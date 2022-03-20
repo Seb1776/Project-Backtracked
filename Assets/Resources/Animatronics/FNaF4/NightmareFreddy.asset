@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c21f431352f35c140a7c2707fd4314d8, type: 3}
+  m_Name: NightmareFreddy
+  m_EditorClassIdentifier: 
+  animatronicName: Nightmare Freddy
+  animatronicType: 0
+  realityGroup: 3
+  animatronicPrefab: {fileID: 7981165385703454749, guid: e406ad10c79578845a99c117ecadb216, type: 3}
+  skins:
+  - skinName: Nightmare Freddy
+    skinIndex: 0
+    currentSkinQuality: 0
+  - skinName: Camouflage Nightmare Freddy
+    skinIndex: 1
+    currentSkinQuality: 1
+  - skinName: Robo-Nightmare Freddy
+    skinIndex: 2
+    currentSkinQuality: 2
+  defaultSkin: 0
+  animatronicAbilities:
+  - {fileID: 11400000, guid: 2c2f445d878e52c4185f5af53912c21b, type: 2}
+  - {fileID: 11400000, guid: 41ff01a791e89e442a155f22d1df5f14, type: 2}
+  - {fileID: 11400000, guid: 292354040907189489531a9b42838ae1, type: 2}
+  - {fileID: 11400000, guid: 4cb4417e01f67e140a193e40a9e2c7cb, type: 2}
+  animatronicPortrait: {fileID: -3973273844858870114, guid: db57a23783164dc46a8a4372400bf34c, type: 3}
+  maxHealth: 450
+  maxDefense: 15
+  maxAttack: 80
+  maxCritChance: 5

@@ -1,0 +1,42 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c21f431352f35c140a7c2707fd4314d8, type: 3}
+  m_Name: JJ
+  m_EditorClassIdentifier: 
+  animatronicName: JJ
+  animatronicType: 0
+  realityGroup: 1
+  animatronicPrefab: {fileID: 3340981022727981743, guid: 41082bc6d04fdb44698806594c1af786, type: 3}
+  skins:
+  - skinName: JJ
+    skinIndex: 0
+    currentSkinQuality: 0
+  - skinName: JJ Green Girl
+    skinIndex: 1
+    currentSkinQuality: 1
+  - skinName: Dee Dee
+    skinIndex: 2
+    currentSkinQuality: 2
+  - skinName: XOR
+    skinIndex: 3
+    currentSkinQuality: 4
+  defaultSkin: 3
+  animatronicAbilities:
+  - {fileID: 11400000, guid: 553a28c50fad8dc4495d84a7c01bc5cd, type: 2}
+  - {fileID: 11400000, guid: ddc48d88ce69ab24d96ed093810c2033, type: 2}
+  - {fileID: 11400000, guid: 84e4ac474bd0e7f4e9f8f3a86ac2b83b, type: 2}
+  - {fileID: 11400000, guid: 92bedb6ac4ed69248a5b66daa3c49852, type: 2}
+  animatronicPortrait: {fileID: -7147492911834177937, guid: 357b73acac65e71458e08b42df737be6, type: 3}
+  maxHealth: 200
+  maxDefense: 50
+  maxAttack: 50
+  maxCritChance: 5

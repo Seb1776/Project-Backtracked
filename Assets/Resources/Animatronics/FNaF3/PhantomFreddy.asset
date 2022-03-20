@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c21f431352f35c140a7c2707fd4314d8, type: 3}
+  m_Name: PhantomFreddy
+  m_EditorClassIdentifier: 
+  animatronicName: Phantom Freddy
+  animatronicType: 0
+  realityGroup: 2
+  animatronicPrefab: {fileID: 5007579569743374272, guid: 855f21d949479e74dbcc813da54a193c, type: 3}
+  skins:
+  - skinName: Phantom Freddy
+    skinIndex: 0
+    currentSkinQuality: 0
+  - skinName: Magmatic Phantom Freddy
+    skinIndex: 1
+    currentSkinQuality: 2
+  - skinName: Ultra-Magmatic Phantom Freddy
+    skinIndex: 2
+    currentSkinQuality: 3
+  defaultSkin: 2
+  animatronicAbilities:
+  - {fileID: 11400000, guid: a28094b0b84ae99448933290e51e6fe3, type: 2}
+  - {fileID: 11400000, guid: 41ff01a791e89e442a155f22d1df5f14, type: 2}
+  - {fileID: 11400000, guid: 92bedb6ac4ed69248a5b66daa3c49852, type: 2}
+  - {fileID: 11400000, guid: fc89848285bea2f4c9ba27514cfc64e8, type: 2}
+  animatronicPortrait: {fileID: -8896358138217037826, guid: f88dc50ff2c61d74f822f34842460a5e, type: 3}
+  maxHealth: 215
+  maxDefense: 65
+  maxAttack: 25
+  maxCritChance: 15

@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c21f431352f35c140a7c2707fd4314d8, type: 3}
+  m_Name: OrvilleElephant
+  m_EditorClassIdentifier: 
+  animatronicName: Orville Elephant
+  animatronicType: 0
+  realityGroup: 6
+  animatronicPrefab: {fileID: 8957843091784226576, guid: 5145abf867ca83c4fb55ef30834dc09c, type: 3}
+  skins:
+  - skinName: Orville Elephant
+    skinIndex: 0
+    currentSkinQuality: 0
+  - skinName: Savana Orville Elephant
+    skinIndex: 1
+    currentSkinQuality: 2
+  - skinName: Familiar Orville Elephant
+    skinIndex: 2
+    currentSkinQuality: 3
+  defaultSkin: 0
+  animatronicAbilities:
+  - {fileID: 11400000, guid: 03d7a8d060c5e034bbd4effe10a13907, type: 2}
+  - {fileID: 11400000, guid: 5887fb3312ded034da60ce681420c92d, type: 2}
+  - {fileID: 11400000, guid: 2e0d8429e27fd8140ad4e79267106f4a, type: 2}
+  - {fileID: 11400000, guid: c858bf2e46df44b4c819b0b27d75739e, type: 2}
+  animatronicPortrait: {fileID: 6786232424852231044, guid: 8e7a27dbe5d3c4940a85d67534e32aa9, type: 3}
+  maxHealth: 325
+  maxDefense: 45
+  maxAttack: 50
+  maxCritChance: 15

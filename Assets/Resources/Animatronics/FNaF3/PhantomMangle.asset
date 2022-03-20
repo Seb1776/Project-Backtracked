@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c21f431352f35c140a7c2707fd4314d8, type: 3}
+  m_Name: PhantomMangle
+  m_EditorClassIdentifier: 
+  animatronicName: Phantom Mangle
+  animatronicType: 0
+  realityGroup: 2
+  animatronicPrefab: {fileID: 6777814859718798730, guid: 5446647a260c0f6488ee8e39d13abc35, type: 3}
+  skins:
+  - skinName: Phantom Mangle
+    skinIndex: 0
+    currentSkinQuality: 0
+  - skinName: Magmatic Phantom Mangle
+    skinIndex: 1
+    currentSkinQuality: 2
+  - skinName: Ultra-Magmatic Phantom Mangle
+    skinIndex: 2
+    currentSkinQuality: 3
+  defaultSkin: 0
+  animatronicAbilities:
+  - {fileID: 11400000, guid: fc89848285bea2f4c9ba27514cfc64e8, type: 2}
+  - {fileID: 11400000, guid: 53a70c4d6f58cb947a30d7c8d71f4f60, type: 2}
+  - {fileID: 11400000, guid: 7c25ed805ad5d9c43b20d0ef6c541f03, type: 2}
+  - {fileID: 11400000, guid: 92bedb6ac4ed69248a5b66daa3c49852, type: 2}
+  animatronicPortrait: {fileID: -672214115263439309, guid: 3b1d7194e377b914b8a83fe76caed155, type: 3}
+  maxHealth: 275
+  maxDefense: 40
+  maxAttack: 60
+  maxCritChance: 5

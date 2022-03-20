@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c21f431352f35c140a7c2707fd4314d8, type: 3}
+  m_Name: HappyFrog
+  m_EditorClassIdentifier: 
+  animatronicName: Happy Frog
+  animatronicType: 0
+  realityGroup: 6
+  animatronicPrefab: {fileID: 3618040154992826716, guid: c78d08b697681d54d8f185660896133a, type: 3}
+  skins:
+  - skinName: Happy Frog
+    skinIndex: 0
+    currentSkinQuality: 0
+  - skinName: Reddy Happy Frog
+    skinIndex: 1
+    currentSkinQuality: 1
+  - skinName: Familiar Happy Frog
+    skinIndex: 2
+    currentSkinQuality: 2
+  defaultSkin: 0
+  animatronicAbilities:
+  - {fileID: 11400000, guid: 2c2f445d878e52c4185f5af53912c21b, type: 2}
+  - {fileID: 11400000, guid: cafa2bfc3f4667449b3f1748402af57f, type: 2}
+  - {fileID: 11400000, guid: 968ddeea9d95ebc47a1fc2d25d016cfd, type: 2}
+  - {fileID: 11400000, guid: bec3bb6cc150bc743b2585e71dbca5a9, type: 2}
+  animatronicPortrait: {fileID: -7986911534450095521, guid: 989271947c498bd45821420e66b382d4, type: 3}
+  maxHealth: 325
+  maxDefense: 65
+  maxAttack: 50
+  maxCritChance: 5

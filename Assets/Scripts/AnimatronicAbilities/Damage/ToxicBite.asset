@@ -1,0 +1,43 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8cfd646504bdc0e49a26eb8115aeecfc, type: 3}
+  m_Name: ToxicBite
+  m_EditorClassIdentifier: 
+  ability: 0
+  colorGroup: 6
+  abilityName: Toxic Bite
+  timeBeforeAbility: 0.19
+  timeToDestroyEffect: 0.22
+  attackEffect: {fileID: 8921215044624444286, guid: 6a01ad8b817d712499097c451a1487a5, type: 3}
+  sFXPlayMode: 0
+  timeOfRandomIterations: 0
+  globalIntervalsBtwSFX: 0
+  abilitySoundEffect:
+  - SFX: {fileID: 8300000, guid: 9acc901bc21eac0498ad0590fa0941cb, type: 3}
+    amountToPlayAudio: 1
+    intervalsBtwPlays: {x: 0, y: 0}
+    delayToPlaySFX: 0
+  abilityHasOverlay: 1
+  abilityOverlay: 7
+  timeBeforeOverlay: 0.19
+  fadeInOffDurations: {x: 0.2, y: 0.2}
+  overlayStayDuration: 0
+  makesDamageTo: 0
+  damageToDo: 12
+  targets: 1
+  instanceOfDamage: 1
+  timeBtwInstancesOfDamage: 0
+  canPoison: 1
+  poisonDamage: 5
+  poisonDuration: 3
+  timeBtwPoisonDamage: 0.2
+  randomTargetSelection: 1

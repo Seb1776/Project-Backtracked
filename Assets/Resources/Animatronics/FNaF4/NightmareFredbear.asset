@@ -1,0 +1,45 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c21f431352f35c140a7c2707fd4314d8, type: 3}
+  m_Name: NightmareFredbear
+  m_EditorClassIdentifier: 
+  animatronicName: Nightmare Fredbear
+  animatronicType: 0
+  realityGroup: 3
+  animatronicPrefab: {fileID: 8586670908890109746, guid: 435d59e76fa8d5e4d905830833fcfa77, type: 3}
+  skins:
+  - skinName: Nightmare Fredbear
+    skinIndex: 0
+    currentSkinQuality: 0
+  - skinName: Teasing Nightmare Fredbear
+    skinIndex: 1
+    currentSkinQuality: 1
+  - skinName: Camouflage Nightmare Fredbear
+    skinIndex: 2
+    currentSkinQuality: 1
+  - skinName: Slaughter Nightmare Fredbear
+    skinIndex: 3
+    currentSkinQuality: 2
+  - skinName: Robo-Nightmare Fredbear
+    skinIndex: 4
+    currentSkinQuality: 2
+  defaultSkin: 0
+  animatronicAbilities:
+  - {fileID: 11400000, guid: 0e5cff2203e795448aaf767d2e006e61, type: 2}
+  - {fileID: 11400000, guid: 832eb8386bdc0814dad189593636a8db, type: 2}
+  - {fileID: 11400000, guid: 292354040907189489531a9b42838ae1, type: 2}
+  - {fileID: 11400000, guid: 8dc4d09c7c1500242880bbd22e39adab, type: 2}
+  animatronicPortrait: {fileID: -1195282269455316333, guid: 953d17e5ba0c1364a86ab1a62afb37a4, type: 3}
+  maxHealth: 550
+  maxDefense: 25
+  maxAttack: 80
+  maxCritChance: 5

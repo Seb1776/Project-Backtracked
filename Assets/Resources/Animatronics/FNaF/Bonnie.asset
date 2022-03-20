@@ -1,0 +1,42 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c21f431352f35c140a7c2707fd4314d8, type: 3}
+  m_Name: Bonnie
+  m_EditorClassIdentifier: 
+  animatronicName: Bonnie
+  animatronicType: 0
+  realityGroup: 0
+  animatronicPrefab: {fileID: 7387683386773906705, guid: b15973d9b959f8e4c8c3c345f45d7a10, type: 3}
+  skins:
+  - skinName: Bonnie The Bunny
+    skinIndex: 0
+    currentSkinQuality: 0
+  - skinName: Original Bonnie
+    skinIndex: 1
+    currentSkinQuality: 0
+  - skinName: BlackLight Bonnie
+    skinIndex: 2
+    currentSkinQuality: 0
+  - skinName: Metalistic Bonnie
+    skinIndex: 3
+    currentSkinQuality: 2
+  defaultSkin: 3
+  animatronicAbilities:
+  - {fileID: 11400000, guid: 03d7a8d060c5e034bbd4effe10a13907, type: 2}
+  - {fileID: 11400000, guid: 8e125ae790ff8a84ea4f8cb7f9b1d0ea, type: 2}
+  - {fileID: 11400000, guid: ceff901681a9d8442a0c9d7d90126d2b, type: 2}
+  - {fileID: 11400000, guid: 5887fb3312ded034da60ce681420c92d, type: 2}
+  animatronicPortrait: {fileID: 1116130596500702585, guid: d05cc50de24a7a34eac7d079f437a545, type: 3}
+  maxHealth: 215
+  maxDefense: 35
+  maxAttack: 55
+  maxCritChance: 5

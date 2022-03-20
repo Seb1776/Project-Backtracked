@@ -1,0 +1,48 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c21f431352f35c140a7c2707fd4314d8, type: 3}
+  m_Name: ToyChica
+  m_EditorClassIdentifier: 
+  animatronicName: Toy Chica
+  animatronicType: 0
+  realityGroup: 1
+  animatronicPrefab: {fileID: 7378627468990347987, guid: a3456a2da6cc46740bc81b25468f4e84, type: 3}
+  skins:
+  - skinName: Toy Chica
+    skinIndex: 0
+    currentSkinQuality: 0
+  - skinName: Shadow Toy Chica
+    skinIndex: 1
+    currentSkinQuality: 1
+  - skinName: Funtime Toy Chica
+    skinIndex: 2
+    currentSkinQuality: 1
+  - skinName: White Magic Toy Chica
+    skinIndex: 3
+    currentSkinQuality: 3
+  - skinName: High-Score Toy Chica
+    skinIndex: 4
+    currentSkinQuality: 3
+  - skinName: Game Over Toy Chica
+    skinIndex: 5
+    currentSkinQuality: 4
+  defaultSkin: 5
+  animatronicAbilities:
+  - {fileID: 11400000, guid: 968ddeea9d95ebc47a1fc2d25d016cfd, type: 2}
+  - {fileID: 11400000, guid: 5887fb3312ded034da60ce681420c92d, type: 2}
+  - {fileID: 11400000, guid: 53a70c4d6f58cb947a30d7c8d71f4f60, type: 2}
+  - {fileID: 11400000, guid: 75627c1799d6128458794798745704f2, type: 2}
+  animatronicPortrait: {fileID: 568969187992747792, guid: 79047b8be76f2af47835e44583cb25d6, type: 3}
+  maxHealth: 225
+  maxDefense: 75
+  maxAttack: 35
+  maxCritChance: 20

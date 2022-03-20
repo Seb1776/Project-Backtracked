@@ -1,0 +1,53 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8cfd646504bdc0e49a26eb8115aeecfc, type: 3}
+  m_Name: BadPizza
+  m_EditorClassIdentifier: 
+  ability: 0
+  colorGroup: 6
+  abilityName: Bad Pizza
+  timeBeforeAbility: 2
+  timeToDestroyEffect: 2.2
+  attackEffect: {fileID: 6112155221863695272, guid: a86ed4a80a9101145bd5ba482cd62203, type: 3}
+  effectIsNotCentered: 1
+  offsetIfFlipped: {x: -3.48, y: 4.7}
+  sFXPlayMode: 0
+  timeOfRandomIterations: 0
+  globalIntervalsBtwSFX: 0
+  abilitySoundEffect:
+  - SFX: {fileID: 8300000, guid: d7848f7e140d2114ba9a356ea988d057, type: 3}
+    amountToPlayAudio: 1
+    intervalsBtwPlays: {x: 0, y: 0}
+    delayToPlaySFX: 0
+  - SFX: {fileID: 8300000, guid: 5d2450bf8eac8a145abb925070986394, type: 3}
+    amountToPlayAudio: 1
+    intervalsBtwPlays: {x: 0, y: 0}
+    delayToPlaySFX: 2
+  abilityHasOverlay: 1
+  abilityOverlay: 7
+  timeBeforeOverlay: 2
+  fadeInOffDurations: {x: 0.5, y: 0.5}
+  overlayStayDuration: 1.5
+  abilityHasCameraShake: 0
+  acs: 0
+  customShakeDuration: -1
+  timeBeforeCameraShake: 0
+  makesDamageTo: 0
+  damageToDo: 35
+  targets: 4
+  instanceOfDamage: 1
+  timeBtwInstancesOfDamage: 0
+  canPoison: 1
+  poisonDamage: 3
+  poisonDuration: 5
+  timeBtwPoisonDamage: 0.5
+  randomTargetSelection: 0

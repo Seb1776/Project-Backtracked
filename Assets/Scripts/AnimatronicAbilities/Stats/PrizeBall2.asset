@@ -1,0 +1,47 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93fc9c1632a49f949a0a1eb89a8dcc1f, type: 3}
+  m_Name: PrizeBall2
+  m_EditorClassIdentifier: 
+  ability: 0
+  colorGroup: 1
+  abilityName: Prize Ball II
+  timeBeforeAbility: 0.4
+  timeToDestroyEffect: 1.5
+  attackEffect: {fileID: 961122101305133336, guid: 7a5d4cd8ae6298e4c838e7b68387689f, type: 3}
+  abilitySoundEffect: {fileID: 0}
+  timeToPlaySFX: 0
+  targets: 1
+  randomTargets: 0
+  statsToAffect:
+  - abilityToAffect: 5
+    entityToAffect: 1
+    affectMode: 0
+    affectValue: 0
+    instaKillMode: 0
+    percentageValue: 0
+    pointValue: 0
+    increaseStatTime: 0
+    stunTime: 0
+    chanceToInstaKill: 0
+    minHealthPercentageToKill: 0
+    hauntDuration: 0
+    targetsToHaunt: 0
+    specificAbilities:
+    - {fileID: 11400000, guid: 4cb4417e01f67e140a193e40a9e2c7cb, type: 2}
+    - {fileID: 11400000, guid: 2c65e8588c91bbe4ea93849b638a24c9, type: 2}
+    - {fileID: 11400000, guid: 03d7a8d060c5e034bbd4effe10a13907, type: 2}
+    - {fileID: 11400000, guid: 2c2f445d878e52c4185f5af53912c21b, type: 2}
+    otherSpecificExecution: 1
+    timeBtwMunchiesAttack: {x: 0, y: 0}
+    munchiesDamage: 0
+    munchiesDuration: 0

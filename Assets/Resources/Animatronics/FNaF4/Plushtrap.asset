@@ -1,0 +1,45 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c21f431352f35c140a7c2707fd4314d8, type: 3}
+  m_Name: Plushtrap
+  m_EditorClassIdentifier: 
+  animatronicName: Plushtrap
+  animatronicType: 0
+  realityGroup: 3
+  animatronicPrefab: {fileID: 2597275528001503919, guid: 3e7611abd87448b409f584d438afd667, type: 3}
+  skins:
+  - skinName: Plushtrap
+    skinIndex: 0
+    currentSkinQuality: 0
+  - skinName: Torched Plushtrap
+    skinIndex: 1
+    currentSkinQuality: 1
+  - skinName: Shadow Plushtrap
+    skinIndex: 2
+    currentSkinQuality: 1
+  - skinName: Camouflage Plushtrap
+    skinIndex: 3
+    currentSkinQuality: 1
+  - skinName: Robo-Plushtrap
+    skinIndex: 4
+    currentSkinQuality: 2
+  defaultSkin: 0
+  animatronicAbilities:
+  - {fileID: 11400000, guid: fc89848285bea2f4c9ba27514cfc64e8, type: 2}
+  - {fileID: 11400000, guid: 832eb8386bdc0814dad189593636a8db, type: 2}
+  - {fileID: 11400000, guid: 41ff01a791e89e442a155f22d1df5f14, type: 2}
+  - {fileID: 11400000, guid: 8c72ff43b55d3154db4f8f10c89bb2a4, type: 2}
+  animatronicPortrait: {fileID: -1262069802980515536, guid: 18a37ee01a945d64ab59c5a1387489b5, type: 3}
+  maxHealth: 225
+  maxDefense: 45
+  maxAttack: 65
+  maxCritChance: 20

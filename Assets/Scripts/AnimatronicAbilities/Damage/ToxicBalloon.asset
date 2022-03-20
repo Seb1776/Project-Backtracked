@@ -1,0 +1,47 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8cfd646504bdc0e49a26eb8115aeecfc, type: 3}
+  m_Name: ToxicBalloon
+  m_EditorClassIdentifier: 
+  ability: 0
+  colorGroup: 6
+  abilityName: Toxic Baloon
+  timeBeforeAbility: 1.3
+  timeToDestroyEffect: 3
+  attackEffect: {fileID: 5979451418818558379, guid: 2f8936ce95ce77b4d96338791643a48c, type: 3}
+  sFXPlayMode: 0
+  timeOfRandomIterations: 0
+  globalIntervalsBtwSFX: 0
+  abilitySoundEffect:
+  - SFX: {fileID: 8300000, guid: 7dbdbd78ec514604f9eeec5e3d746081, type: 3}
+    amountToPlayAudio: 1
+    intervalsBtwPlays: {x: 0, y: 0}
+    delayToPlaySFX: 0
+  - SFX: {fileID: 8300000, guid: 89bb85b106940334b95a0c63ed8923ec, type: 3}
+    amountToPlayAudio: 1
+    intervalsBtwPlays: {x: 0, y: 0}
+    delayToPlaySFX: 0.45
+  abilityHasOverlay: 1
+  abilityOverlay: 7
+  timeBeforeOverlay: 0.45
+  fadeInOffDurations: {x: 0.2, y: 0.2}
+  overlayStayDuration: 0.5
+  makesDamageTo: 0
+  damageToDo: 50
+  targets: 4
+  instanceOfDamage: 1
+  timeBtwInstancesOfDamage: 0
+  canPoison: 1
+  poisonDamage: 15
+  poisonDuration: 7
+  timeBtwPoisonDamage: 0.5
+  randomTargetSelection: 0

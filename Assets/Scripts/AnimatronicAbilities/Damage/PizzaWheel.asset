@@ -1,0 +1,47 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8cfd646504bdc0e49a26eb8115aeecfc, type: 3}
+  m_Name: PizzaWheel
+  m_EditorClassIdentifier: 
+  ability: 0
+  colorGroup: 0
+  abilityName: Pizza Wheel
+  timeBeforeAbility: 1.1
+  timeToDestroyEffect: 2.35
+  attackEffect: {fileID: 583380124194272655, guid: 65efb382de996434599a8ea489914e11, type: 3}
+  sFXPlayMode: 0
+  timeOfRandomIterations: 0
+  globalIntervalsBtwSFX: 0
+  abilitySoundEffect:
+  - SFX: {fileID: 8300000, guid: d7848f7e140d2114ba9a356ea988d057, type: 3}
+    amountToPlayAudio: 1
+    intervalsBtwPlays: {x: 0, y: 0}
+    delayToPlaySFX: 0
+  abilityHasOverlay: 0
+  abilityHasCameraShake: 1
+  acs: 0
+  customShakeDuration: 2.3
+  timeBeforeCameraShake: 0
+  abilityOverlay: 0
+  timeBeforeOverlay: 0
+  fadeInOffDurations: {x: 0, y: 0}
+  overlayStayDuration: 0
+  makesDamageTo: 0
+  damageToDo: 10
+  targets: 4
+  instanceOfDamage: 4
+  timeBtwInstancesOfDamage: 0.2
+  canPoison: 0
+  poisonDamage: 0
+  poisonDuration: 0
+  timeBtwPoisonDamage: 0
+  randomTargetSelection: 0

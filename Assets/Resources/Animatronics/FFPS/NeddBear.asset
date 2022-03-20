@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c21f431352f35c140a7c2707fd4314d8, type: 3}
+  m_Name: NeddBear
+  m_EditorClassIdentifier: 
+  animatronicName: Nedd Bear
+  animatronicType: 0
+  realityGroup: 6
+  animatronicPrefab: {fileID: 367905078128658456, guid: 8d06c53cea798524495f37b2cfd2ab3e, type: 3}
+  skins:
+  - skinName: Nedd Bear
+    skinIndex: 0
+    currentSkinQuality: 0
+  - skinName: Panda Nedd Bear
+    skinIndex: 1
+    currentSkinQuality: 1
+  - skinName: Familiar Nedd Bear
+    skinIndex: 2
+    currentSkinQuality: 2
+  defaultSkin: 0
+  animatronicAbilities:
+  - {fileID: 11400000, guid: a51baf6f05bd99048ae8521c763f2ff6, type: 2}
+  - {fileID: 11400000, guid: 03d7a8d060c5e034bbd4effe10a13907, type: 2}
+  - {fileID: 11400000, guid: 53a70c4d6f58cb947a30d7c8d71f4f60, type: 2}
+  - {fileID: 11400000, guid: 4cb4417e01f67e140a193e40a9e2c7cb, type: 2}
+  animatronicPortrait: {fileID: -5667178739953092169, guid: 2a9a87f7e5916954a91dd615388bd850, type: 3}
+  maxHealth: 350
+  maxDefense: 65
+  maxAttack: 45
+  maxCritChance: 15

@@ -1,0 +1,53 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93fc9c1632a49f949a0a1eb89a8dcc1f, type: 3}
+  m_Name: RainyDay
+  m_EditorClassIdentifier: 
+  ability: 0
+  colorGroup: 3
+  abilityName: Rainy Day
+  timeBeforeAbility: 0.32
+  timeToDestroyEffect: 1.7
+  attackEffect: {fileID: 6558395410348098698, guid: 5aed95eeca2c64b4784d29b4180565f4, type: 3}
+  sFXPlayMode: 0
+  timeOfRandomIterations: 0
+  globalIntervalsBtwSFX: 0
+  abilitySoundEffect:
+  - SFX: {fileID: 8300000, guid: b792eb0ff5f024f44908fab42cb5445d, type: 3}
+    amountToPlayAudio: 1
+    intervalsBtwPlays: {x: 0, y: 0}
+    delayToPlaySFX: 0
+  - SFX: {fileID: 8300000, guid: 14d4bf0e4f729634c924437046b5f0f0, type: 3}
+    amountToPlayAudio: 1
+    intervalsBtwPlays: {x: 0, y: 0}
+    delayToPlaySFX: 0.3
+  targets: 0
+  randomTargets: 0
+  statsToAffect:
+  - abilityToAffect: 1
+    entityToAffect: 1
+    affectMode: 1
+    affectValue: 1
+    instaKillMode: 0
+    percentageValue: 25
+    pointValue: 0
+    increaseStatTime: 30
+    stunTime: 0
+    chanceToInstaKill: 0
+    minHealthPercentageToKill: 0
+    hauntDuration: 0
+    targetsToHaunt: 0
+    specificAbilities: []
+    otherSpecificExecution: 0
+    timeBtwMunchiesAttack: {x: 0, y: 0}
+    munchiesDamage: 0
+    munchiesDuration: 0

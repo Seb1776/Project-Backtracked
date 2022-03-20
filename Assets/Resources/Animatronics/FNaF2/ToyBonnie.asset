@@ -1,0 +1,48 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c21f431352f35c140a7c2707fd4314d8, type: 3}
+  m_Name: ToyBonnie
+  m_EditorClassIdentifier: 
+  animatronicName: Toy Bonnie
+  animatronicType: 0
+  realityGroup: 1
+  animatronicPrefab: {fileID: 6952848005743698265, guid: 6a9e87b9d83e1864ba748e200f5f6ea3, type: 3}
+  skins:
+  - skinName: Toy Bonnie
+    skinIndex: 0
+    currentSkinQuality: 0
+  - skinName: Golden Toy Bonnie
+    skinIndex: 1
+    currentSkinQuality: 1
+  - skinName: Funtime Toy Bonnie
+    skinIndex: 2
+    currentSkinQuality: 1
+  - skinName: WhiteMagic Toy Bonnie
+    skinIndex: 3
+    currentSkinQuality: 3
+  - skinName: Boulder Toy Bonnie
+    skinIndex: 4
+    currentSkinQuality: 4
+  - skinName: System Error Toy Bonnie
+    skinIndex: 5
+    currentSkinQuality: 2
+  defaultSkin: 3
+  animatronicAbilities:
+  - {fileID: 11400000, guid: 8e125ae790ff8a84ea4f8cb7f9b1d0ea, type: 2}
+  - {fileID: 11400000, guid: 03d7a8d060c5e034bbd4effe10a13907, type: 2}
+  - {fileID: 11400000, guid: 87f4572731883e044b9340d68b0506d9, type: 2}
+  - {fileID: 11400000, guid: ddc48d88ce69ab24d96ed093810c2033, type: 2}
+  animatronicPortrait: {fileID: -7237512378485803389, guid: 460cb54f6d3cc5141835f0dd5370671a, type: 3}
+  maxHealth: 225
+  maxDefense: 65
+  maxAttack: 25
+  maxCritChance: 20

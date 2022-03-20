@@ -1,0 +1,155 @@
+Using pre-set license
+Built from '2021.1/staging' branch; Version is '2021.1.23f1 (b50729e604a9) revision 11863849'; Using compiler version '192528614'; Build Type 'Release'
+OS: 'Windows 10 Pro; OS build 19044.1586; Version 2009; 64bit' Language: 'en' Physical Memory: 7908 MB
+BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 0
+
+COMMAND LINE ARGUMENTS:
+C:\Program Files\Unity 2021.1.23f1\Editor\Unity.exe
+-adb2
+-batchMode
+-noUpm
+-name
+AssetImportWorker2
+-projectPath
+C:/Users/Holberton/Documents/Project Backtracked-170322/Project Backtracked/Project Backtracked
+-logFile
+Logs/AssetImportWorker2.log
+-srvPort
+55866
+Successfully changed project path to: C:/Users/Holberton/Documents/Project Backtracked-170322/Project Backtracked/Project Backtracked
+C:/Users/Holberton/Documents/Project Backtracked-170322/Project Backtracked/Project Backtracked
+Using Asset Import Pipeline V2.
+Refreshing native plugins compatible for Editor in 1079.67 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Initialize engine version: 2021.1.23f1 (b50729e604a9)
+[Subsystems] Discovering subsystems at path C:/Program Files/Unity 2021.1.23f1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path C:/Users/Holberton/Documents/Project Backtracked-170322/Project Backtracked/Project Backtracked/Assets
+GfxDevice: creating device client; threaded=0; jobified=0
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.1]
+    Renderer: Intel(R) UHD Graphics 620 (ID=0x3ea0)
+    Vendor:   Intel
+    VRAM:     3954 MB
+    Driver:   27.20.100.8729
+Initialize mono
+Mono path[0] = 'C:/Program Files/Unity 2021.1.23f1/Editor/Data/Managed'
+Mono path[1] = 'C:/Program Files/Unity 2021.1.23f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
+Mono config path = 'C:/Program Files/Unity 2021.1.23f1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56068
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: C:/Program Files/Unity 2021.1.23f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Registered in 0.004999 seconds.
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 587.73 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  7.585 seconds
+Domain Reload Profiling:
+	ReloadAssembly (7586ms)
+		BeginReloadAssembly (500ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (0ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (2ms)
+		EndReloadAssembly (2017ms)
+			LoadAssemblies (495ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (719ms)
+			ReleaseScriptCaches (0ms)
+			RebuildScriptCaches (98ms)
+			SetupLoadedEditorAssemblies (1038ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (15ms)
+				SetLoadedEditorAssemblies (1ms)
+				RefreshPlugins (588ms)
+				BeforeProcessingInitializeOnLoad (3ms)
+				ProcessInitializeOnLoadAttributes (341ms)
+				ProcessInitializeOnLoadMethodAttributes (90ms)
+				AfterProcessingInitializeOnLoad (0ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (0ms)
+Platform modules already initialized, skipping
+Registering precompiled user dll's ...
+Registered in 0.033900 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image C:\Users\Holberton\Documents\Project Backtracked-170322\Project Backtracked\Project Backtracked\Library\PackageCache\com.unity.visualscripting@1.7.2\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image C:\Users\Holberton\Documents\Project Backtracked-170322\Project Backtracked\Project Backtracked\Library\PackageCache\com.unity.visualscripting@1.7.2\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 651.80 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  5.731 seconds
+Domain Reload Profiling:
+	ReloadAssembly (5733ms)
+		BeginReloadAssembly (683ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (16ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (82ms)
+		EndReloadAssembly (4847ms)
+			LoadAssemblies (499ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (1734ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (213ms)
+			SetupLoadedEditorAssemblies (2033ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (19ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (657ms)
+				BeforeProcessingInitializeOnLoad (422ms)
+				ProcessInitializeOnLoadAttributes (847ms)
+				ProcessInitializeOnLoadMethodAttributes (72ms)
+				AfterProcessingInitializeOnLoad (16ms)
+				EditorAssembliesLoaded (1ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (21ms)
+Platform modules already initialized, skipping
+========================================================================
+Worker process is ready to serve import requests
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.18 seconds
+Received signal SIGSEGV
+Stack trace:
+0x00007ffbbb6e4279 (igd10iumd64) OpenAdapter10_2
+0x00007ffbbb6e234c (igd10iumd64) OpenAdapter10_2
+0x00007ffbbb6e220d (igd10iumd64) OpenAdapter10_2
+0x00007ffbbb6686ba (igd10iumd64) OpenAdapter10_2
+0x00007ffbc2abb52c (d3d11) D3D11CoreCreateDevice
+0x00007ffbc2aa697f (d3d11) 
+0x00007ffbc2aa67a4 (d3d11) 
+0x00007ffbc2ac8089 (d3d11) D3D11CoreCreateDevice
+0x00007ffbc2ab8fdd (d3d11) D3D11CoreCreateDevice
+0x00007ffbc2ab978c (d3d11) D3D11CoreCreateDevice
+0x00007ffbc2aa95b4 (d3d11) 
+0x00007ffbc2aa9523 (d3d11) 
+0x00007ffbc2aa92a8 (d3d11) 
+0x00007ff6b2df1614 (Unity) D3D11PixelShader::D3D11PixelShader
+0x00007ff6b355455b (Unity) CreateGpuProgram
+0x00007ff6b2e8e746 (Unity) GfxDeviceClient::CreateGpuProgram
+0x00007ff6b340827b (Unity) ShaderLab::SubProgram::Compile
+0x00007ff6b395aa29 (Unity) FinalizeVariant
+0x00007ff6b395ca0d (Unity) GetSubProgramForShaderSnippet
+0x00007ff6b3408a79 (Unity) ShaderLab::Program::CompileShaderSubProgram
+0x00007ff6b3409a34 (Unity) ShaderLab::Program::GetMatchingSubProgram
+0x00007ff6b340f28a (Unity) ShaderLab::ShaderState::FindSubProgramsToUse
+0x00007ff6b3404cb0 (Unity) ShaderLab::Pass::PrepareVariant
+0x00007ff6b33ff348 (Unity) ShaderVariantCollection::WarmupOneShaderImpl
+0x00007ff6b33ffc80 (Unity) ShaderVariantCollection::WarmupShadersImpl
+0x00007ff6b3965053 (Unity) WarmupEditorShaders
+0x00007ff6b4e2788e (Unity) Shader::ReloadAllShaders
+0x00007ff6b3f58434 (Unity) <lambda_b8d7149c13e04c595cbe2952d7e0317a>::operator()
+0x00007ff6b3fded62 (Unity) asio::detail::completion_handler<core::mutable_function<void __cdecl(void)> >::do_complete
+0x00007ff6b3fe0fd0 (Unity) asio::detail::win_iocp_io_service::do_one
+0x00007ff6b3fe4696 (Unity) asio::io_service::run
+0x00007ff6b3f8076a (Unity) RunAssetImportWorkerClientV2
+0x00007ff6b3f807c0 (Unity) RunAssetImporterV2
+0x00007ff6b3a80b77 (Unity) Application::InitializeProject
+0x00007ff6b3e92ed7 (Unity) WinMain
+0x00007ff6b59fc202 (Unity) __scrt_common_main_seh
+0x00007ffbc8117034 (KERNEL32) BaseThreadInitThunk
+0x00007ffbc9f22651 (ntdll) RtlUserThreadStart
+

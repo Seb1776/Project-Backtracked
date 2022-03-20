@@ -1,0 +1,40 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52af90f0a08d30e45b9c836acabfd96e, type: 3}
+  m_Name: HappyJam
+  m_EditorClassIdentifier: 
+  ability: 2
+  colorGroup: 2
+  abilityName: Happy Jam
+  timeBeforeAbility: 0
+  timeToDestroyEffect: 0
+  attackEffect: {fileID: 0}
+  sFXPlayMode: 1
+  timeOfRandomIterations: 0
+  globalIntervalsBtwSFX: 0
+  abilitySoundEffect:
+  - SFX: {fileID: 8300000, guid: 23df9edc2e697794b8292dacb9786a02, type: 3}
+    amountToPlayAudio: 1
+    intervalsBtwPlays: {x: 0, y: 0}
+    delayToPlaySFX: 0
+  - SFX: {fileID: 8300000, guid: 29ab5a30a52a91a46ab51b42c955726c, type: 3}
+    amountToPlayAudio: 1
+    intervalsBtwPlays: {x: 0, y: 0}
+    delayToPlaySFX: 0
+  healMode: 1
+  entityToHeal: 0
+  healAmount: 0
+  healPercentage: 50
+  targets: 4
+  randomTargets: 0
+  instancesOfHeal: 1
+  timeBtwInstancesOfHeal: 0

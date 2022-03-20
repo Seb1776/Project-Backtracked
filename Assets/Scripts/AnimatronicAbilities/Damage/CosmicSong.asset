@@ -1,0 +1,51 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8cfd646504bdc0e49a26eb8115aeecfc, type: 3}
+  m_Name: CosmicSong
+  m_EditorClassIdentifier: 
+  ability: 0
+  colorGroup: 4
+  abilityName: Cosmic Song
+  timeBeforeAbility: 0.3
+  timeToDestroyEffect: 2.4
+  attackEffect: {fileID: 4178479629961045961, guid: d0f81315bfcab7946abaa64a0944af14, type: 3}
+  sFXPlayMode: 1
+  timeOfRandomIterations: 0
+  globalIntervalsBtwSFX: 0
+  abilitySoundEffect:
+  - SFX: {fileID: 8300000, guid: e1f60dc09216ba144ae44e933a4a3052, type: 3}
+    amountToPlayAudio: 1
+    intervalsBtwPlays: {x: 0, y: 0}
+    delayToPlaySFX: 0.3
+  - SFX: {fileID: 8300000, guid: ca4f124f536ee844ba7d1943b55ddeb1, type: 3}
+    amountToPlayAudio: 1
+    intervalsBtwPlays: {x: 0, y: 0}
+    delayToPlaySFX: 0.3
+  abilityHasOverlay: 1
+  abilityOverlay: 4
+  timeBeforeOverlay: 0.3
+  fadeInOffDurations: {x: 0.2, y: 0.2}
+  overlayStayDuration: 1.8
+  abilityHasCameraShake: 0
+  acs: 0
+  customShakeDuration: -1
+  timeBeforeCameraShake: 0
+  makesDamageTo: 0
+  damageToDo: 95
+  targets: 4
+  instanceOfDamage: 10
+  timeBtwInstancesOfDamage: 0.15
+  canPoison: 0
+  poisonDamage: 0
+  poisonDuration: 0
+  timeBtwPoisonDamage: 0
+  randomTargetSelection: 0

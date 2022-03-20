@@ -1,0 +1,48 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c21f431352f35c140a7c2707fd4314d8, type: 3}
+  m_Name: Nightmarionne
+  m_EditorClassIdentifier: 
+  animatronicName: Nightmarionne
+  animatronicType: 0
+  realityGroup: 3
+  animatronicPrefab: {fileID: 7503634586367659831, guid: f0e3247185e52ae41ad414b678a99609, type: 3}
+  skins:
+  - skinName: Nightmarionne
+    skinIndex: 0
+    currentSkinQuality: 0
+  - skinName: Classic Nightmarionne
+    skinIndex: 1
+    currentSkinQuality: 0
+  - skinName: Soulles Nightmarionne
+    skinIndex: 2
+    currentSkinQuality: 1
+  - skinName: Nightmare Vinnie
+    skinIndex: 3
+    currentSkinQuality: 2
+  - skinName: Inverse Nightmarionne
+    skinIndex: 4
+    currentSkinQuality: 2
+  - skinName: Robo-Nightmarionne
+    skinIndex: 5
+    currentSkinQuality: 2
+  defaultSkin: 0
+  animatronicAbilities:
+  - {fileID: 11400000, guid: c858bf2e46df44b4c819b0b27d75739e, type: 2}
+  - {fileID: 11400000, guid: cafa2bfc3f4667449b3f1748402af57f, type: 2}
+  - {fileID: 11400000, guid: ec0086f69ca1208409ed4406aacc6fb4, type: 2}
+  - {fileID: 11400000, guid: df5f75084fdebfc4085b1f0ff07e064b, type: 2}
+  animatronicPortrait: {fileID: -3940993048064262136, guid: 8f7a306bb3cf93d42965bfe605c02668, type: 3}
+  maxHealth: 325
+  maxDefense: 80
+  maxAttack: 15
+  maxCritChance: 20

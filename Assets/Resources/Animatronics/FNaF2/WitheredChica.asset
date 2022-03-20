@@ -1,0 +1,42 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c21f431352f35c140a7c2707fd4314d8, type: 3}
+  m_Name: WitheredChica
+  m_EditorClassIdentifier: 
+  animatronicName: Withered Chica
+  animatronicType: 0
+  realityGroup: 1
+  animatronicPrefab: {fileID: 920052784355343535, guid: 626a8e5676fa3ab41809d193f05c1023, type: 3}
+  skins:
+  - skinName: Withered Chica
+    skinIndex: 0
+    currentSkinQuality: 0
+  - skinName: Rabbit Season Withered Chica
+    skinIndex: 1
+    currentSkinQuality: 1
+  - skinName: Duck Season Withered Chica
+    skinIndex: 2
+    currentSkinQuality: 1
+  - skinName: Black Magic Withered Chica
+    skinIndex: 3
+    currentSkinQuality: 3
+  defaultSkin: 0
+  animatronicAbilities:
+  - {fileID: 11400000, guid: 03d7a8d060c5e034bbd4effe10a13907, type: 2}
+  - {fileID: 11400000, guid: 968ddeea9d95ebc47a1fc2d25d016cfd, type: 2}
+  - {fileID: 11400000, guid: 92bedb6ac4ed69248a5b66daa3c49852, type: 2}
+  - {fileID: 11400000, guid: e74ed70131f528845af7a92dc02e0c49, type: 2}
+  animatronicPortrait: {fileID: 527983707887166635, guid: 3883f4b9aa226b0449de903651ca41ca, type: 3}
+  maxHealth: 225
+  maxDefense: 55
+  maxAttack: 25
+  maxCritChance: 5

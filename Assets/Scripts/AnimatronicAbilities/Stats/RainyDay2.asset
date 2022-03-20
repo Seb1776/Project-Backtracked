@@ -1,0 +1,76 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93fc9c1632a49f949a0a1eb89a8dcc1f, type: 3}
+  m_Name: RainyDay2
+  m_EditorClassIdentifier: 
+  ability: 0
+  colorGroup: 3
+  abilityName: Rainy Day II
+  timeBeforeAbility: 0.32
+  timeToDestroyEffect: 1.7
+  attackEffect: {fileID: 7016557870002756954, guid: ce2d7f69b8851474ea980d1fe289e800, type: 3}
+  sFXPlayMode: 0
+  timeOfRandomIterations: 0
+  globalIntervalsBtwSFX: 0
+  abilitySoundEffect:
+  - SFX: {fileID: 8300000, guid: a369b90be0124f74d85becebf0288b83, type: 3}
+    amountToPlayAudio: 1
+    intervalsBtwPlays: {x: 0, y: 0}
+    delayToPlaySFX: 0
+  - SFX: {fileID: 8300000, guid: 7dd399d7ffb33db4b9a3004c200d0aed, type: 3}
+    amountToPlayAudio: 1
+    intervalsBtwPlays: {x: 0, y: 0}
+    delayToPlaySFX: 0.3
+  - SFX: {fileID: 8300000, guid: b424aefd960b4904497d13fde06b735b, type: 3}
+    amountToPlayAudio: 1
+    intervalsBtwPlays: {x: 0, y: 0}
+    delayToPlaySFX: 0.45
+  targets: 4
+  randomTargets: 0
+  statsToAffect:
+  - abilityToAffect: 1
+    entityToAffect: 1
+    affectMode: 1
+    affectValue: 1
+    instaKillMode: 0
+    percentageValue: 50
+    pointValue: 0
+    increaseStatTime: 10
+    stunTime: 0
+    chanceToInstaKill: 0
+    minHealthPercentageToKill: 0
+    hauntDuration: 0
+    targetsToHaunt: 0
+    specificAbilities: []
+    otherSpecificExecution: 0
+    timeBtwMunchiesAttack: {x: 0, y: 0}
+    munchiesDamage: 0
+    munchiesDuration: 0
+  - abilityToAffect: 5
+    entityToAffect: 1
+    affectMode: 1
+    affectValue: 1
+    instaKillMode: 0
+    percentageValue: 50
+    pointValue: 0
+    increaseStatTime: 10
+    stunTime: 0
+    chanceToInstaKill: 0
+    minHealthPercentageToKill: 0
+    hauntDuration: 0
+    targetsToHaunt: 0
+    specificAbilities:
+    - {fileID: 11400000, guid: cdf6844ff713b484fa0cb8d769f0cc4a, type: 2}
+    otherSpecificExecution: 0
+    timeBtwMunchiesAttack: {x: 0, y: 0}
+    munchiesDamage: 0
+    munchiesDuration: 0

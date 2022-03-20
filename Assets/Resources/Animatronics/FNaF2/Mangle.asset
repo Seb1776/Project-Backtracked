@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c21f431352f35c140a7c2707fd4314d8, type: 3}
+  m_Name: Mangle
+  m_EditorClassIdentifier: 
+  animatronicName: Mangle
+  animatronicType: 0
+  realityGroup: 1
+  animatronicPrefab: {fileID: 2278334765909115714, guid: b0e1d4822b90b61499178c006c06cded, type: 3}
+  skins:
+  - skinName: Mangle
+    skinIndex: 0
+    currentSkinQuality: 0
+  - skinName: Mangled Foxy
+    skinIndex: 1
+    currentSkinQuality: 1
+  - skinName: WhiteMagic Mangle
+    skinIndex: 2
+    currentSkinQuality: 3
+  defaultSkin: 2
+  animatronicAbilities:
+  - {fileID: 0}
+  - {fileID: 11400000, guid: ddc48d88ce69ab24d96ed093810c2033, type: 2}
+  - {fileID: 11400000, guid: 2c65e8588c91bbe4ea93849b638a24c9, type: 2}
+  - {fileID: 11400000, guid: 504a346ddea84ab478ee0332738a9b64, type: 2}
+  animatronicPortrait: {fileID: -2216111509719382536, guid: 70f1ebbfdb428984292f5895dd0a5672, type: 3}
+  maxHealth: 200
+  maxDefense: 30
+  maxAttack: 60
+  maxCritChance: 15

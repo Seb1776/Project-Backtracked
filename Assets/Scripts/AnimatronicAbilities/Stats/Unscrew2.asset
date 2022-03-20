@@ -1,0 +1,74 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93fc9c1632a49f949a0a1eb89a8dcc1f, type: 3}
+  m_Name: Unscrew2
+  m_EditorClassIdentifier: 
+  ability: 0
+  colorGroup: 7
+  abilityName: Unscrew
+  timeBeforeAbility: 0.5
+  timeToDestroyEffect: 2.65
+  attackEffect: {fileID: 8662605572373367035, guid: efc854a8128aaa444850815c4a31f479, type: 3}
+  effectIsCentered: 0
+  offsetIfFlipped: {x: 10.9, y: 1.01791}
+  sFXPlayMode: 2
+  timeOfRandomIterations: 10
+  globalIntervalsBtwSFX: 0
+  abilitySoundEffect:
+  - SFX: {fileID: 8300000, guid: 5680b3bf5ea835246b8c34f6ae80bd7e, type: 3}
+    amountToPlayAudio: 0
+    intervalsBtwPlays: {x: 0, y: 0}
+    delayToPlaySFX: 0.05
+  - SFX: {fileID: 8300000, guid: a970ac700c65cf84cb4da30941e19c70, type: 3}
+    amountToPlayAudio: 0
+    intervalsBtwPlays: {x: 0, y: 0}
+    delayToPlaySFX: 0.05
+  - SFX: {fileID: 8300000, guid: 8edfaa3af7e5a64458900ab082d6d2fb, type: 3}
+    amountToPlayAudio: 0
+    intervalsBtwPlays: {x: 0, y: 0}
+    delayToPlaySFX: 0.05
+  - SFX: {fileID: 8300000, guid: af4ee079bcae4e545bc65846526a6bc3, type: 3}
+    amountToPlayAudio: 0
+    intervalsBtwPlays: {x: 0, y: 0}
+    delayToPlaySFX: 0.05
+  abilityHasOverlay: 0
+  abilityOverlay: 0
+  timeBeforeOverlay: 0
+  fadeInOffDurations: {x: 0, y: 0}
+  overlayStayDuration: 0
+  abilityHasCameraShake: 0
+  acs: 0
+  customShakeDuration: -1
+  timeBeforeCameraShake: 0
+  targets: 1
+  randomTargets: 1
+  statsToAffect:
+  - abilityToAffect: 4
+    entityToAffect: 1
+    affectMode: 0
+    affectValue: 0
+    instaKillMode: 0
+    percentageValue: 0
+    pointValue: 0
+    increaseStatTime: 0
+    stunTime: 0
+    chanceToInstaKill: 50
+    minHealthPercentageToKill: 0
+    hauntDuration: 0
+    specificAbilities: []
+    otherSpecificExecution: 0
+    timeBtwMunchiesAttack: {x: 0, y: 0}
+    munchiesDamage: 0
+    munchiesDuration: 0
+    neonWallType: 0
+    neonWallDuration: 0
+    bubbleBreathDuration: 0

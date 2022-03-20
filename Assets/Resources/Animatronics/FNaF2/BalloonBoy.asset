@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c21f431352f35c140a7c2707fd4314d8, type: 3}
+  m_Name: BalloonBoy
+  m_EditorClassIdentifier: 
+  animatronicName: Balloon Boy
+  animatronicType: 0
+  realityGroup: 1
+  animatronicPrefab: {fileID: 3761040908448150816, guid: 2765381c019c7784fbe2a44304002f47, type: 3}
+  skins:
+  - skinName: Balloon Boy
+    skinIndex: 0
+    currentSkinQuality: 0
+  - skinName: Shadow Balloon Boy
+    skinIndex: 1
+    currentSkinQuality: 2
+  defaultSkin: 0
+  animatronicAbilities:
+  - {fileID: 11400000, guid: 553a28c50fad8dc4495d84a7c01bc5cd, type: 2}
+  - {fileID: 11400000, guid: 53a70c4d6f58cb947a30d7c8d71f4f60, type: 2}
+  - {fileID: 11400000, guid: 56278c9f3dc74ec4e89b6efbb029db65, type: 2}
+  - {fileID: 11400000, guid: 83fccea4e50d5ee4cbd06d22013665ba, type: 2}
+  animatronicPortrait: {fileID: -7707049425698192180, guid: 7aa912d332aff154d9fe327683524a71, type: 3}
+  maxHealth: 200
+  maxDefense: 45
+  maxAttack: 65
+  maxCritChance: 5

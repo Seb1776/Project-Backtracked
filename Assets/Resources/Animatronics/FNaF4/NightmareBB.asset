@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c21f431352f35c140a7c2707fd4314d8, type: 3}
+  m_Name: NightmareBB
+  m_EditorClassIdentifier: 
+  animatronicName: Nightmare BB
+  animatronicType: 0
+  realityGroup: 3
+  animatronicPrefab: {fileID: 2291591032464519118, guid: b1cd8f2af21e22145b13a7d5eb92f261, type: 3}
+  skins:
+  - skinName: Nightmare BB
+    skinIndex: 0
+    currentSkinQuality: 0
+  - skinName: Shadow Nightmare BB
+    skinIndex: 1
+    currentSkinQuality: 1
+  - skinName: Nightmare JJ
+    skinIndex: 2
+    currentSkinQuality: 2
+  defaultSkin: 0
+  animatronicAbilities:
+  - {fileID: 11400000, guid: 8dc4d09c7c1500242880bbd22e39adab, type: 2}
+  - {fileID: 11400000, guid: cafa2bfc3f4667449b3f1748402af57f, type: 2}
+  - {fileID: 11400000, guid: bbb45b6c41ed9cd41b9d80b7144b14e6, type: 2}
+  - {fileID: 11400000, guid: 9a662dc0645e2974bb2c24c1aaf1ae0a, type: 2}
+  animatronicPortrait: {fileID: 8327261830603123540, guid: 4fed10513bf8ee446b0aad312799d14d, type: 3}
+  maxHealth: 450
+  maxDefense: 35
+  maxAttack: 50
+  maxCritChance: 15

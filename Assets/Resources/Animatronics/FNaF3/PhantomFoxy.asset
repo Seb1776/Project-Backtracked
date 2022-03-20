@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c21f431352f35c140a7c2707fd4314d8, type: 3}
+  m_Name: PhantomFoxy
+  m_EditorClassIdentifier: 
+  animatronicName: Phantom Foxy
+  animatronicType: 0
+  realityGroup: 2
+  animatronicPrefab: {fileID: 6681967534952067542, guid: 9f62e2027198bef41a34ef9ff6c71c5b, type: 3}
+  skins:
+  - skinName: Phantom Foxy
+    skinIndex: 0
+    currentSkinQuality: 0
+  - skinName: Magmatic Phantom Foxy
+    skinIndex: 1
+    currentSkinQuality: 2
+  - skinName: Ultra-Magmatic Phantom Foxy
+    skinIndex: 2
+    currentSkinQuality: 3
+  defaultSkin: 0
+  animatronicAbilities:
+  - {fileID: 11400000, guid: 8c72ff43b55d3154db4f8f10c89bb2a4, type: 2}
+  - {fileID: 11400000, guid: fc89848285bea2f4c9ba27514cfc64e8, type: 2}
+  - {fileID: 11400000, guid: 84e4ac474bd0e7f4e9f8f3a86ac2b83b, type: 2}
+  - {fileID: 11400000, guid: 2c65e8588c91bbe4ea93849b638a24c9, type: 2}
+  animatronicPortrait: {fileID: 3509022654004362682, guid: acfa4d6a891254b4fae4684a52ba2c9a, type: 3}
+  maxHealth: 275
+  maxDefense: 45
+  maxAttack: 65
+  maxCritChance: 5

@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c21f431352f35c140a7c2707fd4314d8, type: 3}
+  m_Name: Foxy
+  m_EditorClassIdentifier: 
+  animatronicName: Foxy
+  animatronicType: 0
+  realityGroup: 0
+  animatronicPrefab: {fileID: 9084163458632123789, guid: be684f6e3faed6244aca40d59ce0e298, type: 3}
+  skins:
+  - skinName: Foxy The Pirate Fox
+    skinIndex: 0
+    currentSkinQuality: 0
+  - skinName: BlackLight Foxy
+    skinIndex: 1
+    currentSkinQuality: 0
+  - skinName: Metalistic Foxy
+    skinIndex: 2
+    currentSkinQuality: 2
+  defaultSkin: 2
+  animatronicAbilities:
+  - {fileID: 11400000, guid: 03d7a8d060c5e034bbd4effe10a13907, type: 2}
+  - {fileID: 11400000, guid: 8c72ff43b55d3154db4f8f10c89bb2a4, type: 2}
+  - {fileID: 11400000, guid: 53a70c4d6f58cb947a30d7c8d71f4f60, type: 2}
+  - {fileID: 11400000, guid: 504a346ddea84ab478ee0332738a9b64, type: 2}
+  animatronicPortrait: {fileID: 6357066537086400474, guid: 2cc24985f466a914d845061a3ed95a9d, type: 3}
+  maxHealth: 225
+  maxDefense: 15
+  maxAttack: 55
+  maxCritChance: 5

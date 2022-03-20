@@ -1,0 +1,60 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93fc9c1632a49f949a0a1eb89a8dcc1f, type: 3}
+  m_Name: Waterhose2
+  m_EditorClassIdentifier: 
+  ability: 0
+  colorGroup: 0
+  abilityName: Waterhose II
+  timeBeforeAbility: 0.45
+  timeToDestroyEffect: 1.22
+  attackEffect: {fileID: 5133334004606939198, guid: 6e693b320e7320748b11df33621071f2, type: 3}
+  sFXPlayMode: 0
+  timeOfRandomIterations: 0
+  globalIntervalsBtwSFX: 0
+  abilitySoundEffect:
+  - SFX: {fileID: 8300000, guid: 0e2d49dc4303ffd4299a44e7db842db5, type: 3}
+    amountToPlayAudio: 1
+    intervalsBtwPlays: {x: 0, y: 0}
+    delayToPlaySFX: 0
+  abilityHasOverlay: 1
+  abilityOverlay: 10
+  timeBeforeOverlay: 0
+  fadeInOffDurations: {x: 0.2, y: 0.2}
+  overlayStayDuration: 0.25
+  abilityHasCameraShake: 0
+  acs: 0
+  customShakeDuration: -1
+  timeBeforeCameraShake: 0
+  targets: 4
+  randomTargets: 0
+  statsToAffect:
+  - abilityToAffect: 4
+    entityToAffect: 0
+    affectMode: 0
+    affectValue: 0
+    instaKillMode: 1
+    percentageValue: 0
+    pointValue: 0
+    increaseStatTime: 0
+    stunTime: 0
+    chanceToInstaKill: 15
+    minHealthPercentageToKill: 50
+    hauntDuration: 0
+    specificAbilities: []
+    otherSpecificExecution: 0
+    timeBtwMunchiesAttack: {x: 0, y: 0}
+    munchiesDamage: 0
+    munchiesDuration: 0
+    neonWallType: 0
+    neonWallDuration: 0
+    bubbleBreathDuration: 0

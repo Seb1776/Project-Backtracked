@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c21f431352f35c140a7c2707fd4314d8, type: 3}
+  m_Name: ScrapBaby
+  m_EditorClassIdentifier: 
+  animatronicName: Scrap Baby
+  animatronicType: 0
+  realityGroup: 6
+  animatronicPrefab: {fileID: 9074597744136047233, guid: e4bf3944f516f4d448bbaa416415c12b, type: 3}
+  skins:
+  - skinName: Scrap Baby
+    skinIndex: 0
+    currentSkinQuality: 0
+  - skinName: Mime Scrap Baby
+    skinIndex: 1
+    currentSkinQuality: 2
+  defaultSkin: 0
+  animatronicAbilities:
+  - {fileID: 11400000, guid: 56278c9f3dc74ec4e89b6efbb029db65, type: 2}
+  - {fileID: 11400000, guid: fc89848285bea2f4c9ba27514cfc64e8, type: 2}
+  - {fileID: 11400000, guid: 2c65e8588c91bbe4ea93849b638a24c9, type: 2}
+  - {fileID: 11400000, guid: ceff901681a9d8442a0c9d7d90126d2b, type: 2}
+  animatronicPortrait: {fileID: 7152684212401559284, guid: 06de2a3b4683f0e4fac1e5c4cd51d424, type: 3}
+  maxHealth: 380
+  maxDefense: 65
+  maxAttack: 45
+  maxCritChance: 15

@@ -1,0 +1,45 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c21f431352f35c140a7c2707fd4314d8, type: 3}
+  m_Name: Ennard
+  m_EditorClassIdentifier: 
+  animatronicName: Ennard
+  animatronicType: 0
+  realityGroup: 0
+  animatronicPrefab: {fileID: 36928406743884778, guid: 70d4008d574f5ad49b4411b9b6233a0f, type: 3}
+  skins:
+  - skinName: Ennard
+    skinIndex: 0
+    currentSkinQuality: 0
+  - skinName: Vanilla Ennard
+    skinIndex: 1
+    currentSkinQuality: 0
+  - skinName: T.F.C. Ennard
+    skinIndex: 2
+    currentSkinQuality: 1
+  - skinName: 32-Bit Ennard
+    skinIndex: 3
+    currentSkinQuality: 1
+  - skinName: Soulless Ennard
+    skinIndex: 4
+    currentSkinQuality: 2
+  defaultSkin: 0
+  animatronicAbilities:
+  - {fileID: 11400000, guid: a51baf6f05bd99048ae8521c763f2ff6, type: 2}
+  - {fileID: 11400000, guid: 8e5ea41d7e4244949a40686f9fc46bf4, type: 2}
+  - {fileID: 11400000, guid: f6570f06969cf14448654e93819c0467, type: 2}
+  - {fileID: 11400000, guid: 9a662dc0645e2974bb2c24c1aaf1ae0a, type: 2}
+  animatronicPortrait: {fileID: -6481301812684617836, guid: ad88597a11535a74a9932a59ee0c89c3, type: 3}
+  maxHealth: 350
+  maxDefense: 45
+  maxAttack: 50
+  maxCritChance: 5

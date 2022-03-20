@@ -1,0 +1,47 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8cfd646504bdc0e49a26eb8115aeecfc, type: 3}
+  m_Name: Balloons2
+  m_EditorClassIdentifier: 
+  ability: 0
+  colorGroup: 0
+  abilityName: Balloons II
+  timeBeforeAbility: 0.35
+  timeToDestroyEffect: 1.2
+  attackEffect: {fileID: 7290743920353107761, guid: a319d829a470cfd439bea3ea34b0a237, type: 3}
+  sFXPlayMode: 0
+  timeOfRandomIterations: 0
+  globalIntervalsBtwSFX: 0
+  abilitySoundEffect:
+  - SFX: {fileID: 8300000, guid: a6a863b243945454799697e0142f2986, type: 3}
+    amountToPlayAudio: 3
+    intervalsBtwPlays: {x: 0.05, y: 0.05}
+    delayToPlaySFX: 0
+  - SFX: {fileID: 8300000, guid: 2461478d7180a98479705e13d620844b, type: 3}
+    amountToPlayAudio: 1
+    intervalsBtwPlays: {x: 0, y: 0}
+    delayToPlaySFX: 0.15
+  abilityHasOverlay: 1
+  abilityOverlay: 1
+  timeBeforeOverlay: 0.35
+  fadeInOffDurations: {x: 0.25, y: 0.25}
+  overlayStayDuration: 0.05
+  makesDamageTo: 0
+  damageToDo: 70
+  targets: 3
+  instanceOfDamage: 1
+  timeBtwInstancesOfDamage: 0
+  canPoison: 0
+  poisonDamage: 0
+  poisonDuration: 0
+  timeBtwPoisonDamage: 0
+  randomTargetSelection: 1

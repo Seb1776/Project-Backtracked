@@ -1,0 +1,42 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c21f431352f35c140a7c2707fd4314d8, type: 3}
+  m_Name: MoltenFreddy
+  m_EditorClassIdentifier: 
+  animatronicName: Molten Freddy
+  animatronicType: 0
+  realityGroup: 6
+  animatronicPrefab: {fileID: 4582146537037450087, guid: 8d434626867fbb64a9ca8fa005051bd5, type: 3}
+  skins:
+  - skinName: Molten Freddy
+    skinIndex: 0
+    currentSkinQuality: 0
+  - skinName: Molten Blob
+    skinIndex: 1
+    currentSkinQuality: 1
+  - skinName: Shadow Molten Freddy
+    skinIndex: 2
+    currentSkinQuality: 2
+  - skinName: Goldie Molten Freddy
+    skinIndex: 3
+    currentSkinQuality: 3
+  defaultSkin: 0
+  animatronicAbilities:
+  - {fileID: 11400000, guid: 8dc4d09c7c1500242880bbd22e39adab, type: 2}
+  - {fileID: 11400000, guid: a51baf6f05bd99048ae8521c763f2ff6, type: 2}
+  - {fileID: 11400000, guid: 9a662dc0645e2974bb2c24c1aaf1ae0a, type: 2}
+  - {fileID: 11400000, guid: 56278c9f3dc74ec4e89b6efbb029db65, type: 2}
+  animatronicPortrait: {fileID: 4771469975681399099, guid: 12e4b9c1839cf7b4aa642c0e492286bb, type: 3}
+  maxHealth: 475
+  maxDefense: 10
+  maxAttack: 95
+  maxCritChance: 5

@@ -1,0 +1,38 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8cfd646504bdc0e49a26eb8115aeecfc, type: 3}
+  m_Name: Springlocks
+  m_EditorClassIdentifier: 
+  ability: 0
+  colorGroup: 0
+  abilityName: Springlocks
+  timeBeforeAbility: 0.55
+  timeToDestroyEffect: 1.3
+  attackEffect: {fileID: 7327132752244678652, guid: a5aa13a4800afaa42a1c2577e3ec0bb0, type: 3}
+  sFXPlayMode: 0
+  timeOfRandomIterations: 0
+  globalIntervalsBtwSFX: 0
+  abilitySoundEffect:
+  - SFX: {fileID: 8300000, guid: 85dfcf7078e656e4cb26575c62e40157, type: 3}
+    amountToPlayAudio: 1
+    intervalsBtwPlays: {x: 0, y: 0}
+    delayToPlaySFX: 0
+  makesDamageTo: 0
+  damageToDo: 75
+  targets: 4
+  instanceOfDamage: 5
+  timeBtwInstancesOfDamage: 0.15
+  canPoison: 0
+  poisonDamage: 0
+  poisonDuration: 0
+  timeBtwPoisonDamage: 0
+  randomTargetSelection: 0

@@ -1,0 +1,65 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93fc9c1632a49f949a0a1eb89a8dcc1f, type: 3}
+  m_Name: GloomSong
+  m_EditorClassIdentifier: 
+  ability: 0
+  colorGroup: 3
+  abilityName: Gloom Song
+  timeBeforeAbility: 1.3
+  timeToDestroyEffect: 2
+  attackEffect: {fileID: 3082009482032161806, guid: 1171704164f99cf46b9a6aa5d8d159eb, type: 3}
+  sFXPlayMode: 1
+  timeOfRandomIterations: 0
+  globalIntervalsBtwSFX: 0
+  abilitySoundEffect:
+  - SFX: {fileID: 8300000, guid: 22fd5ea29d186d6469fd11849cf8115d, type: 3}
+    amountToPlayAudio: 1
+    intervalsBtwPlays: {x: 0, y: 0}
+    delayToPlaySFX: 0
+  - SFX: {fileID: 8300000, guid: ac2b8a90116437c43a8315cd56deea12, type: 3}
+    amountToPlayAudio: 1
+    intervalsBtwPlays: {x: 0, y: 0}
+    delayToPlaySFX: 0
+  - SFX: {fileID: 8300000, guid: 0c013b098ddca6047bc462819c4bb01f, type: 3}
+    amountToPlayAudio: 1
+    intervalsBtwPlays: {x: 0, y: 0}
+    delayToPlaySFX: 0
+  abilityHasOverlay: 1
+  abilityOverlay: 8
+  timeBeforeOverlay: 1.3
+  fadeInOffDurations: {x: 0.1, y: 0.1}
+  overlayStayDuration: 0.25
+  targets: 4
+  randomTargets: 0
+  statsToAffect:
+  - abilityToAffect: 0
+    entityToAffect: 1
+    affectMode: 1
+    affectValue: 1
+    instaKillMode: 0
+    percentageValue: 50
+    pointValue: 0
+    increaseStatTime: 20
+    stunTime: 0
+    chanceToInstaKill: 0
+    minHealthPercentageToKill: 0
+    hauntDuration: 0
+    targetsToHaunt: 0
+    specificAbilities: []
+    otherSpecificExecution: 0
+    timeBtwMunchiesAttack: {x: 0, y: 0}
+    munchiesDamage: 0
+    munchiesDuration: 0
+    neonWallType: 0
+    neonWallDuration: 0
+    bubbleBreathDuration: 0

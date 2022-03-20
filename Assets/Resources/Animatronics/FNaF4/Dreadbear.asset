@@ -1,0 +1,42 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c21f431352f35c140a7c2707fd4314d8, type: 3}
+  m_Name: Dreadbear
+  m_EditorClassIdentifier: 
+  animatronicName: Dreadbear
+  animatronicType: 0
+  realityGroup: 2
+  animatronicPrefab: {fileID: 2718959773094861490, guid: 5e759cbb226632240a13011f6366424b, type: 3}
+  skins:
+  - skinName: Dreadbear
+    skinIndex: 0
+    currentSkinQuality: 0
+  - skinName: Vermillion Dreadber
+    skinIndex: 1
+    currentSkinQuality: 1
+  - skinName: Lapiz Dreadbear
+    skinIndex: 2
+    currentSkinQuality: 1
+  - skinName: Metallistic Dreadbear
+    skinIndex: 3
+    currentSkinQuality: 2
+  defaultSkin: 0
+  animatronicAbilities:
+  - {fileID: 11400000, guid: 8dc4d09c7c1500242880bbd22e39adab, type: 2}
+  - {fileID: 11400000, guid: 4cb4417e01f67e140a193e40a9e2c7cb, type: 2}
+  - {fileID: 11400000, guid: 8e5ea41d7e4244949a40686f9fc46bf4, type: 2}
+  - {fileID: 11400000, guid: e74ed70131f528845af7a92dc02e0c49, type: 2}
+  animatronicPortrait: {fileID: 5669089968724755735, guid: 7573daf879f5c224fb87f30645327cbe, type: 3}
+  maxHealth: 500
+  maxDefense: 10
+  maxAttack: 80
+  maxCritChance: 15
