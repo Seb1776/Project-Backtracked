@@ -15,6 +15,7 @@ public class Animatronic : LivingEntity
     public int idxInManager;
 
     Animator animator;
+    Coroutine munchiesCoroutine;
 
     public override void Awake()
     {
@@ -84,6 +85,50 @@ public class Animatronic : LivingEntity
         }
 
         base.Heal(healthValue, healedEntity);
+    }
+
+    public override void TriggerMunchies(float _munchieDuration, int _munchieDamage, Vector2 _timeBtwMunchieDamage)
+    {
+        if (!hasMunchies)
+        {
+            manager.animatronicParty[idxInManager].munchieObject.GetComponent<Animator>().SetBool("appear_munchie", true);
+            hasMunchies = true;
+        }
+        
+        else
+            StopCoroutine(munchiesCoroutine);
+        
+        munchiesCoroutine = StartCoroutine(MunchiesBehaviour(_munchieDuration, _munchieDamage, _timeBtwMunchieDamage));
+
+        base.TriggerMunchies(_munchieDuration, _munchieDamage, _timeBtwMunchieDamage);
+    }
+    
+    IEnumerator MunchiesBehaviour(float _munchieDuration, int _munchieDamage, Vector2 _timeBtwMunchieDamage)
+    {
+        StartCoroutine(UnTriggerMunchies(_munchieDuration));
+
+        while (hasMunchies)
+        {
+            float realTime = Random.Range(_timeBtwMunchieDamage.x, _timeBtwMunchieDamage.y);
+            yield return new WaitForSeconds(realTime);
+
+            manager.animatronicParty[idxInManager].munchieObject.GetComponent<Animator>().SetTrigger("attack_munchie");
+
+            yield return new WaitForSeconds(.1f);
+            MakeDamage(_munchieDamage, "normal");
+        }
+    }
+
+    public override IEnumerator UnTriggerMunchies(float duration)
+    {
+        yield return new WaitForSeconds(duration);
+
+        StopCoroutine(munchiesCoroutine);
+        hasMunchies = false;
+
+        manager.animatronicParty[idxInManager].munchieObject.GetComponent<Animator>().SetBool("appear_munchie", false);
+
+        yield return base.UnTriggerMunchies(duration);
     }
 
     public override void ReviveEntity()

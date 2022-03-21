@@ -24,7 +24,9 @@ public class StatAbility : AnimatronicAbility
                 if (entity)
                 {
                     if (t.abilityToAffect != AnimatronicStats.AbilityToAffect.NeonWall &&
-                        t.abilityToAffect != AnimatronicStats.AbilityToAffect.BubbleBreath)
+                        t.abilityToAffect != AnimatronicStats.AbilityToAffect.BubbleBreath &&
+                        t.abilityToAffect != AnimatronicStats.AbilityToAffect.Munchies &&
+                        t.abilityToAffect != AnimatronicStats.AbilityToAffect.Haunt)
                     {
                         for (int j = 0; j < manager.animatronicParty.Length; j++)
                         {
@@ -108,6 +110,14 @@ public class StatAbility : AnimatronicAbility
                     
                     else if (t.abilityToAffect == AnimatronicStats.AbilityToAffect.BubbleBreath)
                         manager.BubbleBreathActivation("animatronic", t.bubbleBreathDuration);
+                    
+                    else if (t.abilityToAffect == AnimatronicStats.AbilityToAffect.Munchies)
+                    {
+                        var affectedByMunchie = manager.GetEntityList("animatronic", targets, randomTargets);
+                        
+                        for (int j = 0; j < affectedByMunchie.Count; j++)
+                            manager.animatronicParty[affectedByMunchie[j]].animatronicItem.TriggerMunchies(t.munchiesDuration, t.munchiesDamage, t.timeBtwMunchiesAttack);
+                    }
                 }       
 
                 else

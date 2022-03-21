@@ -592,6 +592,7 @@ public class AnimatronicParty
     public GameObject animatronicDeathEffect;
     public GameObject animatronicTombstone;
     public GameObject animatronicGift;
+    public GameObject munchieObject;
     public Transform posSpawn;
     public Animator bubbleBreathBubble;
     [Header ("UI")]

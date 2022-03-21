@@ -98,34 +98,18 @@ public class AnimatronicAbility : ScriptableObject
 
     public Color GetColorFromColorGroup()
     {
-        switch (colorGroup)
+        return colorGroup switch
         {
-            case ColorGroup.Red:
-                return new Color(255f/255f, 37f/255f, 35f/255f);
-
-            case ColorGroup.Yellow:
-                return new Color(255f/255f, 219f/255f, 35f/255f);
-            
-            case ColorGroup.Pink:
-                return new Color(249f/255f, 0f/255f, 255f/255f);
-            
-            case ColorGroup.Purple:
-                return new Color(74f/255f, 0f/255f, 255f/255f);
-            
-            case ColorGroup.White:
-                return new Color(255f/255f, 255f/255f, 255f/255f);
-            
-            case ColorGroup.Orange:
-                return new Color(255f/255f, 158f/255f, 35f/255f);
-            
-            case ColorGroup.Green:
-                return new Color(17f/255f, 154f/255f, 0f/255f);
-            
-            case ColorGroup.BlazeOrange:
-                return new Color(255f/255f, 103f/255f, 0f/255f);
-        }
-
-        return new Color(0f, 0f, 0f);
+            ColorGroup.Red => new Color(255f / 255f, 37f / 255f, 35f / 255f),
+            ColorGroup.Yellow => new Color(255f / 255f, 219f / 255f, 35f / 255f),
+            ColorGroup.Pink => new Color(249f / 255f, 0f / 255f, 255f / 255f),
+            ColorGroup.Purple => new Color(74f / 255f, 0f / 255f, 255f / 255f),
+            ColorGroup.White => new Color(255f / 255f, 255f / 255f, 255f / 255f),
+            ColorGroup.Orange => new Color(255f / 255f, 158f / 255f, 35f / 255f),
+            ColorGroup.Green => new Color(17f / 255f, 154f / 255f, 0f / 255f),
+            ColorGroup.BlazeOrange => new Color(255f / 255f, 103f / 255f, 0f / 255f),
+            _ => new Color(0f, 0f, 0f)
+        };
     }
 }
 
