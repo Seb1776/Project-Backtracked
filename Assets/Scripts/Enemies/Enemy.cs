@@ -174,7 +174,7 @@ public class Enemy : LivingEntity
         base.DamageFeedback();
     }
 
-    public override IEnumerator IncreaseStatTimer(string _stat, int _value, float _duration, bool _operation, float _deltaBefore)
+    /*public override IEnumerator IncreaseStatTimer(string _stat, int _value, float _duration, bool _operation, float _deltaBefore)
     {
         instancesOfNerf++;
         yield return new WaitForSeconds(_deltaBefore);
@@ -306,7 +306,7 @@ public class Enemy : LivingEntity
 
         instancesOfNerf--;
         yield return base.IncreaseStatTimer(_stat, _value, _duration, _operation, _deltaBefore);
-    }
+    }*/
 
     public void SelectAttack()
     {

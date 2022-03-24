@@ -5,7 +5,9 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "New Stat Ability", menuName = "Animatronic Ability/Stat Ability")]
 public class StatAbility : AnimatronicAbility
 {
+    public enum SupposedToAffect { SameEntity, OppositeEntity }
     [Header ("Stat Ability")]
+    public SupposedToAffect supposedToAffect;
     [Range(1, 4)]
     public int targets;
     public bool randomTargets;
@@ -33,41 +35,50 @@ public class StatAbility : AnimatronicAbility
                             switch (t.abilityToAffect)
                             {
                                 case AnimatronicStats.AbilityToAffect.Attack:
-                                    if (t.affectValue == AnimatronicStats.AffectValue.PercentageBased)
+                                    if (supposedToAffect == SupposedToAffect.SameEntity)
+                                    {
+                                        
+                                    }
+
+                                    else
+                                    {
+
+                                    }
+                                    /*if (t.affectValue == AnimatronicStats.AffectValue.PercentageBased)
                                     {
                                         int increaseValue = manager.GetValueFromPercentage(manager.animatronicParty[j].animatronicItem.currentAttack, t.percentageValue);
                                         manager.StartCoroutine(manager.animatronicParty[j].animatronicItem.IncreaseStatTimer("ATK", increaseValue, t.increaseStatTime, t.affectMode == AnimatronicStats.AffectMode.Additive, timeBeforeAbility));
                                     }
 
                                     else if (t.affectValue == AnimatronicStats.AffectValue.PointBased)
-                                        manager.StartCoroutine(manager.animatronicParty[j].animatronicItem.IncreaseStatTimer("ATK", t.pointValue, t.increaseStatTime, t.affectMode == AnimatronicStats.AffectMode.Additive, timeBeforeAbility));
-                                    break;
+                                        manager.StartCoroutine(manager.animatronicParty[j].animatronicItem.IncreaseStatTimer("ATK", t.pointValue, t.increaseStatTime, t.affectMode == AnimatronicStats.AffectMode.Additive, timeBeforeAbility));*/
+                                break;
 
                                 case AnimatronicStats.AbilityToAffect.Defense:
-                                    if (t.affectValue == AnimatronicStats.AffectValue.PercentageBased)
+                                    /*if (t.affectValue == AnimatronicStats.AffectValue.PercentageBased)
                                     {
                                         int increaseValue = manager.GetValueFromPercentage(manager.animatronicParty[j].animatronicItem.currentDefense, t.percentageValue);
                                         manager.StartCoroutine(manager.animatronicParty[j].animatronicItem.IncreaseStatTimer("DEF", increaseValue, t.increaseStatTime, t.affectMode == AnimatronicStats.AffectMode.Additive, timeBeforeAbility));
                                     }
 
                                     else if (t.affectValue == AnimatronicStats.AffectValue.PointBased)
-                                        manager.StartCoroutine(manager.animatronicParty[j].animatronicItem.IncreaseStatTimer("DEF", t.pointValue, t.increaseStatTime, t.affectMode == AnimatronicStats.AffectMode.Additive, timeBeforeAbility));
-                                    break;
+                                        manager.StartCoroutine(manager.animatronicParty[j].animatronicItem.IncreaseStatTimer("DEF", t.pointValue, t.increaseStatTime, t.affectMode == AnimatronicStats.AffectMode.Additive, timeBeforeAbility));*/
+                                break;
 
                                 case AnimatronicStats.AbilityToAffect.CriticalChance:
-                                    if (t.affectValue == AnimatronicStats.AffectValue.PercentageBased)
+                                    /*if (t.affectValue == AnimatronicStats.AffectValue.PercentageBased)
                                     {
                                         int increaseValue = manager.GetValueFromPercentage(manager.animatronicParty[j].animatronicItem.currentDefense, t.percentageValue);
                                         manager.StartCoroutine(manager.animatronicParty[j].animatronicItem.IncreaseStatTimer("CRT", increaseValue, t.increaseStatTime, t.affectMode == AnimatronicStats.AffectMode.Additive, timeBeforeAbility));
                                     }
 
                                     else if (t.affectValue == AnimatronicStats.AffectValue.PointBased)
-                                        manager.StartCoroutine(manager.animatronicParty[j].animatronicItem.IncreaseStatTimer("CRT", t.pointValue, t.increaseStatTime, t.affectMode == AnimatronicStats.AffectMode.Additive, timeBeforeAbility));
-                                    break;
+                                        manager.StartCoroutine(manager.animatronicParty[j].animatronicItem.IncreaseStatTimer("CRT", t.pointValue, t.increaseStatTime, t.affectMode == AnimatronicStats.AffectMode.Additive, timeBeforeAbility));*/
+                                break;
 
                                 case AnimatronicStats.AbilityToAffect.Stun:
                                     manager.animatronicParty[j].animatronicItem.TriggerStunEffect(t.stunTime);
-                                    break;
+                                break;
 
                                 case AnimatronicStats.AbilityToAffect.InstaKill:
                                     switch (t.instaKillMode)
@@ -114,10 +125,10 @@ public class StatAbility : AnimatronicAbility
                     
                     else if (t.abilityToAffect == AnimatronicStats.AbilityToAffect.Munchies)
                     {
-                        var affectedByMunchie = manager.GetEntityList("animatronic", targets, randomTargets);
+                        var affectedByMunchie = manager.GetEntityList("enemy", targets, randomTargets);
                         
                         for (int j = 0; j < affectedByMunchie.Count; j++)
-                            manager.animatronicParty[affectedByMunchie[j]].animatronicItem.TriggerMunchies(t.munchiesDuration, t.munchiesDamage, t.timeBtwMunchiesAttack);
+                            manager.enemyParty[affectedByMunchie[j]].enemyItem.TriggerMunchies(t.munchiesDuration, t.munchiesDamage, t.timeBtwMunchiesAttack);
                     }
 
                     else if (t.abilityToAffect == AnimatronicStats.AbilityToAffect.Haunt)
@@ -139,6 +150,7 @@ public class StatAbility : AnimatronicAbility
                             t.abilityToAffect != AnimatronicStats.AbilityToAffect.Munchies &&
                             t.abilityToAffect != AnimatronicStats.AbilityToAffect.NeonWall &&
                             t.abilityToAffect != AnimatronicStats.AbilityToAffect.BubbleBreath &&
+                            t.abilityToAffect != AnimatronicStats.AbilityToAffect.Stun &&
                             t.abilityToAffect != AnimatronicStats.AbilityToAffect.OtherSpecific)
                         {
                             for (int j = 0; j < manager.enemyParty.Length; j++)
@@ -146,29 +158,25 @@ public class StatAbility : AnimatronicAbility
                                 switch (t.abilityToAffect)
                                 {
                                     case AnimatronicStats.AbilityToAffect.Attack:
-                                        if (t.affectValue == AnimatronicStats.AffectValue.PercentageBased)
+                                        /*if (t.affectValue == AnimatronicStats.AffectValue.PercentageBased)
                                         {
                                             int increaseValue = manager.GetValueFromPercentage(manager.enemyParty[j].enemyItem.currentAttack, t.percentageValue);
                                             manager.StartCoroutine(manager.enemyParty[j].enemyItem.IncreaseStatTimer("ATK", increaseValue, t.increaseStatTime, t.affectMode == AnimatronicStats.AffectMode.Additive, timeBeforeAbility));
                                         }
 
                                         else if (t.affectValue == AnimatronicStats.AffectValue.PointBased)
-                                            manager.StartCoroutine(manager.enemyParty[j].enemyItem.IncreaseStatTimer("ATK", t.pointValue, t.increaseStatTime, t.affectMode == AnimatronicStats.AffectMode.Additive, timeBeforeAbility));
+                                            manager.StartCoroutine(manager.enemyParty[j].enemyItem.IncreaseStatTimer("ATK", t.pointValue, t.increaseStatTime, t.affectMode == AnimatronicStats.AffectMode.Additive, timeBeforeAbility));*/
                                     break;
 
                                     case AnimatronicStats.AbilityToAffect.Defense:
-                                        if (t.affectValue == AnimatronicStats.AffectValue.PercentageBased)
+                                        /*if (t.affectValue == AnimatronicStats.AffectValue.PercentageBased)
                                         {
                                             int increaseValue = manager.GetValueFromPercentage(manager.enemyParty[j].enemyItem.currentAttack, t.percentageValue);
                                             manager.StartCoroutine(manager.enemyParty[j].enemyItem.IncreaseStatTimer("DEF", increaseValue, t.increaseStatTime, t.affectMode == AnimatronicStats.AffectMode.Additive, timeBeforeAbility));
                                         }
 
                                         else if (t.affectValue == AnimatronicStats.AffectValue.PointBased)
-                                            manager.StartCoroutine(manager.enemyParty[j].enemyItem.IncreaseStatTimer("DEF", t.pointValue, t.increaseStatTime, t.affectMode == AnimatronicStats.AffectMode.Additive, timeBeforeAbility));
-                                    break;
-
-                                    case AnimatronicStats.AbilityToAffect.Stun:
-                                        manager.enemyParty[j].enemyItem.TriggerStunEffect(t.stunTime);
+                                            manager.StartCoroutine(manager.enemyParty[j].enemyItem.IncreaseStatTimer("DEF", t.pointValue, t.increaseStatTime, t.affectMode == AnimatronicStats.AffectMode.Additive, timeBeforeAbility));*/
                                     break;
 
                                     case AnimatronicStats.AbilityToAffect.Gifts:
@@ -177,6 +185,14 @@ public class StatAbility : AnimatronicAbility
                                     break;
                                 }
                             }
+                        }
+
+                        else if (t.abilityToAffect == AnimatronicStats.AbilityToAffect.Stun)
+                        {
+                            List<int> entityIdxStun = manager.GetEntityList("animatronic", targets, randomTargets);
+
+                            for (int j = 0; j < entityIdxStun.Count; j++)
+                                manager.animatronicParty[entityIdxStun[j]].animatronicItem.TriggerStunEffect(t.stunTime);
                         }
 
                         else if (t.abilityToAffect == AnimatronicStats.AbilityToAffect.Haunt)
@@ -214,7 +230,7 @@ public class StatAbility : AnimatronicAbility
                                 case AnimatronicStats.InstaKillMode.HealthBased:
                                     for (int j = 0; j < entityIdxInsta.Count; j++)
                                     {
-                                        int healthValuePercentage = manager.GetValueFromPercentage(manager.animatronicParty[entityIdxInsta[j]].animatronicyItem.GetComponent<Enemy>().enemyData.maxHealth, t.minHealthPercentageToKill);
+                                        int healthValuePercentage = manager.GetValueFromPercentage(manager.animatronicParty[entityIdxInsta[j]].animatronicItem.GetComponent<Enemy>().enemyData.maxHealth, t.minHealthPercentageToKill);
 
                                         if (manager.animatronicParty[entityIdxInsta[j]].animatronicItem.currentHealth <= healthValuePercentage)
                                             manager.StartCoroutine(manager.animatronicParty[entityIdxInsta[j]].animatronicItem.DelayInstaKill(timeBeforeAbility));
@@ -253,9 +269,9 @@ public class StatAbility : AnimatronicAbility
                             switch (t.abilityToAffect)
                             {
                                 case AnimatronicStats.AbilityToAffect.Defense:
-                                    int increaseValue = manager.GetValueFromPercentage(manager.bossParty.enemyItem.currentDefense, t.percentageValue);
-                                    manager.StartCoroutine(manager.bossParty.enemyItem.IncreaseStatTimer("DEF", increaseValue, t.increaseStatTime, t.affectMode == AnimatronicStats.AffectMode.Additive, timeBeforeAbility));
-                                    break;
+                                    /*int increaseValue = manager.GetValueFromPercentage(manager.bossParty.enemyItem.currentDefense, t.percentageValue);
+                                    manager.StartCoroutine(manager.bossParty.enemyItem.IncreaseStatTimer("DEF", increaseValue, t.increaseStatTime, t.affectMode == AnimatronicStats.AffectMode.Additive, timeBeforeAbility));*/
+                                break;
                                 
                                 case AnimatronicStats.AbilityToAffect.Stun:
                                     manager.bossParty.enemyItem.TriggerStunEffect(t.stunTime);

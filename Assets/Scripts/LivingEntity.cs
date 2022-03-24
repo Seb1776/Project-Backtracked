@@ -29,6 +29,8 @@ public class LivingEntity : MonoBehaviour
     public GameManager manager;
     public AudioSource source;
     public int instancesOfNerf;
+    [Header ("Stats")]
+    public List<AllStatsMods> allStats = new List<AllStatsMods>();
 
     Coroutine stunCoroutine;
     Coroutine buffCoroutine;
@@ -39,7 +41,10 @@ public class LivingEntity : MonoBehaviour
         manager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
     }
 
-    public virtual void Start() {}
+    public virtual void Start() 
+    {
+        DefineAllStats();
+    }
 
     public virtual void Update() 
     {
@@ -64,6 +69,17 @@ public class LivingEntity : MonoBehaviour
 
         else
             currentStunDuration = 0f;
+    }
+
+    void DefineAllStats()
+    {
+        AllStatsMods STRStat = new AllStatsMods(AllStatsMods.StatType.ATK);
+        AllStatsMods DEFStat = new AllStatsMods(AllStatsMods.StatType.DEF);
+        AllStatsMods CRTStat = new AllStatsMods(AllStatsMods.StatType.CRT);
+
+        allStats.Add(STRStat);
+        allStats.Add(DEFStat);
+        allStats.Add(CRTStat);
     }
 
     float stunDuration, currentStunDuration;
@@ -110,10 +126,13 @@ public class LivingEntity : MonoBehaviour
         stunned = false;
     }
 
-    public virtual IEnumerator IncreaseStatTimer(string _stat, int _value, float _duration, bool _operation, float _deltaBefore)
-    {
-        yield return null;
-    }
+    public virtual void ApplySTR() {}
+
+    public virtual void ApplyDEF() {}
+
+    public virtual void ApplyCRT() {}
+
+    public virtual void IncreaseStatTimer(string _stat, int _value, float _duration, bool _operation, float _deltaBefore) {}
 
     public virtual void Heal(int healValue, LivingEntity healedEntity)
     {
@@ -298,4 +317,70 @@ public class LivingEntity : MonoBehaviour
     }
 
     public virtual void DamageFeedback() {}
+}
+
+[System.Serializable]
+public class AllStatsMods
+{
+    public enum StatType { ATK, DEF, CRT }
+    public StatType statType;
+    public List<StatModification> allStatMods = new List<StatModification>();
+
+    public AllStatsMods(StatType statType)
+    {
+        this.statType = statType;
+    }
+}
+
+[System.Serializable]
+public class StatModification
+{
+    public string statID;
+    public int amountToMod;
+    public float timeToAffect, currentTimeToAffect;
+    public bool operation;
+
+    public StatModification(string statID, int amountToMod, bool operation, float timeToAffect)
+    {
+        this.statID = statID;
+        this.amountToMod = amountToMod;
+        this.operation = operation;
+        this.timeToAffect = timeToAffect;
+    }
+
+    public void AddStat(AllStatsMods.StatType _stat, LivingEntity ent)
+    {
+        switch (_stat)
+        {
+            case AllStatsMods.StatType.ATK:
+                ent.currentAttack += amountToMod;
+            break;
+
+            case AllStatsMods.StatType.DEF:
+                ent.currentDefense += amountToMod;
+            break;
+
+            case AllStatsMods.StatType.CRT:
+                ent.currentCritChance += amountToMod;
+            break;
+        }
+    }
+
+    public void SubtractStat(AllStatsMods.StatType _stat, LivingEntity ent)
+    {
+        switch (_stat)
+        {
+            case AllStatsMods.StatType.ATK:
+                ent.currentAttack -= amountToMod;
+            break;
+
+            case AllStatsMods.StatType.DEF:
+                ent.currentDefense -= amountToMod;
+            break;
+
+            case AllStatsMods.StatType.CRT:
+                ent.currentCritChance -= amountToMod;
+            break;
+        }
+    }
 }

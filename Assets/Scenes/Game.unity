@@ -5153,6 +5153,7 @@ MonoBehaviour:
   manager: {fileID: 0}
   source: {fileID: 0}
   instancesOfNerf: 0
+  allStats: []
   enemyData: {fileID: 11400000, guid: 5eea98d4dc8e49e4ab360327f6f35d18, type: 2}
   normalAbilities:
   - {fileID: 11400000, guid: 04aa6b67a53ef744eb223c810ca420f0, type: 2}
@@ -14616,6 +14617,7 @@ MonoBehaviour:
   manager: {fileID: 0}
   source: {fileID: 0}
   instancesOfNerf: 0
+  allStats: []
   enemyData: {fileID: 11400000, guid: 5eea98d4dc8e49e4ab360327f6f35d18, type: 2}
   normalAbilities:
   - {fileID: 11400000, guid: 04aa6b67a53ef744eb223c810ca420f0, type: 2}
@@ -17064,6 +17066,7 @@ MonoBehaviour:
   manager: {fileID: 0}
   source: {fileID: 0}
   instancesOfNerf: 0
+  allStats: []
   enemyData: {fileID: 11400000, guid: 895956a8d970aef41be476577462e80d, type: 2}
   normalAbilities:
   - {fileID: 11400000, guid: 04aa6b67a53ef744eb223c810ca420f0, type: 2}
@@ -39240,6 +39243,7 @@ MonoBehaviour:
   manager: {fileID: 0}
   source: {fileID: 0}
   instancesOfNerf: 0
+  allStats: []
   enemyData: {fileID: 11400000, guid: 5eea98d4dc8e49e4ab360327f6f35d18, type: 2}
   normalAbilities:
   - {fileID: 11400000, guid: 04aa6b67a53ef744eb223c810ca420f0, type: 2}
@@ -70698,6 +70702,7 @@ MonoBehaviour:
   manager: {fileID: 0}
   source: {fileID: 0}
   instancesOfNerf: 0
+  allStats: []
   animatronicLevel: 1
   animatronicData: {fileID: 11400000, guid: 4d0ef4bfc51ca944c9b19a34c3bb3917, type: 2}
   skins:
@@ -75280,6 +75285,7 @@ MonoBehaviour:
   manager: {fileID: 0}
   source: {fileID: 0}
   instancesOfNerf: 0
+  allStats: []
   animatronicLevel: 1
   animatronicData: {fileID: 11400000, guid: 165b35beff9a2d948a56cc12e5cd3c9a, type: 2}
   skins:
@@ -75441,6 +75447,7 @@ MonoBehaviour:
   manager: {fileID: 0}
   source: {fileID: 0}
   instancesOfNerf: 0
+  allStats: []
   enemyData: {fileID: 11400000, guid: f8ac98082024184418812c5fdeb39e91, type: 2}
   normalAbilities:
   - {fileID: 11400000, guid: 04aa6b67a53ef744eb223c810ca420f0, type: 2}
@@ -75633,6 +75640,7 @@ MonoBehaviour:
   manager: {fileID: 0}
   source: {fileID: 0}
   instancesOfNerf: 0
+  allStats: []
   animatronicLevel: 0
   animatronicData: {fileID: 11400000, guid: 8a42e8ab5eff27346b5a1aaec4cd1144, type: 2}
   skins:
@@ -75891,6 +75899,7 @@ MonoBehaviour:
   manager: {fileID: 0}
   source: {fileID: 0}
   instancesOfNerf: 0
+  allStats: []
   animatronicLevel: 1
   animatronicData: {fileID: 11400000, guid: 0789db362c106474bbfb736c70347a93, type: 2}
   skins:
@@ -78223,6 +78232,7 @@ MonoBehaviour:
   manager: {fileID: 0}
   source: {fileID: 0}
   instancesOfNerf: 0
+  allStats: []
   animatronicLevel: 0
   animatronicData: {fileID: 11400000, guid: 2bb596f78fd297544b8d8fd606fb6d54, type: 2}
   skins:
@@ -106065,6 +106075,7 @@ MonoBehaviour:
   manager: {fileID: 0}
   source: {fileID: 0}
   instancesOfNerf: 0
+  allStats: []
   animatronicLevel: 1
   animatronicData: {fileID: 11400000, guid: 4d0ef4bfc51ca944c9b19a34c3bb3917, type: 2}
   skins:
@@ -114419,6 +114430,7 @@ MonoBehaviour:
   manager: {fileID: 0}
   source: {fileID: 0}
   instancesOfNerf: 0
+  allStats: []
   animatronicLevel: 0
   animatronicData: {fileID: 11400000, guid: 619e4d512f08ffb418a1876e99255824, type: 2}
   skins:
