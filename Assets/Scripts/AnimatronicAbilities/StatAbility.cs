@@ -20,7 +20,7 @@ public class StatAbility : AnimatronicAbility
         foreach (var t in statsToAffect)
         {
             if (t.abilityToAffect != AnimatronicStats.AbilityToAffect.MimicBall)
-            {
+            {   //Animatronics
                 if (entity)
                 {
                     if (t.abilityToAffect != AnimatronicStats.AbilityToAffect.NeonWall &&
@@ -76,7 +76,7 @@ public class StatAbility : AnimatronicAbility
                                             if (manager.GetRandomBoolChance(t.chanceToInstaKill))
                                                 if (manager.animatronicParty[j].alive)
                                                     manager.animatronicParty[j].animatronicItem.MakeDamage(manager.animatronicParty[j].animatronicItem.currentHealth);
-                                            break;
+                                        break;
 
                                         case AnimatronicStats.InstaKillMode.HealthBased:
                                             int minHealthValue = manager.GetValueFromPercentage(manager.animatronicParty[j].animatronicItem.currentHealth, t.minHealthPercentageToKill);
@@ -84,23 +84,24 @@ public class StatAbility : AnimatronicAbility
                                             if (minHealthValue >= manager.animatronicParty[j].animatronicItem.currentHealth)
                                                 if (manager.animatronicParty[j].alive)
                                                     manager.animatronicParty[j].animatronicItem.MakeDamage(manager.animatronicParty[j].animatronicItem.currentHealth);
-                                            break;
+                                        break;
 
                                         case AnimatronicStats.InstaKillMode.TrueMode:
                                             if (manager.animatronicParty[j].alive)
                                                 manager.animatronicParty[j].animatronicItem.MakeDamage(manager.animatronicParty[j].animatronicItem.currentHealth);
-                                            break;
+                                        break;
                                     }
-                                    break;
+                                break;
 
                                 case AnimatronicStats.AbilityToAffect.Gifts:
-                                    manager.animatronicParty[j].animatronicItem.TriggerGift();
-                                    break;
+                                    if (!manager.animatronicParty[j].animatronicItem.hasGift)
+                                        manager.animatronicParty[j].animatronicItem.TriggerGift();
+                                break;
 
                                 case AnimatronicStats.AbilityToAffect.OtherSpecific:
                                     foreach (AnimatronicAbility aa in t.specificAbilities)
                                         aa.ApplyEffect(entity, flip, offset);
-                                    break;
+                                break;
                             }
                         }
                     }
@@ -118,15 +119,26 @@ public class StatAbility : AnimatronicAbility
                         for (int j = 0; j < affectedByMunchie.Count; j++)
                             manager.animatronicParty[affectedByMunchie[j]].animatronicItem.TriggerMunchies(t.munchiesDuration, t.munchiesDamage, t.timeBtwMunchiesAttack);
                     }
-                }       
 
+                    else if (t.abilityToAffect == AnimatronicStats.AbilityToAffect.Haunt)
+                    {
+                        List<int> entityIdxHaunt = manager.GetEntityList("enemy", targets, randomTargets);
+
+                        for (int j = 0; j < entityIdxHaunt.Count; j++)
+                            manager.enemyParty[entityIdxHaunt[j]].enemyItem.TriggerHauntingEffect(t.hauntDuration, timeBeforeAbility);
+                    }
+                }       
+                //Enemies
                 else
                 {
+                    //Regular Battle
                     if (manager.battleMusicContext == GameManager.BattleMusicContext.Fight)
                     {
                         if (t.abilityToAffect != AnimatronicStats.AbilityToAffect.Haunt &&
                             t.abilityToAffect != AnimatronicStats.AbilityToAffect.InstaKill &&
                             t.abilityToAffect != AnimatronicStats.AbilityToAffect.Munchies &&
+                            t.abilityToAffect != AnimatronicStats.AbilityToAffect.NeonWall &&
+                            t.abilityToAffect != AnimatronicStats.AbilityToAffect.BubbleBreath &&
                             t.abilityToAffect != AnimatronicStats.AbilityToAffect.OtherSpecific)
                         {
                             for (int j = 0; j < manager.enemyParty.Length; j++)
@@ -142,23 +154,27 @@ public class StatAbility : AnimatronicAbility
 
                                         else if (t.affectValue == AnimatronicStats.AffectValue.PointBased)
                                             manager.StartCoroutine(manager.enemyParty[j].enemyItem.IncreaseStatTimer("ATK", t.pointValue, t.increaseStatTime, t.affectMode == AnimatronicStats.AffectMode.Additive, timeBeforeAbility));
-                                        break;
+                                    break;
 
                                     case AnimatronicStats.AbilityToAffect.Defense:
                                         if (t.affectValue == AnimatronicStats.AffectValue.PercentageBased)
                                         {
-                                            Debug.Log("huh?");
                                             int increaseValue = manager.GetValueFromPercentage(manager.enemyParty[j].enemyItem.currentAttack, t.percentageValue);
                                             manager.StartCoroutine(manager.enemyParty[j].enemyItem.IncreaseStatTimer("DEF", increaseValue, t.increaseStatTime, t.affectMode == AnimatronicStats.AffectMode.Additive, timeBeforeAbility));
                                         }
 
                                         else if (t.affectValue == AnimatronicStats.AffectValue.PointBased)
                                             manager.StartCoroutine(manager.enemyParty[j].enemyItem.IncreaseStatTimer("DEF", t.pointValue, t.increaseStatTime, t.affectMode == AnimatronicStats.AffectMode.Additive, timeBeforeAbility));
-                                        break;
+                                    break;
 
                                     case AnimatronicStats.AbilityToAffect.Stun:
                                         manager.enemyParty[j].enemyItem.TriggerStunEffect(t.stunTime);
-                                        break;
+                                    break;
+
+                                    case AnimatronicStats.AbilityToAffect.Gifts:
+                                        if (!manager.enemyParty[j].enemyItem.hasGift)
+                                            manager.enemyParty[j].enemyItem.TriggerGift();
+                                    break;
                                 }
                             }
                         }
@@ -178,7 +194,7 @@ public class StatAbility : AnimatronicAbility
 
                         else if (t.abilityToAffect == AnimatronicStats.AbilityToAffect.InstaKill)
                         {
-                            List<int> entityIdxInsta = manager.GetEntityList("enemy", targets, randomTargets);
+                            List<int> entityIdxInsta = manager.GetEntityList("animatronic", targets, randomTargets);
 
                             switch (t.instaKillMode)
                             {
@@ -188,39 +204,45 @@ public class StatAbility : AnimatronicAbility
                                     for (int j = 0; j < entityIdxInsta.Count; j++)
                                     {   
                                         if (manager.GetRandomBoolChance(t.chanceToInstaKill))
-                                            manager.StartCoroutine(manager.enemyParty[entityIdxInsta[j]].enemyItem.DelayInstaKill(timeBeforeAbility));
+                                            manager.StartCoroutine(manager.animatronicParty[entityIdxInsta[j]].animatronicItem.DelayInstaKill(timeBeforeAbility));
                                         
                                         else
-                                            manager.StartCoroutine(manager.enemyParty[entityIdxInsta[j]].enemyItem.FailedInstaKill(timeBeforeAbility));
+                                            manager.StartCoroutine(manager.animatronicParty[entityIdxInsta[j]].animatronicItem.FailedInstaKill(timeBeforeAbility));
                                     }
                                     break;
 
                                 case AnimatronicStats.InstaKillMode.HealthBased:
                                     for (int j = 0; j < entityIdxInsta.Count; j++)
                                     {
-                                        int healthValuePercentage = manager.GetValueFromPercentage(manager.enemyParty[entityIdxInsta[j]].enemyItem.GetComponent<Enemy>().enemyData.maxHealth, t.minHealthPercentageToKill);
+                                        int healthValuePercentage = manager.GetValueFromPercentage(manager.animatronicParty[entityIdxInsta[j]].animatronicyItem.GetComponent<Enemy>().enemyData.maxHealth, t.minHealthPercentageToKill);
 
-                                        if (manager.enemyParty[entityIdxInsta[j]].enemyItem.currentHealth <= healthValuePercentage)
-                                            manager.StartCoroutine(manager.enemyParty[entityIdxInsta[j]].enemyItem.DelayInstaKill(timeBeforeAbility));
+                                        if (manager.animatronicParty[entityIdxInsta[j]].animatronicItem.currentHealth <= healthValuePercentage)
+                                            manager.StartCoroutine(manager.animatronicParty[entityIdxInsta[j]].animatronicItem.DelayInstaKill(timeBeforeAbility));
                                     }
                                     break;
 
                                 case AnimatronicStats.InstaKillMode.TrueMode:
                                     for (int j = 0; j < entityIdxInsta.Count; j++)
-                                        manager.StartCoroutine(manager.enemyParty[entityIdxInsta[j]].enemyItem.DelayInstaKill(timeBeforeAbility));
+                                        manager.StartCoroutine(manager.animatronicParty[entityIdxInsta[j]].animatronicItem.DelayInstaKill(timeBeforeAbility));
                                     break;
                             }
                         }
 
                         else if (t.abilityToAffect == AnimatronicStats.AbilityToAffect.Munchies)
                         {
-                            List<int> affectedByMunchie = manager.GetEntityList("enemy", targets, randomTargets);
+                            List<int> affectedByMunchie = manager.GetEntityList("animatronic", targets, randomTargets);
 
                             for (int j = 0; j < affectedByMunchie.Count; j++)
-                                manager.enemyParty[affectedByMunchie[j]].enemyItem.TriggerMunchies(t.munchiesDuration, t.munchiesDamage, t.timeBtwMunchiesAttack);
+                                manager.animatronicParty[affectedByMunchie[j]].animatronicItem.TriggerMunchies(t.munchiesDuration, t.munchiesDamage, t.timeBtwMunchiesAttack);
                         }
-                    }
 
+                        else if (t.abilityToAffect == AnimatronicStats.AbilityToAffect.NeonWall)
+                            manager.NeonWallActivation("enemies", t.neonWallType, t.neonWallDuration);
+                        
+                        else if (t.abilityToAffect == AnimatronicStats.AbilityToAffect.BubbleBreath)
+                            manager.BubbleBreathActivation("enemy", t.bubbleBreathDuration);
+                    }
+                    //Boss Battle
                     else
                     {
                         Debug.Log("instaboss");
@@ -251,14 +273,12 @@ public class StatAbility : AnimatronicAbility
 
                         else if (t.abilityToAffect == AnimatronicStats.AbilityToAffect.Haunt)
                         {
-                            Debug.Log("instah");
                             unusedIndexOrder.Clear();
                             manager.bossParty.enemyItem.TriggerHauntingEffect(t.hauntDuration, timeBeforeAbility);
                         }
 
                         else if (t.abilityToAffect == AnimatronicStats.AbilityToAffect.InstaKill)
                         {
-                            Debug.Log("insta");
                             switch (t.instaKillMode)
                             {
                                 case AnimatronicStats.InstaKillMode.ChanceBased:
@@ -286,8 +306,8 @@ public class StatAbility : AnimatronicAbility
             }
 
             else
-            if (!manager.hasMimicBall)
-                manager.TriggerMimicBall();
+                if (!manager.hasMimicBall)
+                    manager.TriggerMimicBall();
         }
 
         manager.StartCoroutine(AbilitySoundEffect());

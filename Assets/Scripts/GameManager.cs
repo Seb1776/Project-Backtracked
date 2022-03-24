@@ -56,6 +56,7 @@ public class GameManager : MonoBehaviour
     public bool waitingForTurn;
 
     Coroutine neonWallCoroutine;
+    Coroutine enemyNeonWallCoroutine;
     Coroutine bubbleBreathCoroutine;
     private static readonly int Mimic = Animator.StringToHash("mimic");
     private static readonly int MimicAppear = Animator.StringToHash("mimic_appear");
@@ -110,6 +111,7 @@ public class GameManager : MonoBehaviour
         {
             BattleBehaviour();
             HandleUpdateUI();
+            TimedAbilitiesBehaviour();
         }
 
         //Debug.Log(sfxMixer.volume);
@@ -118,8 +120,8 @@ public class GameManager : MonoBehaviour
     void BattleBehaviour()
     {
         foreach (AnimatronicParty ap in animatronicParty)
-        {   
-            if ((!waitingForTurn && !ap.animatronicItem.stunned) && ap.alive)
+        {
+            if ((!waitingForTurn && !ap.animatronicItem.stunned && !ap.animatronicItem.haunted) && ap.alive)
             {
                 if (ap.remainingTimeToPlay < timeBtwTurns)
                 {
@@ -142,7 +144,7 @@ public class GameManager : MonoBehaviour
         {
             foreach (EnemyParty ep in enemyParty)
             {
-                if (!ep.enemyItem.stunned && ep.alive)
+                if (!ep.enemyItem.stunned && ep.alive && !ep.enemyItem.haunted)
                 {
                     if (ep.remainingTimeToPlay < timeBtwTurns)
                     {
@@ -193,72 +195,176 @@ public class GameManager : MonoBehaviour
         mimicBall.mimicBallAnim.SetTrigger(Mimic);
     }
 
-    public void NeonWallActivation(string createFor, int neonWallType, float duration)
-    {
-        if (animatronicParty[0].animatronicItem.hasNeonWall)
-            StopCoroutine(neonWallCoroutine);
+    bool actNeonWallA, actEndoArmyA, actBubbleBreathA,
+        actNeonWallE, actEndoArmyE, actBubbleBreathE;
 
-        neonWallCoroutine = StartCoroutine(TriggerNeonWall(createFor, neonWallType, duration));
-    }
+    float neonWallCurrentDurationA, neonWallCurrentDurationE,
+          endoACurrentDurationA, endoACurrentDurationE,
+          bubbleBCurrentDurationA, bubbleBCurrentDurationE;
+    
+    float neonWallDurationA, neonWallDurationE,
+          endoADurationA, endoAtDurationE,
+          bubbleBDurationA, bubbleBDurationE;
+    
+    int activatedNWTypeA, activatedNWTypeE;
 
-    public IEnumerator TriggerNeonWall(string createFor, int neonWallType, float duration)
+    void TimedAbilitiesBehaviour()
     {
-        if (createFor == "animatronic")
+        //Animatronics
+        if (actNeonWallA)
         {
-            neonWallAnimatronics[neonWallType].SetBool("neonwall", true);
+            if (neonWallCurrentDurationA < neonWallDurationA)
+                neonWallCurrentDurationA += Time.deltaTime;
             
-            foreach (AnimatronicParty ap in animatronicParty)
+            if (neonWallCurrentDurationA >= neonWallDurationA)
             {
-                ap.animatronicItem.hasNeonWall = true;
-                ap.animatronicItem.neonWallType = neonWallType;
+                neonWallAnimatronics[activatedNWTypeA].SetBool("neonwall", false);
+                neonWallCurrentDurationA = 0f;
+                actNeonWallA = false;
+
+                foreach (AnimatronicParty ap in animatronicParty)
+                {
+                    ap.animatronicItem.hasNeonWall = false;
+                    ap.animatronicItem.neonWallType = -1;
+                }
             }
         }
 
-        yield return new WaitForSeconds(duration);
+        if (actBubbleBreathA)
+        {
+            if (bubbleBCurrentDurationA < bubbleBDurationA)
+            {
+                bubbleBCurrentDurationA += Time.deltaTime;
 
+                if (bubbleBCurrentDurationA >= bubbleBDurationA)
+                {
+                    bubbleBCurrentDurationA = 0f;
+
+                    foreach (AnimatronicParty ap in animatronicParty)
+                    {
+                        ap.animatronicItem.hasBubbleBreath = false;
+                        ap.bubbleBreathBubble.SetBool("bubble", false);
+                    }
+
+                    actBubbleBreathA = false;
+                }
+            }
+        }
+
+        if (actEndoArmyA)
+        {
+            //Animatronic EndoArmy
+        }
+
+        //Enemies
+        if (actNeonWallE)
+        {
+            if (neonWallCurrentDurationE < neonWallDurationE)
+                neonWallCurrentDurationE += Time.deltaTime;
+            
+            if (neonWallCurrentDurationE >= neonWallDurationE)
+            {
+                neonWallAnimatronics[activatedNWTypeE].SetBool("neonwall", false);
+                neonWallCurrentDurationE = 0f;
+                actNeonWallE = false;
+
+                foreach (EnemyParty ep in enemyParty)
+                {
+                    ep.enemyItem.hasNeonWall = false;
+                    ep.enemyItem.neonWallType = -1;
+                }
+            }
+        }
+
+        if (actBubbleBreathE)
+        {
+            if (bubbleBCurrentDurationE < bubbleBDurationE)
+            {
+                bubbleBCurrentDurationE += Time.deltaTime;
+
+                if (bubbleBCurrentDurationE >= bubbleBDurationE)
+                {
+                    bubbleBCurrentDurationE = 0f;
+
+                    foreach (EnemyParty ep in enemyParty)
+                    {
+                        ep.enemyItem.hasBubbleBreath = false;
+                        ep.bubbleBreathBubble.SetBool("bubble", false);
+                    }
+                    
+                    actBubbleBreathE = false;
+                }
+            }
+        }
+
+        if (actEndoArmyE)
+        {
+            //Enemies EndoArmy
+        }
+    }
+
+    public void NeonWallActivation(string createFor, int neonWallType, float duration)
+    {
         if (createFor == "animatronic")
         {
-            neonWallAnimatronics[neonWallType].SetBool("neonwall", false);
-            
-            foreach (AnimatronicParty ap in animatronicParty)
-            {
-                ap.animatronicItem.hasNeonWall = false;
-                ap.animatronicItem.neonWallType = -1;
-            }
+            if (actNeonWallA)
+                neonWallCurrentDurationA = 0f;
+
+            actNeonWallA = true;
+            neonWallDurationA = duration;
+            activatedNWTypeA = neonWallType;
+            neonWallAnimatronics[neonWallType].SetBool("neonwall", true);
+        }
+
+        else
+        {
+            if (actNeonWallE)
+                neonWallCurrentDurationE = 0f;
+
+            actNeonWallE = true;
+            neonWallDurationE = duration;
+            activatedNWTypeE = neonWallType;
+            neonWallEnemies[neonWallType].SetBool("neonwall", true);
+
         }
     }
 
     public void BubbleBreathActivation(string invokeFor, float duration)
-    {
-        Debug.Log(animatronicParty[0].animatronicItem.hasBubbleBreath);
-        if (animatronicParty[0].animatronicItem.hasBubbleBreath)
-        {
-            StopCoroutine(bubbleBreathCoroutine);
-        }
-
-        bubbleBreathCoroutine = StartCoroutine(TriggerBubbleBreath(invokeFor, duration));
-    }
-
-    public IEnumerator TriggerBubbleBreath(string invokeFor, float duration)
-    {
+    {   
         if (invokeFor == "animatronic")
         {
-            foreach (AnimatronicParty ap in animatronicParty)
+            if (!actBubbleBreathA)
             {
-                ap.animatronicItem.hasBubbleBreath = true;
-                ap.bubbleBreathBubble.SetBool("bubble", true);
+                bubbleBDurationA = duration;
+                actBubbleBreathA = true;
+
+                foreach (AnimatronicParty ap in animatronicParty)
+                {
+                    ap.animatronicItem.hasBubbleBreath = true;
+                    ap.bubbleBreathBubble.SetBool("bubble", true);
+                }
             }
+
+            else
+                bubbleBCurrentDurationA = 0f;
         }
 
-        yield return new WaitForSeconds(duration);
-
-        if (invokeFor == "animatronic")
+        else
         {
-            foreach (AnimatronicParty ap in animatronicParty)
+            if (!actBubbleBreathE)
             {
-                ap.animatronicItem.hasBubbleBreath = false;
-                ap.bubbleBreathBubble.SetBool("bubble", false);
+                bubbleBDurationE = duration;
+                actBubbleBreathE = true;
+
+                foreach (EnemyParty ep in enemyParty)
+                {
+                    ep.enemyItem.hasBubbleBreath = true;
+                    ep.bubbleBreathBubble.SetBool("bubble", true);
+                }
             }
+
+            else
+                bubbleBCurrentDurationE = 0f;
         }
     }
 
@@ -567,7 +673,13 @@ public class GameManager : MonoBehaviour
     }
 
     public bool GetRandomBoolChance(float percentageChance)
-    {   
+    {
+        if (percentageChance >= 100)
+            return true;
+        
+        else if (percentageChance <= 0)
+            return false;
+
         if (percentageChance > 0)
         {
             float randChance = Random.value;
@@ -624,7 +736,7 @@ public class AnimatronicParty
         animatronicItem.currentCritChance = animatronicItem.GetComponent<Animatronic>().animatronicData.maxCritChance;
         animatronicItem.respectiveDamageNumber = damageTextPrefab;
         animatronicItem.parentCanvas = canvasParent;
-        giftBox.maxValue = animatronicItem.GetComponent<Animatronic>().animatronicData.maxHealth;
+        giftBox.maxValue = animatronicItem.GetComponent<Animatronic>().animatronicData.maxHealth / 2f;
         alive = true;
     }
 
@@ -662,6 +774,7 @@ public class EnemyParty
     public GameObject abilityPanelPrefab;
     public GameObject munchieObject;
     public GameObject enemyGift;
+    public Animator bubbleBreathBubble;
     public Text enemyBossName;
     public bool alive;
 

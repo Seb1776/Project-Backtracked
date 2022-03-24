@@ -37,10 +37,21 @@ public class Animatronic : LivingEntity
         base.Start();
     }
 
-    void Update()
+    public override void Update()
     {
         if (!manager.animatronicParty[idxInManager].alive && entityMesh.activeSelf)
             entityMesh.SetActive(false);
+        
+        if (hasMunchies)
+            MunchiesBehaviour();
+        
+        if (playingFeedback)
+            DamageFeedback();
+        
+        if (haunted)
+            StartHaunt();
+        
+        base.Update();
     }
 
     void SetSkin()
@@ -58,25 +69,12 @@ public class Animatronic : LivingEntity
         base.MakeDamage(damageValue, context, attackingEntity, attackedEntity);
         
         if (manager.animatronicParty[idxInManager].alive)
-        {
-            StartCoroutine(DamageFeedback());
-        }
-
-        else
-            entityMesh.SetActive(false);
+            playingFeedback = true;
     }
 
     public override void Heal(int healthValue, LivingEntity healedEntity)
-    {   
-        if (hasGift)
-        {
-            currentGiftHealth += healthValue;
-
-            if (currentGiftHealth >= animatronicData.maxHealth)
-                currentGiftHealth = animatronicData.maxHealth;
-        }
-
-        else
+    {
+        if (!hasGift)
         {
             currentHealth += healthValue;
 
@@ -92,50 +90,93 @@ public class Animatronic : LivingEntity
         if (!hasMunchies)
         {
             manager.animatronicParty[idxInManager].munchieObject.GetComponent<Animator>().SetBool("appear_munchie", true);
+            munchieDamage = _munchieDamage;
+            munchieDuration = _munchieDuration;
+            timeBtwMunchieDamage = _timeBtwMunchieDamage;
+            newTimeMunchieDamage = Random.Range(timeBtwMunchieDamage.x, timeBtwMunchieDamage.y);
             hasMunchies = true;
         }
         
         else
-            StopCoroutine(munchiesCoroutine);
-        
-        munchiesCoroutine = StartCoroutine(MunchiesBehaviour(_munchieDuration, _munchieDamage, _timeBtwMunchieDamage));
+            currentMunchieDuration = 0f;
 
         base.TriggerMunchies(_munchieDuration, _munchieDamage, _timeBtwMunchieDamage);
     }
-    
-    IEnumerator MunchiesBehaviour(float _munchieDuration, int _munchieDamage, Vector2 _timeBtwMunchieDamage)
+
+    public override void TriggerHauntingEffect(float _hauntTime, float _timeBeforeAbility)
     {
-        StartCoroutine(UnTriggerMunchies(_munchieDuration));
-
-        while (hasMunchies)
+        if (!haunted)
         {
-            float realTime = Random.Range(_timeBtwMunchieDamage.x, _timeBtwMunchieDamage.y);
-            yield return new WaitForSeconds(realTime);
+            haunted = true;
+            hauntTime = _hauntTime;
+            delay = _timeBeforeAbility;
+            entityMesh.GetComponent<Animator>().speed = 0f;
+        }
+        
+        else
+            currentHauntTime = 0f;
 
-            manager.animatronicParty[idxInManager].munchieObject.GetComponent<Animator>().SetTrigger("attack_munchie");
+        base.TriggerHauntingEffect(_hauntTime, _timeBeforeAbility);
+    }
 
-            yield return new WaitForSeconds(.1f);
-            MakeDamage(_munchieDamage, "normal");
+    float hauntTime, delay, currentHauntTime, currentDelay;
+
+    void StartHaunt()
+    {
+        if (currentDelay < delay)
+            currentDelay += Time.deltaTime;
+        
+        else if (currentDelay >= delay)
+        {
+            if (currentHauntTime < hauntTime)
+            {
+                currentHauntTime += Time.deltaTime;
+
+                if (currentHauntTime >= hauntTime)
+                {
+                    currentDelay = 0f;
+                    currentHauntTime = 0f;
+                    haunted = false;
+                    entityMesh.GetComponent<Animator>().speed = 1f;
+                }
+            }
         }
     }
 
-    public override IEnumerator UnTriggerMunchies(float duration)
+    float currentMunchieDuration, munchieDuration, newTimeMunchieDamage, currentTimeBtwMunchieDamage;
+    int munchieDamage;
+    Vector2 timeBtwMunchieDamage;
+
+    void MunchiesBehaviour()
     {
-        yield return new WaitForSeconds(duration);
+        if (currentMunchieDuration < munchieDuration)
+        {
+            currentMunchieDuration += Time.deltaTime;
 
-        StopCoroutine(munchiesCoroutine);
-        hasMunchies = false;
+            if (currentTimeBtwMunchieDamage < newTimeMunchieDamage)
+            {
+                currentTimeBtwMunchieDamage += Time.deltaTime;
 
-        manager.animatronicParty[idxInManager].munchieObject.GetComponent<Animator>().SetBool("appear_munchie", false);
+                if (currentTimeBtwMunchieDamage >= newTimeMunchieDamage)
+                {
+                    manager.animatronicParty[idxInManager].munchieObject.GetComponent<Animator>().SetTrigger("attack_munchie");
+                    MakeDamage(munchieDamage, "normal");
+                }
+            }
 
-        yield return base.UnTriggerMunchies(duration);
+            if (currentMunchieDuration >= munchieDuration)
+            {
+                hasMunchies = false;
+                manager.animatronicParty[idxInManager].munchieObject.GetComponent<Animator>().SetBool("appear_munchie", false);
+            }
+        }
     }
 
     public override void ReviveEntity()
     {
         manager.animatronicParty[idxInManager].alive = true;
         manager.animatronicParty[idxInManager].animatronicTombstone.SetActive(false);
-        currentHealth = animatronicData.maxHealth;
+        currentHealth = (int)(animatronicData.maxHealth / 2f);
         entityMesh.SetActive(true);
 
         base.ReviveEntity();
@@ -149,9 +190,7 @@ public class Animatronic : LivingEntity
         else
         {
             hasGift = true;
-
-            currentGiftHealth = currentHealth = animatronicData.maxHealth;
-            Heal(animatronicData.maxHealth, this);
+            currentGiftHealth = (int)(animatronicData.maxHealth / 2f);
 
             if (!manager.animatronicParty[idxInManager].animatronicGift.GetComponent<Animator>().GetBool("appear"))
                 manager.animatronicParty[idxInManager].animatronicGift.GetComponent<Animator>().SetBool("appear", true);
@@ -298,23 +337,49 @@ public class Animatronic : LivingEntity
         yield return base.IncreaseStatTimer(_stat, _value, _duration, _operation, _deltaBefore);
     }
 
-    public override IEnumerator DamageFeedback()
+    float currentFeedbackTimer;
+    int currentFeedbackIter;
+
+    public override void DamageFeedback()
     {
-        if (!playingFeedback)
+        if (currentFeedbackIter >= 6)
         {
-            for (int i = 0; i < 3; i++)
+            playingFeedback = false;
+            currentFeedbackIter = 0;
+            currentFeedbackTimer = 0f;
+            entityMesh.SetActive(true);
+        }
+
+        else if (currentFeedbackIter < 6)
+        {
+            if (entityMesh.activeSelf)
             {
-                if (manager.animatronicParty[idxInManager].alive)
+                if (currentFeedbackTimer < 0.01f)
+                    currentFeedbackTimer += Time.deltaTime;
+
+                if (currentFeedbackTimer >= 0.01f)
                 {
                     entityMesh.SetActive(false);
-                    yield return new WaitForSeconds(0.05f);
+                    currentFeedbackTimer = 0f;
+                    currentFeedbackIter++;
+                }
+            }
+
+            else
+            {
+                if (currentFeedbackTimer < 0.01f)
+                    currentFeedbackTimer += Time.deltaTime;
+                
+                if (currentFeedbackTimer >= 0.01f)
+                {
                     entityMesh.SetActive(true);
-                    yield return new WaitForSeconds(0.05f);
+                    currentFeedbackTimer = 0f;
+                    currentFeedbackIter++;
                 }
             }
         }
 
-        yield return base.DamageFeedback();
+        base.DamageFeedback();
     }
 
     public override void TriggerEntityDeath()
@@ -328,7 +393,8 @@ public class Animatronic : LivingEntity
             source.PlayOneShot(deathSound);
         }
 
-        StopCoroutine(DamageFeedback());
+        if (playingFeedback) playingFeedback = false;
+        entityMesh.SetActive(false);
 
         manager.animatronicParty[idxInManager].alive = false;
         manager.animatronicParty[idxInManager].animatronicDeathEffect.SetActive(true);

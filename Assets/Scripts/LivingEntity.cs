@@ -18,6 +18,7 @@ public class LivingEntity : MonoBehaviour
     public bool hasGift;
     public bool hasMunchies;
     public bool hasNeonWall;
+    public bool haunted;
     public int neonWallType;
     public bool hasBubbleBreath;
     public Transform parentCanvas;
@@ -40,6 +41,12 @@ public class LivingEntity : MonoBehaviour
 
     public virtual void Start() {}
 
+    public virtual void Update() 
+    {
+        if (stunned)
+            StunBehaviour();
+    }
+
     public void TriggerPoisonousEffect(int _poisonDamage, float _poisonDuration, float _timeBtwPoisonDamage)
     {
         poisoned = true;
@@ -52,17 +59,26 @@ public class LivingEntity : MonoBehaviour
         if (!stunned)
         {
             stunned = true;
-            stunCoroutine = StartCoroutine(StunEffect(_stunDuration));
+            stunDuration = _stunDuration;
         }
 
         else
+            currentStunDuration = 0f;
+    }
+
+    float stunDuration, currentStunDuration;
+
+    public void StunBehaviour()
+    {
+        if (currentStunDuration < stunDuration)
         {
-            StopCoroutine(stunCoroutine);
+            currentStunDuration += Time.deltaTime;
 
-            foreach (GameObject j in GameObject.FindGameObjectsWithTag("Jumpscare"))
-                Destroy(j);
-
-            stunCoroutine = StartCoroutine(StunEffect(_stunDuration));
+            if (currentStunDuration >= stunDuration)
+            {
+                currentStunDuration = 0f;
+                stunned = false;
+            }
         }
     }
 
@@ -75,8 +91,6 @@ public class LivingEntity : MonoBehaviour
     public virtual void UnTriggerGift() {}
 
     public virtual void TriggerMunchies(float _munchieDuration, int _munchieDamage, Vector2 _timeBtwMunchieDamage) {}
-
-    public virtual IEnumerator UnTriggerMunchies(float duration) { yield return null; }
 
     public virtual void TriggerInstaKill() {}
 
@@ -283,8 +297,5 @@ public class LivingEntity : MonoBehaviour
         }
     }
 
-    public virtual IEnumerator DamageFeedback()
-    {   
-        yield return null;
-    }
+    public virtual void DamageFeedback() {}
 }

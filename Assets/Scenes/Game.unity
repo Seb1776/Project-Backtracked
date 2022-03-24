@@ -3388,13 +3388,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   partyToLoad:
-  - animatronicName: Springtrap
-    animatronicGame: 2
+  - animatronicName: ShadowBonnie
+    animatronicGame: 1
     position: 0
   - animatronicName: NightmareFredbear
     animatronicGame: 3
     position: 1
-  - animatronicName: SecurityPuppet
+  - animatronicName: FuntimeChica
     animatronicGame: 5
     position: 2
   - animatronicName: WitheredFreddy
@@ -3491,7 +3491,8 @@ MonoBehaviour:
     damageTextPrefab: {fileID: 1777735614942547243, guid: c9b35b987c7a3d349bd962d425697347, type: 3}
     abilityPanelPrefab: {fileID: 6848488189562142712, guid: 11c6907d849018741a35255c254ab2d1, type: 3}
     munchieObject: {fileID: 655941331}
-    enemyGift: {fileID: 0}
+    enemyGift: {fileID: 974827967}
+    bubbleBreathBubble: {fileID: 1781031348}
     enemyBossName: {fileID: 0}
     alive: 1
   - enemyItem: {fileID: 515612566}
@@ -3503,7 +3504,8 @@ MonoBehaviour:
     damageTextPrefab: {fileID: 1777735614942547243, guid: c9b35b987c7a3d349bd962d425697347, type: 3}
     abilityPanelPrefab: {fileID: 6848488189562142712, guid: 11c6907d849018741a35255c254ab2d1, type: 3}
     munchieObject: {fileID: 1424316708}
-    enemyGift: {fileID: 0}
+    enemyGift: {fileID: 394830515}
+    bubbleBreathBubble: {fileID: 1658125625}
     enemyBossName: {fileID: 0}
     alive: 1
   - enemyItem: {fileID: 424992900}
@@ -3515,7 +3517,8 @@ MonoBehaviour:
     damageTextPrefab: {fileID: 1777735614942547243, guid: c9b35b987c7a3d349bd962d425697347, type: 3}
     abilityPanelPrefab: {fileID: 6848488189562142712, guid: 11c6907d849018741a35255c254ab2d1, type: 3}
     munchieObject: {fileID: 1343593533}
-    enemyGift: {fileID: 0}
+    enemyGift: {fileID: 814134622}
+    bubbleBreathBubble: {fileID: 323042663}
     enemyBossName: {fileID: 0}
     alive: 1
   - enemyItem: {fileID: 158456828}
@@ -3527,7 +3530,8 @@ MonoBehaviour:
     damageTextPrefab: {fileID: 1777735614942547243, guid: c9b35b987c7a3d349bd962d425697347, type: 3}
     abilityPanelPrefab: {fileID: 6848488189562142712, guid: 11c6907d849018741a35255c254ab2d1, type: 3}
     munchieObject: {fileID: 1605425525}
-    enemyGift: {fileID: 0}
+    enemyGift: {fileID: 1767630898}
+    bubbleBreathBubble: {fileID: 1214904098}
     enemyBossName: {fileID: 0}
     alive: 1
   bossParty:
@@ -3541,6 +3545,7 @@ MonoBehaviour:
     abilityPanelPrefab: {fileID: 0}
     munchieObject: {fileID: 0}
     enemyGift: {fileID: 0}
+    bubbleBreathBubble: {fileID: 0}
     enemyBossName: {fileID: 359549224}
     alive: 1
   attackButtons:
@@ -3560,7 +3565,9 @@ MonoBehaviour:
   neonWallAnimatronics:
   - {fileID: 1471375264}
   - {fileID: 526376525}
-  neonWallEnemies: []
+  neonWallEnemies:
+  - {fileID: 581336650}
+  - {fileID: 1028893415}
   overlaysParent: {fileID: 1260967425}
   overlayObj: {fileID: 7398130180605197800, guid: 01da1e76e50fe7341a7beb897b93c302, type: 3}
   overlays:
@@ -5136,6 +5143,7 @@ MonoBehaviour:
   hasGift: 0
   hasMunchies: 0
   hasNeonWall: 0
+  haunted: 0
   neonWallType: 0
   hasBubbleBreath: 0
   parentCanvas: {fileID: 0}
@@ -5149,10 +5157,10 @@ MonoBehaviour:
   normalAbilities:
   - {fileID: 11400000, guid: 04aa6b67a53ef744eb223c810ca420f0, type: 2}
   specialAbilities:
-  - _ability: {fileID: 11400000, guid: 832eb8386bdc0814dad189593636a8db, type: 2}
-    chanceOfUsing: 25
-  - _ability: {fileID: 11400000, guid: 84e4ac474bd0e7f4e9f8f3a86ac2b83b, type: 2}
+  - _ability: {fileID: 11400000, guid: 87f4572731883e044b9340d68b0506d9, type: 2}
     chanceOfUsing: 5
+  - _ability: {fileID: 11400000, guid: 84e4ac474bd0e7f4e9f8f3a86ac2b83b, type: 2}
+    chanceOfUsing: 25
   abilityText: {fileID: 6848488189562142712, guid: 11c6907d849018741a35255c254ab2d1, type: 3}
   chanceToUseSpecialAbility: 0
   idxInManager: 0
@@ -14598,6 +14606,7 @@ MonoBehaviour:
   hasGift: 0
   hasMunchies: 0
   hasNeonWall: 0
+  haunted: 0
   neonWallType: 0
   hasBubbleBreath: 0
   parentCanvas: {fileID: 0}
@@ -14611,10 +14620,10 @@ MonoBehaviour:
   normalAbilities:
   - {fileID: 11400000, guid: 04aa6b67a53ef744eb223c810ca420f0, type: 2}
   specialAbilities:
-  - _ability: {fileID: 11400000, guid: 832eb8386bdc0814dad189593636a8db, type: 2}
-    chanceOfUsing: 25
-  - _ability: {fileID: 11400000, guid: 84e4ac474bd0e7f4e9f8f3a86ac2b83b, type: 2}
+  - _ability: {fileID: 11400000, guid: 87f4572731883e044b9340d68b0506d9, type: 2}
     chanceOfUsing: 5
+  - _ability: {fileID: 11400000, guid: 84e4ac474bd0e7f4e9f8f3a86ac2b83b, type: 2}
+    chanceOfUsing: 25
   abilityText: {fileID: 6848488189562142712, guid: 11c6907d849018741a35255c254ab2d1, type: 3}
   chanceToUseSpecialAbility: 0
   idxInManager: 0
@@ -17045,6 +17054,7 @@ MonoBehaviour:
   hasGift: 0
   hasMunchies: 0
   hasNeonWall: 0
+  haunted: 0
   neonWallType: 0
   hasBubbleBreath: 0
   parentCanvas: {fileID: 0}
@@ -17770,7 +17780,7 @@ Transform:
   m_GameObject: {fileID: 526376523}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0.64999986, y: 2.13, z: 0.32999992}
-  m_LocalScale: {x: 18.06, y: 18.06, z: 32.45436}
+  m_LocalScale: {x: 15.28, y: 16.3, z: 32.45436}
   m_Children: []
   m_Father: {fileID: 769057864}
   m_RootOrder: 1
@@ -19648,7 +19658,7 @@ Transform:
   m_GameObject: {fileID: 581336648}
   m_LocalRotation: {x: -0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.2, y: 2.13, z: 0.32999992}
-  m_LocalScale: {x: -18.06, y: 18.06, z: 32.45436}
+  m_LocalScale: {x: 15.28, y: 16.3, z: 32.45436}
   m_Children: []
   m_Father: {fileID: 171165902}
   m_RootOrder: 0
@@ -22551,7 +22561,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 655941331}
   m_LocalRotation: {x: -0, y: 0.28961894, z: -0, w: 0.95714206}
-  m_LocalPosition: {x: 3.3936365, y: 1.449, z: 0.48652363}
+  m_LocalPosition: {x: 2.9236364, y: 2.099, z: -13.793476}
   m_LocalScale: {x: 1.3188, y: 1.3188, z: 1.3188}
   m_Children:
   - {fileID: 264445495}
@@ -35338,7 +35348,7 @@ Transform:
   m_GameObject: {fileID: 1028893413}
   m_LocalRotation: {x: -0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.19999981, y: 2.13, z: 0.32999992}
-  m_LocalScale: {x: -18.06, y: 18.06, z: 32.45436}
+  m_LocalScale: {x: 15.28, y: 16.3, z: 32.45436}
   m_Children: []
   m_Father: {fileID: 171165902}
   m_RootOrder: 1
@@ -38452,14 +38462,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1149155034}
   m_LocalRotation: {x: -0, y: 0.28961894, z: -0, w: 0.95714206}
-  m_LocalPosition: {x: 0.23000023, y: -0.74099994, z: -0.28999996}
+  m_LocalPosition: {x: -0.47000027, y: -0.09099996, z: -14.279999}
   m_LocalScale: {x: 1.3188, y: 1.3188, z: 1.3188}
   m_Children:
   - {fileID: 1177493174}
   - {fileID: 974827968}
   - {fileID: 1781031347}
   m_Father: {fileID: 1168988111}
-  m_RootOrder: 2
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &1149155036
 Animator:
@@ -38889,12 +38899,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1168988110}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.47, y: 0.65, z: -14.28}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 1149155035}
   - {fileID: 1966325582}
   - {fileID: 2138425286}
-  - {fileID: 1149155035}
   - {fileID: 655941332}
   m_Father: {fileID: 171165902}
   m_RootOrder: 2
@@ -39220,6 +39230,7 @@ MonoBehaviour:
   hasGift: 0
   hasMunchies: 0
   hasNeonWall: 0
+  haunted: 0
   neonWallType: 0
   hasBubbleBreath: 0
   parentCanvas: {fileID: 0}
@@ -39233,10 +39244,10 @@ MonoBehaviour:
   normalAbilities:
   - {fileID: 11400000, guid: 04aa6b67a53ef744eb223c810ca420f0, type: 2}
   specialAbilities:
-  - _ability: {fileID: 11400000, guid: 832eb8386bdc0814dad189593636a8db, type: 2}
-    chanceOfUsing: 25
-  - _ability: {fileID: 11400000, guid: 84e4ac474bd0e7f4e9f8f3a86ac2b83b, type: 2}
+  - _ability: {fileID: 11400000, guid: 87f4572731883e044b9340d68b0506d9, type: 2}
     chanceOfUsing: 5
+  - _ability: {fileID: 11400000, guid: 84e4ac474bd0e7f4e9f8f3a86ac2b83b, type: 2}
+    chanceOfUsing: 25
   abilityText: {fileID: 6848488189562142712, guid: 11c6907d849018741a35255c254ab2d1, type: 3}
   chanceToUseSpecialAbility: 0
   idxInManager: 0
@@ -48996,7 +49007,7 @@ Transform:
   m_GameObject: {fileID: 1471375263}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0.64999986, y: 2.13, z: 0.32999992}
-  m_LocalScale: {x: 18.06, y: 18.06, z: 32.45436}
+  m_LocalScale: {x: 15.28, y: 16.3, z: 32.45436}
   m_Children: []
   m_Father: {fileID: 769057864}
   m_RootOrder: 0
@@ -64943,13 +64954,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1966325580}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.72, y: 7.5899997, z: 29.23}
+  m_LocalPosition: {x: 0.25, y: 8.24, z: 14.950001}
   m_LocalScale: {x: -4, y: 4, z: 1}
   m_Children:
   - {fileID: 1389252934}
   - {fileID: 1921518073}
   m_Father: {fileID: 1168988111}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1966452785
 GameObject:
@@ -70677,6 +70688,7 @@ MonoBehaviour:
   hasGift: 0
   hasMunchies: 0
   hasNeonWall: 0
+  haunted: 0
   neonWallType: 0
   hasBubbleBreath: 0
   parentCanvas: {fileID: 0}
@@ -71198,15 +71210,15 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2138425285}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 8.8495035}
+  m_LocalPosition: {x: 0, y: 0, z: -5.430496}
   m_LocalScale: {x: -1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1168988111}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 7.5070815, y: 2.7402368}
+  m_AnchoredPosition: {x: 7.0370817, y: 3.3902369}
   m_SizeDelta: {x: 17.1145, y: 10.2078}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2138425287
@@ -75258,6 +75270,7 @@ MonoBehaviour:
   hasGift: 0
   hasMunchies: 0
   hasNeonWall: 0
+  haunted: 0
   neonWallType: 0
   hasBubbleBreath: 0
   parentCanvas: {fileID: 0}
@@ -75418,6 +75431,7 @@ MonoBehaviour:
   hasGift: 0
   hasMunchies: 0
   hasNeonWall: 0
+  haunted: 0
   neonWallType: 0
   hasBubbleBreath: 0
   parentCanvas: {fileID: 0}
@@ -75609,6 +75623,7 @@ MonoBehaviour:
   hasGift: 0
   hasMunchies: 0
   hasNeonWall: 0
+  haunted: 0
   neonWallType: 0
   hasBubbleBreath: 0
   parentCanvas: {fileID: 0}
@@ -75866,6 +75881,7 @@ MonoBehaviour:
   hasGift: 0
   hasMunchies: 0
   hasNeonWall: 0
+  haunted: 0
   neonWallType: 0
   hasBubbleBreath: 0
   parentCanvas: {fileID: 0}
@@ -78197,6 +78213,7 @@ MonoBehaviour:
   hasGift: 0
   hasMunchies: 0
   hasNeonWall: 0
+  haunted: 0
   neonWallType: 0
   hasBubbleBreath: 0
   parentCanvas: {fileID: 0}
@@ -106038,6 +106055,7 @@ MonoBehaviour:
   hasGift: 0
   hasMunchies: 0
   hasNeonWall: 0
+  haunted: 0
   neonWallType: 0
   hasBubbleBreath: 0
   parentCanvas: {fileID: 0}
@@ -114391,6 +114409,7 @@ MonoBehaviour:
   hasGift: 0
   hasMunchies: 0
   hasNeonWall: 0
+  haunted: 0
   neonWallType: 0
   hasBubbleBreath: 0
   parentCanvas: {fileID: 0}

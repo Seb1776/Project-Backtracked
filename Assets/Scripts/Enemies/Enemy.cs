@@ -35,18 +35,49 @@ public class Enemy : LivingEntity
         base.Start();
     }
 
-    void Update()
+    public override void Update()
     {
         if (!manager.enemyParty[idxInManager].alive && entityMesh.activeSelf)
             entityMesh.SetActive(false);
+        
+        if (hasMunchies)
+            MunchiesBehaviour();
+        
+        if (playingFeedback)
+            DamageFeedback();
+        
+        if (haunted)
+            StartHaunt();
+        
+        base.Update();
     }
 
     public override void TriggerGift()
     {
-        currentGiftHealth = currentHealth = enemyData.maxHealth;
+        if (manager.battleMusicContext != GameManager.BattleMusicContext.Fight)
+        {
+            hasGift = true;
 
-        if (!manager.enemyParty[idxInManager].enemyGift.GetComponent<Animator>().GetBool("appear"))
-            manager.enemyParty[idxInManager].enemyGift.GetComponent<Animator>().SetBool("appear", true);
+            currentGiftHealth = currentHealth = (int)(enemyData.maxHealth / 2f);
+
+            if (!manager.enemyParty[idxInManager].enemyGift.GetComponent<Animator>().GetBool("appear"))
+                manager.enemyParty[idxInManager].enemyGift.GetComponent<Animator>().SetBool("appear", true);
+        }
+
+        else
+        {
+            if (!manager.enemyParty[idxInManager].alive)
+                ReviveEntity();
+            
+            else
+            {
+                hasGift = true;
+                currentGiftHealth = (int)(enemyData.maxHealth / 2f);
+
+                if (!manager.enemyParty[idxInManager].enemyGift.GetComponent<Animator>().GetBool("appear"))
+                    manager.enemyParty[idxInManager].enemyGift.GetComponent<Animator>().SetBool("appear", true);
+            }
+        }
 
         base.TriggerGift();
     }
@@ -57,60 +88,90 @@ public class Enemy : LivingEntity
         base.UnTriggerGift();
     }
 
-    public override void TriggerHauntingEffect(float hauntTime, float timeBeforeAbility)
+    public override void TriggerHauntingEffect(float _hauntTime, float _timeBeforeAbility)
     {
-        if (hauntingCoroutine == null)
-            hauntingCoroutine = StartCoroutine(StartHaunt(hauntTime, timeBeforeAbility));
+        if (!haunted)
+        {
+            haunted = true;
+            hauntTime = _hauntTime;
+            delay = _timeBeforeAbility;
+        }
         
         else
-        {
-            StopCoroutine(hauntingCoroutine);
-            hauntingCoroutine = StartCoroutine(StartHaunt(hauntTime, timeBeforeAbility));
-        }
+            currentHauntTime = 0f;
 
-        base.TriggerHauntingEffect(hauntTime, timeBeforeAbility);
+        base.TriggerHauntingEffect(_hauntTime, _timeBeforeAbility);
     }
 
-    IEnumerator ReEnableAnimator(float reactivateIn)
-    {
-        yield return new WaitForSeconds(reactivateIn);
-        entityMesh.GetComponent<Animator>().speed = 1f;
-        hauntingCoroutine = _haunt = null;
-    }
+    float hauntTime, delay, currentHauntTime, currentDelay;
 
-    IEnumerator StartHaunt(float _hauntTime, float delay)
+    void StartHaunt()
     {
-        yield return new WaitForSeconds(delay);
-        TriggerStunEffect(_hauntTime);
-        entityMesh.GetComponent<Animator>().speed = 0f;
-
-        if (_haunt == null)
-            _haunt = StartCoroutine(ReEnableAnimator(_hauntTime));
+        if (currentDelay < delay)
+            currentDelay += Time.deltaTime;
         
-        else
+        else if (currentDelay >= delay)
         {
-            StopCoroutine(_haunt);
-            _haunt = StartCoroutine(ReEnableAnimator(_hauntTime));
-        }
-    }
+            entityMesh.GetComponent<Animator>().speed = 0f;
 
-    public override IEnumerator DamageFeedback()
-    {
-        if (!playingFeedback)
-        {
-            for (int i = 0; i < 3; i++)
+            if (currentHauntTime < hauntTime)
             {
-                if (manager.enemyParty[idxInManager].alive)
+                currentHauntTime += Time.deltaTime;
+
+                if (currentHauntTime >= hauntTime)
+                {
+                    currentDelay = 0f;
+                    currentHauntTime = 0f;
+                    haunted = false;
+                    entityMesh.GetComponent<Animator>().speed = 1f;
+                }
+            }
+        }
+    }
+
+    float currentFeedbackTimer;
+    int currentFeedbackIter;
+
+    public override void DamageFeedback()
+    {
+        if (currentFeedbackIter >= 6)
+        {
+            playingFeedback = false;
+            currentFeedbackIter = 0;
+            currentFeedbackTimer = 0f;
+            entityMesh.SetActive(true);
+        }
+
+        else if (currentFeedbackIter < 6)
+        {
+            if (entityMesh.activeSelf)
+            {
+                if (currentFeedbackTimer < 0.01f)
+                    currentFeedbackTimer += Time.deltaTime;
+
+                if (currentFeedbackTimer >= 0.01f)
                 {
                     entityMesh.SetActive(false);
-                    yield return new WaitForSeconds(0.05f);
+                    currentFeedbackTimer = 0f;
+                    currentFeedbackIter++;
+                }
+            }
+
+            else
+            {
+                if (currentFeedbackTimer < 0.01f)
+                    currentFeedbackTimer += Time.deltaTime;
+                
+                if (currentFeedbackTimer >= 0.01f)
+                {
                     entityMesh.SetActive(true);
-                    yield return new WaitForSeconds(0.05f);
+                    currentFeedbackTimer = 0f;
+                    currentFeedbackIter++;
                 }
             }
         }
 
-        yield return base.DamageFeedback();
+        base.DamageFeedback();
     }
 
     public override IEnumerator IncreaseStatTimer(string _stat, int _value, float _duration, bool _operation, float _deltaBefore)
@@ -314,10 +375,10 @@ public class Enemy : LivingEntity
         base.MakeDamage(damageValue, context, attackingEntity, attackedEntity);
 
         if (manager.enemyParty[idxInManager].alive)
-            StartCoroutine(DamageFeedback());
-
-        else
+        {
+            playingFeedback = true;
             entityMesh.SetActive(false);
+        }
     }
 
     public override void Heal(int healthValue, LivingEntity healedEntity)
@@ -338,18 +399,19 @@ public class Enemy : LivingEntity
             source.PlayOneShot(deathSound);
         }
 
+        if (hauntingCoroutine != null)
+            StopCoroutine(hauntingCoroutine);
+            
+        if (_haunt != null)
+            StopCoroutine(_haunt);
+        
+        if (hasBubbleBreath)
+            manager.enemyParty[idxInManager].bubbleBreathBubble.SetBool("bubble", false);
+
         if (hasMunchies)
         {
             hasMunchies = false;
 
-            if (munchiesCoroutine != null)
-                StopCoroutine(munchiesCoroutine);
-            
-            if (hauntingCoroutine != null)
-                StopCoroutine(hauntingCoroutine);
-            
-            if (_haunt != null)
-                StopCoroutine(_haunt);
 
             if (manager.battleMusicContext == GameManager.BattleMusicContext.Fight)
                 manager.enemyParty[idxInManager].munchieObject.GetComponent<Animator>().SetBool("appear_munchie", false);
@@ -358,7 +420,8 @@ public class Enemy : LivingEntity
                 manager.bossParty.munchieObject.GetComponent<Animator>().SetBool("appear_munchie", false);
         }
 
-        StopCoroutine(DamageFeedback());
+        if (playingFeedback) playingFeedback = false;
+        entityMesh.SetActive(false);
 
         manager.enemyParty[idxInManager].alive = false;
         manager.enemyParty[idxInManager].enemyDeathEffect.SetActive(true);
@@ -393,51 +456,56 @@ public class Enemy : LivingEntity
             else
                 manager.bossParty.munchieObject.GetComponent<Animator>().SetBool("appear_munchie", true);
             
+            munchieDamage = _munchieDamage;
+            munchieDuration = _munchieDuration;
+            timeBtwMunchieDamage = _timeBtwMunchieDamage;
+            newTimeMunchieDamage = Random.Range(timeBtwMunchieDamage.x, timeBtwMunchieDamage.y);
             hasMunchies = true;
         }
 
         else
-            StopCoroutine(munchiesCoroutine);
-
-        munchiesCoroutine = StartCoroutine(MunchiesBehaviour(_munchieDuration, _munchieDamage, _timeBtwMunchieDamage));
+            currentMunchieDuration = 0f;
 
         base.TriggerMunchies(_munchieDuration, _munchieDamage, _timeBtwMunchieDamage);
     }
 
-    IEnumerator MunchiesBehaviour(float _munchieDuration, int _munchieDamage, Vector2 _timeBtwMunchieDamage)
-    {
-        StartCoroutine(UnTriggerMunchies(_munchieDuration));
+    float currentMunchieDuration, munchieDuration, newTimeMunchieDamage, currentTimeBtwMunchieDamage;
+    int munchieDamage;
+    Vector2 timeBtwMunchieDamage;
 
-        while (hasMunchies)
+    void MunchiesBehaviour()
+    {
+        if (currentMunchieDuration < munchieDuration)
         {
-            float realTime = Random.Range(_timeBtwMunchieDamage.x, _timeBtwMunchieDamage.y);
-            yield return new WaitForSeconds(realTime);
+            currentMunchieDuration += Time.deltaTime;
 
-            if (manager.battleMusicContext == GameManager.BattleMusicContext.Fight)
-                manager.enemyParty[idxInManager].munchieObject.GetComponent<Animator>().SetTrigger("attack_munchie");
+            if (currentTimeBtwMunchieDamage < newTimeMunchieDamage)
+            {
+                currentTimeBtwMunchieDamage += Time.deltaTime;
 
-            else
-                manager.bossParty.munchieObject.GetComponent<Animator>().SetTrigger("attack_munchie");
+                if (currentTimeBtwMunchieDamage >= newTimeMunchieDamage)
+                {   
+                    if (manager.battleMusicContext == GameManager.BattleMusicContext.Fight)
+                        manager.enemyParty[idxInManager].munchieObject.GetComponent<Animator>().SetTrigger("attack_munchie");
 
-            yield return new WaitForSeconds(.1f);
-            MakeDamage(_munchieDamage, "normal");
+                    else
+                        manager.bossParty.munchieObject.GetComponent<Animator>().SetTrigger("attack_munchie");
+                    
+                    MakeDamage(munchieDamage, "normal");
+                }
+            }
+
+            if (currentMunchieDuration >= munchieDuration)
+            {
+                hasMunchies = false;
+
+                if (manager.battleMusicContext == GameManager.BattleMusicContext.Fight)
+                    manager.enemyParty[idxInManager].munchieObject.GetComponent<Animator>().SetBool("appear_munchie", false);
+                
+                else
+                    manager.bossParty.munchieObject.GetComponent<Animator>().SetBool("appear_munchie", false);
+            }
         }
-    }
-
-    public override IEnumerator UnTriggerMunchies(float duration)
-    {
-        yield return new WaitForSeconds(duration);
-
-        StopCoroutine(munchiesCoroutine);
-        hasMunchies = false;
-        
-        if (manager.battleMusicContext == GameManager.BattleMusicContext.Fight)
-            manager.enemyParty[idxInManager].munchieObject.GetComponent<Animator>().SetBool("appear_munchie", false);
-
-        else
-            manager.bossParty.munchieObject.GetComponent<Animator>().SetBool("appear_munchie", false);
-
-        yield return base.UnTriggerMunchies(duration);
     }
 }
 
