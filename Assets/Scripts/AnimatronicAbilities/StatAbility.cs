@@ -82,7 +82,7 @@ public class StatAbility : AnimatronicAbility
                         }
                     }
 
-                    else if (t.abilityToAffect == AnimatronicStats.AbilityToAffect.Defense)
+                    if (t.abilityToAffect == AnimatronicStats.AbilityToAffect.Defense)
                     {
                         if (supposedToAffect == SupposedToAffect.SameEntity)
                         {
@@ -140,7 +140,7 @@ public class StatAbility : AnimatronicAbility
                         }
                     }
 
-                    else if (t.abilityToAffect == AnimatronicStats.AbilityToAffect.CriticalChance)
+                    if (t.abilityToAffect == AnimatronicStats.AbilityToAffect.CriticalChance)
                     {
                         if (supposedToAffect == SupposedToAffect.SameEntity)
                         {
@@ -197,16 +197,14 @@ public class StatAbility : AnimatronicAbility
                         }
                     }
 
-                    else if (t.abilityToAffect == AnimatronicStats.AbilityToAffect.Gifts)
+                    if (t.abilityToAffect == AnimatronicStats.AbilityToAffect.Gifts)
                     {
-                        List<int> aliveIdx = manager.GetEntityList("animatronic", targets, randomTargets);
-
-                        for (int i = 0; i < aliveIdx.Count; i++)
-                            if (!manager.animatronicParty[aliveIdx[i]].animatronicItem.hasGift)
-                                manager.animatronicParty[aliveIdx[i]].animatronicItem.TriggerGift();
+                        for (int i = 0; i < manager.animatronicParty.Length; i++)
+                            if (!manager.animatronicParty[i].animatronicItem.hasGift)
+                                manager.animatronicParty[i].animatronicItem.TriggerGift();
                     }
 
-                    else if (t.abilityToAffect == AnimatronicStats.AbilityToAffect.Stun)
+                    if (t.abilityToAffect == AnimatronicStats.AbilityToAffect.Stun)
                     {
                         List<int> aliveIdx = manager.GetEntityList("enemy", targets, randomTargets);
 
@@ -214,13 +212,13 @@ public class StatAbility : AnimatronicAbility
                             manager.enemyParty[aliveIdx[i]].enemyItem.TriggerStunEffect(t.stunTime);
                     }
 
-                    else if (t.abilityToAffect == AnimatronicStats.AbilityToAffect.OtherSpecific)
+                    if (t.abilityToAffect == AnimatronicStats.AbilityToAffect.OtherSpecific)
                     {
                         foreach (AnimatronicAbility aa in t.specificAbilities)
                             aa.ApplyEffect(entity, flip, offset);
                     }
 
-                    else if (t.abilityToAffect == AnimatronicStats.AbilityToAffect.InstaKill)
+                    if (t.abilityToAffect == AnimatronicStats.AbilityToAffect.InstaKill)
                     {
                         List<int> aliveIdx = manager.GetEntityList("enemy", targets, randomTargets);
 
@@ -230,6 +228,9 @@ public class StatAbility : AnimatronicAbility
                                 for (int i = 0; i < aliveIdx.Count; i++)
                                     if (manager.GetRandomBoolChance(t.chanceToInstaKill))
                                         manager.enemyParty[aliveIdx[i]].enemyItem.InstaKill();
+                                    
+                                    else
+                                        manager.StartCoroutine(manager.enemyParty[aliveIdx[i]].enemyItem.FailedInstaKill(2.5f));
                             break;
 
                             case AnimatronicStats.InstaKillMode.HealthBased:
@@ -239,6 +240,9 @@ public class StatAbility : AnimatronicAbility
 
                                     if (manager.enemyParty[aliveIdx[i]].enemyItem.currentHealth <= minHealthValue)
                                         manager.enemyParty[aliveIdx[i]].enemyItem.InstaKill();
+                                    
+                                    else
+                                        manager.StartCoroutine(manager.enemyParty[aliveIdx[i]].enemyItem.FailedInstaKill(2.5f));
                                 }
                             break;
 
@@ -249,13 +253,13 @@ public class StatAbility : AnimatronicAbility
                         }
                     }
 
-                    else if (t.abilityToAffect == AnimatronicStats.AbilityToAffect.NeonWall)
+                    if (t.abilityToAffect == AnimatronicStats.AbilityToAffect.NeonWall)
                         manager.NeonWallActivation("animatronic", t.neonWallType, t.neonWallDuration);
                     
-                    else if (t.abilityToAffect == AnimatronicStats.AbilityToAffect.BubbleBreath)
+                    if (t.abilityToAffect == AnimatronicStats.AbilityToAffect.BubbleBreath)
                         manager.BubbleBreathActivation("animatronic", t.bubbleBreathDuration);
                     
-                    else if (t.abilityToAffect == AnimatronicStats.AbilityToAffect.Munchies)
+                    if (t.abilityToAffect == AnimatronicStats.AbilityToAffect.Munchies)
                     {
                         var affectedByMunchie = manager.GetEntityList("enemy", targets, randomTargets);
                         
@@ -263,7 +267,7 @@ public class StatAbility : AnimatronicAbility
                             manager.enemyParty[affectedByMunchie[j]].enemyItem.TriggerMunchies(t.munchiesDuration, t.munchiesDamage, t.timeBtwMunchiesAttack);
                     }
 
-                    else if (t.abilityToAffect == AnimatronicStats.AbilityToAffect.Haunt)
+                    if (t.abilityToAffect == AnimatronicStats.AbilityToAffect.Haunt)
                     {
                         List<int> entityIdxHaunt = manager.GetEntityList("enemy", targets, randomTargets);
 
@@ -480,6 +484,9 @@ public class StatAbility : AnimatronicAbility
                                     for (int i = 0; i < aliveIdx.Count; i++)
                                         if (manager.GetRandomBoolChance(t.chanceToInstaKill))
                                             manager.animatronicParty[aliveIdx[i]].animatronicItem.InstaKill();
+                                        
+                                        else
+                                            manager.StartCoroutine(manager.animatronicParty[aliveIdx[i]].animatronicItem.FailedInstaKill(2.5f));
                                 break;
 
                                 case AnimatronicStats.InstaKillMode.HealthBased:
@@ -489,6 +496,9 @@ public class StatAbility : AnimatronicAbility
 
                                         if (manager.animatronicParty[aliveIdx[i]].animatronicItem.currentHealth <= minHealthValue)
                                             manager.animatronicParty[aliveIdx[i]].animatronicItem.InstaKill();
+                                        
+                                        else
+                                            manager.StartCoroutine(manager.animatronicParty[aliveIdx[i]].animatronicItem.FailedInstaKill(2.5f));
                                     }
                                 break;
 
@@ -707,6 +717,9 @@ public class StatAbility : AnimatronicAbility
                                     for (int i = 0; i < aliveIdx.Count; i++)
                                         if (manager.GetRandomBoolChance(t.chanceToInstaKill))
                                             manager.animatronicParty[aliveIdx[i]].animatronicItem.InstaKill();
+                                        
+                                        else
+                                            manager.StartCoroutine(manager.animatronicParty[aliveIdx[i]].animatronicItem.FailedInstaKill(2.5f));
                                 break;
 
                                 case AnimatronicStats.InstaKillMode.HealthBased:
@@ -716,6 +729,9 @@ public class StatAbility : AnimatronicAbility
 
                                         if (manager.animatronicParty[aliveIdx[i]].animatronicItem.currentHealth <= minHealthValue)
                                             manager.animatronicParty[aliveIdx[i]].animatronicItem.InstaKill();
+                                        
+                                        else
+                                            manager.StartCoroutine(manager.animatronicParty[aliveIdx[i]].animatronicItem.FailedInstaKill(2.5f));
                                     }
                                 break;
 
@@ -826,7 +842,6 @@ public class StatAbility : AnimatronicAbility
         else if (ose == AnimatronicStats.OtherSpecificExecution.SelectRandom)
         {
             int specificAbility = Random.Range(0, abs.Length);
-            Debug.Log(abs[specificAbility].abilityName);
             abs[specificAbility].ApplyEffect(entity, flip, offset);
         }
     }

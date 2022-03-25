@@ -8,8 +8,6 @@ public class Enemy : LivingEntity
     public AnimatronicAbility[] normalAbilities;
     public EnemySpecialAbility[] specialAbilities;
     public GameObject abilityText;
-    [Range(0f, 100f)]
-    public float chanceToUseSpecialAbility;
     public int idxInManager;
 
     Coroutine munchiesCoroutine;
@@ -49,7 +47,34 @@ public class Enemy : LivingEntity
         if (haunted)
             StartHaunt();
         
+        HandleStatEffects();
+        
         base.Update();
+    }
+
+    void HandleStatEffects()
+    {
+        for (int i = 0; i < allStats.Count; i++)
+        {
+            if (allStats[i].allStatMods.Count > 0)
+            {
+                for (int j = 0; j < allStats[i].allStatMods.Count; j++)
+                {
+                    if (allStats[i].allStatMods[j].currentTimeToAffect < allStats[i].allStatMods[j].timeToAffect)
+                    {
+                        allStats[i].allStatMods[j].currentTimeToAffect += Time.deltaTime;
+
+                        if (allStats[i].allStatMods[j].currentTimeToAffect >= allStats[i].allStatMods[j].timeToAffect)
+                        {
+                            if (!allStats[i].allStatMods[j].operation) allStats[i].allStatMods[j].AddStat(allStats[i].statType, this);
+                            else allStats[i].allStatMods[j].SubtractStat(allStats[i].statType, this);
+
+                            allStats[i].allStatMods.Remove(allStats[i].allStatMods[j]);
+                        }
+                    }
+                }
+            }
+        }
     }
 
     public override void TriggerGift()
@@ -85,6 +110,7 @@ public class Enemy : LivingEntity
     public override void UnTriggerGift()
     {
         manager.enemyParty[idxInManager].enemyGift.GetComponent<Animator>().SetBool("appear", false);
+        hasGift = false;
         base.UnTriggerGift();
     }
 
@@ -541,6 +567,6 @@ public class Enemy : LivingEntity
 public class EnemySpecialAbility
 {
     public AnimatronicAbility _ability;
-    [Range(5f, 100f)]
+    [Range(0f, 100f)]
     public float chanceOfUsing;
 }

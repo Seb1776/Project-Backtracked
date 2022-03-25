@@ -3391,7 +3391,7 @@ MonoBehaviour:
   - animatronicName: ShadowBonnie
     animatronicGame: 1
     position: 0
-  - animatronicName: NightmareFreddy
+  - animatronicName: Dreadbear
     animatronicGame: 3
     position: 1
   - animatronicName: SecurityPuppet
@@ -5159,11 +5159,10 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 04aa6b67a53ef744eb223c810ca420f0, type: 2}
   specialAbilities:
   - _ability: {fileID: 11400000, guid: 87f4572731883e044b9340d68b0506d9, type: 2}
-    chanceOfUsing: 5
+    chanceOfUsing: 0
   - _ability: {fileID: 11400000, guid: 84e4ac474bd0e7f4e9f8f3a86ac2b83b, type: 2}
-    chanceOfUsing: 5
+    chanceOfUsing: 0
   abilityText: {fileID: 6848488189562142712, guid: 11c6907d849018741a35255c254ab2d1, type: 3}
-  chanceToUseSpecialAbility: 0
   idxInManager: 0
 --- !u!82 &158456829
 AudioSource:
@@ -14623,11 +14622,10 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 04aa6b67a53ef744eb223c810ca420f0, type: 2}
   specialAbilities:
   - _ability: {fileID: 11400000, guid: 87f4572731883e044b9340d68b0506d9, type: 2}
-    chanceOfUsing: 5
+    chanceOfUsing: 0
   - _ability: {fileID: 11400000, guid: 84e4ac474bd0e7f4e9f8f3a86ac2b83b, type: 2}
-    chanceOfUsing: 5
+    chanceOfUsing: 0
   abilityText: {fileID: 6848488189562142712, guid: 11c6907d849018741a35255c254ab2d1, type: 3}
-  chanceToUseSpecialAbility: 0
   idxInManager: 0
 --- !u!82 &424992901
 AudioSource:
@@ -17072,7 +17070,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 04aa6b67a53ef744eb223c810ca420f0, type: 2}
   specialAbilities: []
   abilityText: {fileID: 6848488189562142712, guid: 11c6907d849018741a35255c254ab2d1, type: 3}
-  chanceToUseSpecialAbility: 15
   idxInManager: 0
 --- !u!82 &515612568
 AudioSource:
@@ -37250,7 +37247,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1088424647
 Transform:
   m_ObjectHideFlags: 0
@@ -39249,11 +39246,10 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 04aa6b67a53ef744eb223c810ca420f0, type: 2}
   specialAbilities:
   - _ability: {fileID: 11400000, guid: 87f4572731883e044b9340d68b0506d9, type: 2}
-    chanceOfUsing: 5
+    chanceOfUsing: 0
   - _ability: {fileID: 11400000, guid: 84e4ac474bd0e7f4e9f8f3a86ac2b83b, type: 2}
-    chanceOfUsing: 5
+    chanceOfUsing: 0
   abilityText: {fileID: 6848488189562142712, guid: 11c6907d849018741a35255c254ab2d1, type: 3}
-  chanceToUseSpecialAbility: 0
   idxInManager: 0
 --- !u!82 &1177493176
 AudioSource:
@@ -75455,7 +75451,6 @@ MonoBehaviour:
   - _ability: {fileID: 0}
     chanceOfUsing: 0
   abilityText: {fileID: 0}
-  chanceToUseSpecialAbility: 15
   idxInManager: 0
 --- !u!95 &919132147589645945
 Animator:

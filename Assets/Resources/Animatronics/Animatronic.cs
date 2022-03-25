@@ -51,7 +51,7 @@ public class Animatronic : LivingEntity
         if (haunted)
             StartHaunt();
         
-        HandleStatAffects();
+        HandleStatEffects();
         
         base.Update();
     }
@@ -223,6 +223,15 @@ public class Animatronic : LivingEntity
         base.UnTriggerGift();
     }
 
+    public override IEnumerator FailedInstaKill(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        GameObject dn = Instantiate(manager.enemyParty[idxInManager].enemyItem.respectiveDamageNumber, manager.enemyParty[idxInManager].enemyItem.respectiveDamageNumber.transform.position, manager.enemyParty[idxInManager].enemyItem.respectiveDamageNumber.transform.rotation, manager.enemyParty[idxInManager].enemyItem.parentCanvas);
+        string[] failedInstaMsgs = {"NOPE", "NAH M8", "GITGUD", "LMAO"};
+        dn.GetComponent<DamageNumbers>().AppearText(0, "normal", failedInstaMsgs[Random.Range(0, failedInstaMsgs.Length)]);
+        yield return base.FailedInstaKill(delay);
+    }
+
     public override void AddStatEffectToList(string _statID, int _amountToMod, bool _operation, float _timeToAffect, AllStatsMods.StatType _statType)
     {
         bool exists = false;
@@ -251,24 +260,24 @@ public class Animatronic : LivingEntity
         base.AddStatEffectToList(_statID, _amountToMod, _operation, _timeToAffect, _statType);
     }
 
-    void HandleStatAffects()
+    void HandleStatEffects()
     {
         for (int i = 0; i < allStats.Count; i++)
         {
             if (allStats[i].allStatMods.Count > 0)
             {
-                foreach (StatModification sm in allStats[i].allStatMods)
+                for (int j = 0; j < allStats[i].allStatMods.Count; j++)
                 {
-                    if (sm.currentTimeToAffect < sm.timeToAffect)
+                    if (allStats[i].allStatMods[j].currentTimeToAffect < allStats[i].allStatMods[j].timeToAffect)
                     {
-                        sm.currentTimeToAffect += Time.deltaTime;
+                        allStats[i].allStatMods[j].currentTimeToAffect += Time.deltaTime;
 
-                        if (sm.currentTimeToAffect >= sm.timeToAffect)
+                        if (allStats[i].allStatMods[j].currentTimeToAffect >= allStats[i].allStatMods[j].timeToAffect)
                         {
-                            if (!sm.operation) sm.SubtractStat(allStats[i].statType, this);
-                            else sm.AddStat(allStats[i].statType, this);
+                            if (!allStats[i].allStatMods[j].operation) allStats[i].allStatMods[j].AddStat(allStats[i].statType, this);
+                            else allStats[i].allStatMods[j].SubtractStat(allStats[i].statType, this);
 
-                            allStats[i].allStatMods.Remove(sm);
+                            allStats[i].allStatMods.Remove(allStats[i].allStatMods[j]);
                         }
                     }
                 }

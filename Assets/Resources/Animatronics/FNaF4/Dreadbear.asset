@@ -32,7 +32,7 @@ MonoBehaviour:
   defaultSkin: 0
   animatronicAbilities:
   - {fileID: 11400000, guid: 8dc4d09c7c1500242880bbd22e39adab, type: 2}
-  - {fileID: 11400000, guid: 4cb4417e01f67e140a193e40a9e2c7cb, type: 2}
+  - {fileID: 11400000, guid: d29d7a552f7fddf4a96a5357aafbcc26, type: 2}
   - {fileID: 11400000, guid: 8e5ea41d7e4244949a40686f9fc46bf4, type: 2}
   - {fileID: 11400000, guid: e74ed70131f528845af7a92dc02e0c49, type: 2}
   animatronicPortrait: {fileID: 5669089968724755735, guid: 7573daf879f5c224fb87f30645327cbe, type: 3}

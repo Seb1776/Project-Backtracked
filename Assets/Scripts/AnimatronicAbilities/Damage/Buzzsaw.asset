@@ -10,24 +10,28 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8cfd646504bdc0e49a26eb8115aeecfc, type: 3}
-  m_Name: PizzaWheel2
+  m_Name: Buzzsaw
   m_EditorClassIdentifier: 
   ability: 0
-  colorGroup: 0
-  abilityName: Pizza Wheel II
-  timeBeforeAbility: 2
-  timeToDestroyEffect: 4.35
-  attackEffect: {fileID: 6463560568969473443, guid: 960d0374a2da25941aa8d523aa81b9c2, type: 3}
+  colorGroup: 8
+  abilityName: Buzzsaw
+  timeBeforeAbility: 0.35
+  timeToDestroyEffect: 1.2
+  attackEffect: {fileID: 8036524668391964468, guid: 10fbeb3040a812147aa63fd2bc834921, type: 3}
   effectIsNotCentered: 0
-  offsetIfFlipped: {x: 0, y: 0}
+  offsetIfFlipped: {x: 5.49, y: 0}
   sFXPlayMode: 0
   timeOfRandomIterations: 0
   globalIntervalsBtwSFX: 0
   abilitySoundEffect:
-  - SFX: {fileID: 8300000, guid: d7848f7e140d2114ba9a356ea988d057, type: 3}
+  - SFX: {fileID: 8300000, guid: dff1acde39d93fb4c8ea03734d81a685, type: 3}
     amountToPlayAudio: 1
     intervalsBtwPlays: {x: 0, y: 0}
     delayToPlaySFX: 0
+  - SFX: {fileID: 8300000, guid: 578625fdf4cb92f4f92262d0b8b3fe75, type: 3}
+    amountToPlayAudio: 1
+    intervalsBtwPlays: {x: 0, y: 0}
+    delayToPlaySFX: 0.35
   abilityHasOverlay: 0
   abilityOverlay: 0
   timeBeforeOverlay: 0
@@ -35,13 +39,13 @@ MonoBehaviour:
   overlayStayDuration: 0
   abilityHasCameraShake: 1
   acs: 1
-  customShakeDuration: 4.35
+  customShakeDuration: -1
   timeBeforeCameraShake: 0
   makesDamageTo: 0
-  damageToDo: 35
+  damageToDo: 40
   targets: 4
-  instanceOfDamage: 20
-  timeBtwInstancesOfDamage: 0.5
+  instanceOfDamage: 1
+  timeBtwInstancesOfDamage: 0
   canPoison: 0
   poisonDamage: 0
   poisonDuration: 0

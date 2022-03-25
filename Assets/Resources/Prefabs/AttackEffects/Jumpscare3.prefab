@@ -92,9 +92,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7403424481109706825}
-  - component: {fileID: 1350782845436886074}
+  - component: {fileID: 329430259964633411}
   m_Layer: 0
-  m_Name: Jumpscare2
+  m_Name: Jumpscare3
   m_TagString: Jumpscare
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -116,7 +116,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!95 &1350782845436886074
+--- !u!95 &329430259964633411
 Animator:
   serializedVersion: 3
   m_ObjectHideFlags: 0
@@ -126,7 +126,7 @@ Animator:
   m_GameObject: {fileID: 7403424481109706824}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: cd70d109155a8a14da677435b56c9def, type: 2}
+  m_Controller: {fileID: 9100000, guid: 0d7b8f6a44a906542bad59b3d7a62b0e, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0

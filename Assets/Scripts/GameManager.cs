@@ -68,10 +68,6 @@ public class GameManager : MonoBehaviour
         GetInitialTurns();
         PlayMusicContext();
 
-        foreach (Animator a in neonWallAnimatronics)
-            if (!a.gameObject.activeSelf)
-                a.gameObject.SetActive(true);
-
         foreach (AnimatronicParty ap in animatronicParty)
         {
             ap.SetAnimatronicData();
@@ -786,6 +782,12 @@ public class EnemyParty
         enemyItem.respectiveDamageNumber = damageTextPrefab;
         enemyItem.GetComponent<Enemy>().abilityText = abilityPanelPrefab;
         enemyItem.parentCanvas = canvasParent;
+
+        if (!bubbleBreathBubble.gameObject.activeSelf)
+            bubbleBreathBubble.gameObject.SetActive(true);
+        
+        if (!enemyGift.activeSelf)
+            enemyGift.SetActive(true);
 
         if (enemyBossName != null)
             enemyBossName.text = enemyItem.GetComponent<Enemy>().enemyData.enemyName;
