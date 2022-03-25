@@ -112,6 +112,8 @@ public class LivingEntity : MonoBehaviour
 
     public virtual void InstaKill() {}
 
+    public virtual void AddStatEffectToList(string _statID, int _amountToMod, bool _operation, float _timeToAffect, AllStatsMods.StatType _statType) {}
+
     public virtual IEnumerator FailedInstaKill(float delay) { yield return null; }
 
     public IEnumerator DelayInstaKill(float delay)

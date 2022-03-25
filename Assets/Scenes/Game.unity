@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.17983145, g: 0.22516449, b: 0.30662704, a: 1}
+  m_IndirectSpecularColor: {r: 0.17983122, g: 0.22516404, b: 0.30662656, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -3391,10 +3391,10 @@ MonoBehaviour:
   - animatronicName: ShadowBonnie
     animatronicGame: 1
     position: 0
-  - animatronicName: NightmareFredbear
+  - animatronicName: NightmareFreddy
     animatronicGame: 3
     position: 1
-  - animatronicName: FuntimeChica
+  - animatronicName: SecurityPuppet
     animatronicGame: 5
     position: 2
   - animatronicName: WitheredFreddy
@@ -5161,7 +5161,7 @@ MonoBehaviour:
   - _ability: {fileID: 11400000, guid: 87f4572731883e044b9340d68b0506d9, type: 2}
     chanceOfUsing: 5
   - _ability: {fileID: 11400000, guid: 84e4ac474bd0e7f4e9f8f3a86ac2b83b, type: 2}
-    chanceOfUsing: 25
+    chanceOfUsing: 5
   abilityText: {fileID: 6848488189562142712, guid: 11c6907d849018741a35255c254ab2d1, type: 3}
   chanceToUseSpecialAbility: 0
   idxInManager: 0
@@ -14625,7 +14625,7 @@ MonoBehaviour:
   - _ability: {fileID: 11400000, guid: 87f4572731883e044b9340d68b0506d9, type: 2}
     chanceOfUsing: 5
   - _ability: {fileID: 11400000, guid: 84e4ac474bd0e7f4e9f8f3a86ac2b83b, type: 2}
-    chanceOfUsing: 25
+    chanceOfUsing: 5
   abilityText: {fileID: 6848488189562142712, guid: 11c6907d849018741a35255c254ab2d1, type: 3}
   chanceToUseSpecialAbility: 0
   idxInManager: 0
@@ -39251,7 +39251,7 @@ MonoBehaviour:
   - _ability: {fileID: 11400000, guid: 87f4572731883e044b9340d68b0506d9, type: 2}
     chanceOfUsing: 5
   - _ability: {fileID: 11400000, guid: 84e4ac474bd0e7f4e9f8f3a86ac2b83b, type: 2}
-    chanceOfUsing: 25
+    chanceOfUsing: 5
   abilityText: {fileID: 6848488189562142712, guid: 11c6907d849018741a35255c254ab2d1, type: 3}
   chanceToUseSpecialAbility: 0
   idxInManager: 0
@@ -78232,7 +78232,13 @@ MonoBehaviour:
   manager: {fileID: 0}
   source: {fileID: 0}
   instancesOfNerf: 0
-  allStats: []
+  allStats:
+  - statType: 0
+    allStatMods: []
+  - statType: 0
+    allStatMods: []
+  - statType: 0
+    allStatMods: []
   animatronicLevel: 0
   animatronicData: {fileID: 11400000, guid: 2bb596f78fd297544b8d8fd606fb6d54, type: 2}
   skins:

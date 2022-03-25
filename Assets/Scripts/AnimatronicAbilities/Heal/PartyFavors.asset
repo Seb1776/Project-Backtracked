@@ -14,10 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ability: 0
   colorGroup: 2
-  abilityName: PartyFavors
+  abilityName: Party Favors
   timeBeforeAbility: 0
   timeToDestroyEffect: 0
   attackEffect: {fileID: 0}
+  effectIsNotCentered: 0
+  offsetIfFlipped: {x: 0, y: 0}
   sFXPlayMode: 0
   timeOfRandomIterations: 0
   globalIntervalsBtwSFX: 0
@@ -30,6 +32,16 @@ MonoBehaviour:
     amountToPlayAudio: 1
     intervalsBtwPlays: {x: 0, y: 0}
     delayToPlaySFX: 0
+  abilityHasOverlay: 0
+  abilityOverlay: 0
+  timeBeforeOverlay: 0
+  fadeInOffDurations: {x: 0, y: 0}
+  overlayStayDuration: 0
+  abilityHasCameraShake: 0
+  acs: 0
+  customShakeDuration: -1
+  timeBeforeCameraShake: 0
+  supposedToAffect: 0
   targets: 0
   randomTargets: 0
   statsToAffect:
@@ -45,7 +57,6 @@ MonoBehaviour:
     chanceToInstaKill: 0
     minHealthPercentageToKill: 0
     hauntDuration: 0
-    targetsToHaunt: 0
     specificAbilities:
     - {fileID: 11400000, guid: a392634452f360845b2d616264d3fd41, type: 2}
     - {fileID: 11400000, guid: aefa76ce021364e40b7a4406fd0f7dda, type: 2}
@@ -53,3 +64,6 @@ MonoBehaviour:
     timeBtwMunchiesAttack: {x: 0, y: 0}
     munchiesDamage: 0
     munchiesDuration: 0
+    neonWallType: 0
+    neonWallDuration: 0
+    bubbleBreathDuration: 0

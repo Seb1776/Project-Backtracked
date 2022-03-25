@@ -18,6 +18,8 @@ MonoBehaviour:
   timeBeforeAbility: 0.45
   timeToDestroyEffect: 3
   attackEffect: {fileID: 8616681352927895164, guid: d4f8059fe4b1ecd43ada040c5e11beea, type: 3}
+  effectIsNotCentered: 0
+  offsetIfFlipped: {x: 0, y: 0}
   sFXPlayMode: 1
   timeOfRandomIterations: 0
   globalIntervalsBtwSFX: 0
@@ -35,6 +37,11 @@ MonoBehaviour:
   timeBeforeOverlay: 0.45
   fadeInOffDurations: {x: 0.2, y: 0.2}
   overlayStayDuration: 0.5
+  abilityHasCameraShake: 0
+  acs: 0
+  customShakeDuration: -1
+  timeBeforeCameraShake: 0
+  supposedToAffect: 1
   targets: 4
   randomTargets: 0
   statsToAffect:
@@ -50,7 +57,6 @@ MonoBehaviour:
     chanceToInstaKill: 0
     minHealthPercentageToKill: 0
     hauntDuration: 0
-    targetsToHaunt: 0
     specificAbilities: []
     otherSpecificExecution: 0
     timeBtwMunchiesAttack: {x: 0, y: 0}

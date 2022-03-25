@@ -8,7 +8,7 @@ public class Enemy : LivingEntity
     public AnimatronicAbility[] normalAbilities;
     public EnemySpecialAbility[] specialAbilities;
     public GameObject abilityText;
-    [Range(15f, 85f)]
+    [Range(0f, 100f)]
     public float chanceToUseSpecialAbility;
     public int idxInManager;
 
@@ -86,6 +86,34 @@ public class Enemy : LivingEntity
     {
         manager.enemyParty[idxInManager].enemyGift.GetComponent<Animator>().SetBool("appear", false);
         base.UnTriggerGift();
+    }
+
+    public override void AddStatEffectToList(string _statID, int _amountToMod, bool _operation, float _timeToAffect, AllStatsMods.StatType _statType)
+    {
+        bool exists = false;
+
+        for (int i = 0; i < allStats.Count; i++)
+        {
+            for (int j = 0; j < allStats[i].allStatMods.Count; j++)
+            {
+                if (allStats[i].allStatMods[j].statID == _statID)
+                    exists = true;
+            }
+        }
+
+        if (!exists)
+        {
+            StatModification _sm = new StatModification(_statID, _amountToMod, _operation, _timeToAffect);
+
+            for (int i = 0; i < allStats.Count; i++)
+                if (allStats[i].statType == _statType)
+                    allStats[i].allStatMods.Add(_sm);
+            
+            if (_operation) _sm.AddStat(_statType, this);
+            else _sm.SubtractStat(_statType, this);
+        }
+
+        base.AddStatEffectToList(_statID, _amountToMod, _operation, _timeToAffect, _statType);
     }
 
     public override void TriggerHauntingEffect(float _hauntTime, float _timeBeforeAbility)

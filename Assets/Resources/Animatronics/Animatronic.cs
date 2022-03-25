@@ -174,6 +174,16 @@ public class Animatronic : LivingEntity
         }
     }
 
+    public override void InstaKill()
+    {
+        if (hasGift)
+            UnTriggerGift();
+        
+        MakeDamage(currentHealth, "normal");
+
+        base.InstaKill();
+    }
+
     public override void ReviveEntity()
     {
         manager.animatronicParty[idxInManager].alive = true;
@@ -213,7 +223,7 @@ public class Animatronic : LivingEntity
         base.UnTriggerGift();
     }
 
-    public void AddStatEffectToList(string _statID, int _amountToMod, bool _operation, float _timeToAffect, AllStatsMods.StatType _statType)
+    public override void AddStatEffectToList(string _statID, int _amountToMod, bool _operation, float _timeToAffect, AllStatsMods.StatType _statType)
     {
         bool exists = false;
 
@@ -234,17 +244,20 @@ public class Animatronic : LivingEntity
                 if (allStats[i].statType == _statType)
                     allStats[i].allStatMods.Add(_sm);
             
-            _sm.AddStat(_statType, this);
+            if (_operation) _sm.AddStat(_statType, this);
+            else _sm.SubtractStat(_statType, this);
         }
+
+        base.AddStatEffectToList(_statID, _amountToMod, _operation, _timeToAffect, _statType);
     }
 
     void HandleStatAffects()
     {
-        foreach (AllStatsMods asm in allStats)
+        for (int i = 0; i < allStats.Count; i++)
         {
-            if (asm.allStatMods.Count > 0)
+            if (allStats[i].allStatMods.Count > 0)
             {
-                foreach (StatModification sm in asm.allStatMods)
+                foreach (StatModification sm in allStats[i].allStatMods)
                 {
                     if (sm.currentTimeToAffect < sm.timeToAffect)
                     {
@@ -252,8 +265,10 @@ public class Animatronic : LivingEntity
 
                         if (sm.currentTimeToAffect >= sm.timeToAffect)
                         {
-                            sm.SubtractStat(asm.statType, this);
-                            asm.allStatMods.Remove(sm);
+                            if (!sm.operation) sm.SubtractStat(allStats[i].statType, this);
+                            else sm.AddStat(allStats[i].statType, this);
+
+                            allStats[i].allStatMods.Remove(sm);
                         }
                     }
                 }
