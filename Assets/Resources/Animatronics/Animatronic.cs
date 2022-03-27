@@ -240,7 +240,7 @@ public class Animatronic : LivingEntity
         {
             for (int j = 0; j < allStats[i].allStatMods.Count; j++)
             {
-                if (allStats[i].allStatMods[j].statID == _statID)
+                if (allStats[i].allStatMods[j].statID == _statID && allStats[i].statType == _statType)
                     exists = true;
             }
         }
@@ -253,163 +253,64 @@ public class Animatronic : LivingEntity
                 if (allStats[i].statType == _statType)
                     allStats[i].allStatMods.Add(_sm);
             
-            if (_operation) _sm.AddStat(_statType, this);
-            else _sm.SubtractStat(_statType, this);
+            if (_operation)
+            {
+                _sm.AddStat(_statType, this);
+                
+                for (int i = 0; i < manager.animatronicStats.Length; i++)
+                {
+                    if (manager.animatronicStats[i].statUIMod == _statType)
+                    {
+                        manager.animatronicStats[i].Buff(true, _statID);
+                        break;
+                    }
+                }
+            }
+
+            else 
+            {   
+                _sm.SubtractStat(_statType, this);
+
+                for (int i = 0; i < manager.animatronicStats.Length; i++)
+                {
+                    if (manager.animatronicStats[i].statUIMod == _statType)
+                    {
+                        manager.animatronicStats[i].Buff(false, _statID);
+                        break;
+                    }
+                }
+            }
         }
 
         base.AddStatEffectToList(_statID, _amountToMod, _operation, _timeToAffect, _statType);
     }
 
-    void HandleStatEffects()
+    public void HandleStatEffects()
     {
-        for (int i = 0; i < allStats.Count; i++)
+        foreach (AllStatsMods asm in allStats)
         {
-            if (allStats[i].allStatMods.Count > 0)
+            if (asm.allStatMods.Count > 0)
             {
-                for (int j = 0; j < allStats[i].allStatMods.Count; j++)
+                for (int j = 0; j < asm.allStatMods.Count; j++)
                 {
-                    if (allStats[i].allStatMods[j].currentTimeToAffect < allStats[i].allStatMods[j].timeToAffect)
+                    if (asm.allStatMods[j].currentTimeToAffect < asm.allStatMods[j].timeToAffect)
                     {
-                        allStats[i].allStatMods[j].currentTimeToAffect += Time.deltaTime;
+                        asm.allStatMods[j].currentTimeToAffect += Time.deltaTime;
 
-                        if (allStats[i].allStatMods[j].currentTimeToAffect >= allStats[i].allStatMods[j].timeToAffect)
+                        if (asm.allStatMods[j].currentTimeToAffect >= asm.allStatMods[j].timeToAffect)
                         {
-                            if (!allStats[i].allStatMods[j].operation) allStats[i].allStatMods[j].AddStat(allStats[i].statType, this);
-                            else allStats[i].allStatMods[j].SubtractStat(allStats[i].statType, this);
+                            if (!asm.allStatMods[j].operation) asm.allStatMods[j].AddStat(asm.statType, this);
+                            else asm.allStatMods[j].SubtractStat(asm.statType, this);
 
-                            allStats[i].allStatMods.Remove(allStats[i].allStatMods[j]);
+                            manager.StatInstanceOver(asm.allStatMods[j].statID, asm.statType, this, asm.allStatMods[j].operation);
+
+                            asm.allStatMods.Remove(asm.allStatMods[j]);
                         }
                     }
                 }
             }
         }
     }
-
-    /*public override IEnumerator IncreaseStatTimer(string _stat, int _value, float _duration, bool _operation, float _deltaBefore)
-    {
-        instancesOfNerf++;
-        yield return new WaitForSeconds(_deltaBefore);
-
-        switch (_stat)
-        {
-            case "DEF":
-                if (_operation)
-                {
-                    currentDefense += _value;
-                    manager.imageDefBuffUp.SetActive(true);
-                }
-
-                else
-                {
-                    currentDefense -= _value;
-                    manager.imageDefBuffDown.SetActive(true);
-                }
-
-                manager.textDefBuff.SetActive(true);
-            break;
-
-            case "ATK":
-                if (_operation)
-                {
-                    currentAttack += _value;
-                    manager.imageAtkBuffUp.SetActive(true);
-                }
-
-                else
-                {
-                    currentAttack -= _value;
-                    manager.imageAtkBuffDown.SetActive(true);
-                }
-
-                manager.textAtkBuff.SetActive(true);
-            break;
-
-            case "CRT":
-                if (_operation)
-                {
-                    currentCritChance += _value;
-                    manager.imageCrtBuffUp.SetActive(true);
-                }
-
-                else
-                {
-                    currentCritChance -= _value;
-                    manager.imageCrtBuffDown.SetActive(true);
-                }
-            break;
-        }
-
-        yield return new WaitForSeconds(_duration);
-
-        switch (_stat)
-        {
-            case "DEF":
-                if (_operation)
-                {
-                    currentDefense -= _value;
-
-                    if (instancesOfNerf <= 1)
-                        manager.imageDefBuffUp.SetActive(false);
-                }
-
-                else
-                {
-                    currentDefense += _value;
-
-                    if (instancesOfNerf <= 1)
-                        manager.imageDefBuffDown.SetActive(false);
-                }
-
-                if ((!manager.imageDefBuffDown.activeSelf || !manager.imageDefBuffUp.activeSelf) && instancesOfNerf <= 1)
-                    manager.textDefBuff.SetActive(false);
-            break;
-
-            case "ATK":
-                if (_operation)
-                {
-                    currentAttack -= _value;
-
-                    if (instancesOfNerf <= 1)
-                        manager.imageAtkBuffUp.SetActive(false);
-                }
-
-                else
-                {
-                    currentAttack += _value;
-
-                    if (instancesOfNerf <= 1)
-                        manager.imageAtkBuffDown.SetActive(false);
-                }
-
-                if ((!manager.imageAtkBuffDown.activeSelf || !manager.imageAtkBuffUp.activeSelf) && instancesOfNerf <= 1)
-                    manager.textAtkBuff.SetActive(false);
-            break;
-
-            case "CRT":
-                if (_operation)
-                {
-                    currentCritChance -= _value;
-
-                    if (instancesOfNerf <= 1)
-                        manager.imageCrtBuffUp.SetActive(false);
-                }
-
-                else
-                {
-                    currentCritChance += _value;
-
-                    if (instancesOfNerf <= 1)
-                        manager.imageCrtBuffDown.SetActive(false);
-                }
-
-                if ((!manager.imageCrtBuffDown.activeSelf || !manager.imageCrtBuffUp.activeSelf) && instancesOfNerf <= 1)
-                    manager.textCrtBuff.SetActive(false);
-            break;
-        }
-
-        instancesOfNerf--;
-        yield return base.IncreaseStatTimer(_stat, _value, _duration, _operation, _deltaBefore);
-    }*/
 
     float currentFeedbackTimer;
     int currentFeedbackIter;

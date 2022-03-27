@@ -25,24 +25,7 @@ public class GameManager : MonoBehaviour
     public Transform overlaysParent;
     public GameObject overlayObj;
     public Sprite[] overlays;
-    public GameObject imageDefBuffDown;
-    public GameObject imageDefBuffUp;
-    public GameObject textDefBuff;
-    public GameObject imageAtkBuffDown;
-    public GameObject imageAtkBuffUp;
-    public GameObject textAtkBuff;
-    public GameObject imageCrtBuffDown;
-    public GameObject imageCrtBuffUp;
-    public GameObject textCrtBuff;
-    public GameObject e_imageDefBuffDown;
-    public GameObject e_imageDefBuffUp;
-    public GameObject e_textDefBuff;
-    public GameObject e_imageAtkBuffDown;
-    public GameObject e_imageAtkBuffUp;
-    public GameObject e_textAtkBuff;
-    public GameObject e_imageCrtBuffDown;
-    public GameObject e_imageCrtBuffUp;
-    public GameObject e_textCrtBuff;
+    public EntityStats[] animatronicStats, enemyStats;
     public Animator battleWonPanel;
     public Slider bossHealth;
     public Text bossHealthText;
@@ -58,9 +41,6 @@ public class GameManager : MonoBehaviour
     Coroutine neonWallCoroutine;
     Coroutine enemyNeonWallCoroutine;
     Coroutine bubbleBreathCoroutine;
-    private static readonly int Mimic = Animator.StringToHash("mimic");
-    private static readonly int MimicAppear = Animator.StringToHash("mimic_appear");
-    private static readonly int Move = Animator.StringToHash("move");
 
     void Start()
     {
@@ -109,8 +89,34 @@ public class GameManager : MonoBehaviour
             HandleUpdateUI();
             TimedAbilitiesBehaviour();
         }
+    }
 
-        //Debug.Log(sfxMixer.volume);
+    public void StatInstanceOver(string instanceOver, AllStatsMods.StatType _stat, LivingEntity _ent, bool _op)
+    {
+        if (_ent.GetComponent<Animatronic>() != null)
+        {
+            for (int i = 0; i < animatronicStats.Length; i++)
+            {
+                Debug.Log(_stat.ToString());
+                if (animatronicStats[i].statUIMod == _stat)
+                {
+                    if (_op) animatronicStats[i].Buff(false, instanceOver);
+                    else animatronicStats[i].Nerf(false, instanceOver);
+                }
+            }
+        }
+
+        else
+        {
+            for (int i = 0; i < enemyStats.Length; i++)
+            {
+                if (enemyStats[i].statUIMod == _stat)
+                {
+                    if (_op) enemyStats[i].Buff(false, instanceOver);
+                    else enemyStats[i].Nerf(false, instanceOver);
+                }
+            }
+        }
     }
 
     void BattleBehaviour()
@@ -170,7 +176,7 @@ public class GameManager : MonoBehaviour
 
                 if (bossParty.remainingTimeToPlay >= timeBtwTurns)
                 {
-                    bossParty.positionAnimatior.SetTrigger(Move);
+                    bossParty.positionAnimatior.SetTrigger("move");
                     bossParty.enemyItem.GetComponent<Enemy>().SelectAttack();
                     currentEnemyTurn = bossParty.enemyItem;
                     bossParty.remainingTimeToPlay = 0f;
@@ -182,13 +188,13 @@ public class GameManager : MonoBehaviour
 
     public void TriggerMimicBall()
     {
-        mimicBall.mimicBallAnim.SetTrigger(MimicAppear);
+        mimicBall.mimicBallAnim.SetTrigger("mimic_appear");
         hasMimicBall = true;
     }
 
     public void TriggerMimicAbility()
     {
-        mimicBall.mimicBallAnim.SetTrigger(Mimic);
+        mimicBall.mimicBallAnim.SetTrigger("mimic");
     }
 
     bool actNeonWallA, actEndoArmyA, actBubbleBreathA,
@@ -687,6 +693,81 @@ public class GameManager : MonoBehaviour
         }
 
         return false;
+    }
+}
+
+[System.Serializable]
+public class EntityStats
+{
+    public AllStatsMods.StatType statUIMod;
+    public GameObject buffImage, nerfImage, modText;
+    public Text buffAmount, nerfAmount;
+    public List<string> currentBuffs = new List<string>(), currentNerfs = new List<string>();
+
+    public void Buff(bool set, string abilityInst)
+    {
+        if (set)
+        {
+            if (!currentBuffs.Contains(abilityInst))
+                currentBuffs.Add(abilityInst);
+        }
+
+        else
+        {
+            if (currentBuffs.Contains(abilityInst))
+                currentBuffs.Remove(abilityInst);
+        }
+
+        buffAmount.text = "x" + currentBuffs.Count.ToString();
+
+        if (!buffImage.activeSelf && currentBuffs.Count > 0)
+        {
+            buffImage.SetActive(true);
+            modText.SetActive(true);
+            buffAmount.gameObject.SetActive(true);
+        }
+        
+        else if (currentBuffs.Count <= 0)
+        {
+            buffImage.SetActive(false);
+            buffAmount.gameObject.SetActive(false);
+        }
+        
+        CheckForModText();
+    }
+
+    public void Nerf(bool set, string abilityInst)
+    {
+        if (set)
+            if (!currentNerfs.Contains(abilityInst))
+                currentNerfs.Add(abilityInst);
+
+        else
+            if (currentNerfs.Contains(abilityInst))
+                currentNerfs.Remove(abilityInst);
+
+        nerfAmount.text = "x" + currentNerfs.Count.ToString();
+
+        if (!nerfImage.activeSelf && currentNerfs.Count > 0)
+        {
+            nerfImage.SetActive(true);
+            modText.SetActive(true);
+            nerfAmount.gameObject.SetActive(true);
+        }
+        
+        else if (currentNerfs.Count <= 0)
+        {
+            nerfImage.SetActive(false);
+            nerfAmount.gameObject.SetActive(false);
+        }
+        
+        CheckForModText();
+    }
+
+    public void CheckForModText()
+    {
+        if (!nerfImage.activeSelf && !buffImage.activeSelf)
+            modText.SetActive(false);
     }
 }
 

@@ -37,7 +37,7 @@ MonoBehaviour:
   timeBeforeOverlay: 0
   fadeInOffDurations: {x: 0, y: 0}
   overlayStayDuration: 0
-  abilityHasCameraShake: 1
+  abilityHasCameraShake: 0
   acs: 1
   customShakeDuration: -1
   timeBeforeCameraShake: 0

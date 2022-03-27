@@ -19,26 +19,26 @@ public class StatAbility : AnimatronicAbility
     {
         GameManager manager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
 
-        foreach (var t in statsToAffect)
+        for (int o = 0; o < statsToAffect.Length; o++/*var statsToAffect[o] in statsToAffect*/)
         {
-            if (t.abilityToAffect != AnimatronicStats.AbilityToAffect.MimicBall)
+            if (statsToAffect[o].abilityToAffect != AnimatronicStats.AbilityToAffect.MimicBall)
             {   //Animatronics
                 if (entity)
                 {
-                    if (t.abilityToAffect == AnimatronicStats.AbilityToAffect.Attack)
+                    if (statsToAffect[o].abilityToAffect == AnimatronicStats.AbilityToAffect.Attack)
                     {
                         if (supposedToAffect == SupposedToAffect.SameEntity)
                         {
                             List<int> aliveIdx = manager.GetEntityList("animatronic", targets, randomTargets);
 
-                            if (t.affectValue == AnimatronicStats.AffectValue.PercentageBased)
+                            if (statsToAffect[o].affectValue == AnimatronicStats.AffectValue.PercentageBased)
                             {
                                 for (int i = 0; i < aliveIdx.Count; i++)
                                 {
                                     int increaseValue = manager.GetValueFromPercentage(
-                                    manager.animatronicParty[aliveIdx[i]].animatronicItem.currentAttack, t.percentageValue);
+                                    manager.animatronicParty[aliveIdx[i]].animatronicItem.currentAttack, statsToAffect[o].percentageValue);
                                     manager.animatronicParty[aliveIdx[i]].animatronicItem.AddStatEffectToList(
-                                        abilityName, increaseValue, t.affectMode == AnimatronicStats.AffectMode.Additive, t.increaseStatTime, AllStatsMods.StatType.ATK
+                                        abilityName, increaseValue, statsToAffect[o].affectMode == AnimatronicStats.AffectMode.Additive, statsToAffect[o].increaseStatTime, AllStatsMods.StatType.ATK
                                     );
                                 }
                             }
@@ -48,8 +48,18 @@ public class StatAbility : AnimatronicAbility
                                 for (int i = 0; i < aliveIdx.Count; i++)
                                 {
                                     manager.animatronicParty[aliveIdx[i]].animatronicItem.AddStatEffectToList(
-                                        abilityName, t.pointValue, t.affectMode == AnimatronicStats.AffectMode.Additive, t.increaseStatTime, AllStatsMods.StatType.ATK
+                                        abilityName, statsToAffect[o].pointValue, statsToAffect[o].affectMode == AnimatronicStats.AffectMode.Additive, statsToAffect[o].increaseStatTime, AllStatsMods.StatType.ATK
                                     );
+                                }
+                            }
+
+                            for (int i = 0; i < manager.animatronicStats.Length; i++)
+                            {
+                                if (manager.animatronicStats[i].statUIMod == AllStatsMods.StatType.ATK)
+                                {
+                                    if (statsToAffect[o].affectMode == AnimatronicStats.AffectMode.Additive) manager.animatronicStats[i].Buff(true, abilityName);
+                                    else manager.animatronicStats[i].Nerf(true, abilityName);
+                                    break;
                                 }
                             }
                         }
@@ -58,14 +68,14 @@ public class StatAbility : AnimatronicAbility
                         {
                             List<int> aliveIdx = manager.GetEntityList("enemy", targets, randomTargets);
 
-                            if (t.affectValue == AnimatronicStats.AffectValue.PercentageBased)
+                            if (statsToAffect[o].affectValue == AnimatronicStats.AffectValue.PercentageBased)
                             {
                                 for (int i = 0; i < aliveIdx.Count; i++)
                                 {
                                     int increaseValue = manager.GetValueFromPercentage(
-                                    manager.enemyParty[aliveIdx[i]].enemyItem.currentAttack, t.percentageValue);
+                                    manager.enemyParty[aliveIdx[i]].enemyItem.currentAttack, statsToAffect[o].percentageValue);
                                     manager.enemyParty[aliveIdx[i]].enemyItem.AddStatEffectToList(
-                                        abilityName, increaseValue, t.affectMode == AnimatronicStats.AffectMode.Additive, t.increaseStatTime, AllStatsMods.StatType.ATK
+                                        abilityName, increaseValue, statsToAffect[o].affectMode == AnimatronicStats.AffectMode.Additive, statsToAffect[o].increaseStatTime, AllStatsMods.StatType.ATK
                                     );
                                 }
                             }
@@ -75,27 +85,37 @@ public class StatAbility : AnimatronicAbility
                                 for (int i = 0; i < aliveIdx.Count; i++)
                                 {
                                     manager.enemyParty[aliveIdx[i]].enemyItem.AddStatEffectToList(
-                                        abilityName, t.pointValue, t.affectMode == AnimatronicStats.AffectMode.Additive, t.increaseStatTime, AllStatsMods.StatType.ATK
+                                        abilityName, statsToAffect[o].pointValue, statsToAffect[o].affectMode == AnimatronicStats.AffectMode.Additive, statsToAffect[o].increaseStatTime, AllStatsMods.StatType.ATK
                                     );
+                                }
+                            }
+
+                            for (int i = 0; i < manager.enemyStats.Length; i++)
+                            {
+                                if (manager.enemyStats[i].statUIMod == AllStatsMods.StatType.ATK)
+                                {
+                                    if (statsToAffect[o].affectMode == AnimatronicStats.AffectMode.Additive) manager.enemyStats[i].Buff(true, abilityName);
+                                    else manager.enemyStats[i].Nerf(true, abilityName);
+                                    break;
                                 }
                             }
                         }
                     }
 
-                    if (t.abilityToAffect == AnimatronicStats.AbilityToAffect.Defense)
+                    if (statsToAffect[o].abilityToAffect == AnimatronicStats.AbilityToAffect.Defense)
                     {
                         if (supposedToAffect == SupposedToAffect.SameEntity)
                         {
                             List<int> aliveIdx = manager.GetEntityList("animatronic", targets, randomTargets);
-
-                            if (t.affectValue == AnimatronicStats.AffectValue.PercentageBased)
+                            
+                            if (statsToAffect[o].affectValue == AnimatronicStats.AffectValue.PercentageBased)
                             {
                                 for (int i = 0; i < aliveIdx.Count; i++)
                                 {
                                     int increaseValue = manager.GetValueFromPercentage(
-                                    manager.animatronicParty[aliveIdx[i]].animatronicItem.currentAttack, t.percentageValue);
+                                    manager.animatronicParty[aliveIdx[i]].animatronicItem.currentAttack, statsToAffect[o].percentageValue);
                                     manager.animatronicParty[aliveIdx[i]].animatronicItem.AddStatEffectToList(
-                                        abilityName, increaseValue, t.affectMode == AnimatronicStats.AffectMode.Additive, t.increaseStatTime, AllStatsMods.StatType.DEF
+                                        abilityName, increaseValue, statsToAffect[o].affectMode == AnimatronicStats.AffectMode.Additive, statsToAffect[o].increaseStatTime, AllStatsMods.StatType.DEF
                                     );
                                 }
                             }
@@ -105,8 +125,18 @@ public class StatAbility : AnimatronicAbility
                                 for (int i = 0; i < aliveIdx.Count; i++)
                                 {
                                     manager.animatronicParty[aliveIdx[i]].animatronicItem.AddStatEffectToList(
-                                        abilityName, t.pointValue, t.affectMode == AnimatronicStats.AffectMode.Additive, t.increaseStatTime, AllStatsMods.StatType.DEF
+                                        abilityName, statsToAffect[o].pointValue, statsToAffect[o].affectMode == AnimatronicStats.AffectMode.Additive, statsToAffect[o].increaseStatTime, AllStatsMods.StatType.DEF
                                     );
+                                }
+                            }
+
+                            for (int i = 0; i < manager.animatronicStats.Length; i++)
+                            {
+                                if (manager.animatronicStats[i].statUIMod == AllStatsMods.StatType.DEF)
+                                {
+                                    if (statsToAffect[o].affectMode == AnimatronicStats.AffectMode.Additive) manager.animatronicStats[i].Buff(true, abilityName);
+                                    else manager.animatronicStats[i].Nerf(true, abilityName);
+                                    break;
                                 }
                             }
                         }
@@ -115,15 +145,15 @@ public class StatAbility : AnimatronicAbility
                         {
                             List<int> aliveIdx = manager.GetEntityList("enemy", targets, randomTargets);
 
-                            if (t.affectValue == AnimatronicStats.AffectValue.PercentageBased)
+                            if (statsToAffect[o].affectValue == AnimatronicStats.AffectValue.PercentageBased)
                             {
                                 for (int i = 0; i < aliveIdx.Count; i++)
                                 {
                                     Debug.Log("xd");
                                     int increaseValue = manager.GetValueFromPercentage(
-                                    manager.enemyParty[aliveIdx[i]].enemyItem.currentAttack, t.percentageValue);
+                                    manager.enemyParty[aliveIdx[i]].enemyItem.currentAttack, statsToAffect[o].percentageValue);
                                     manager.enemyParty[aliveIdx[i]].enemyItem.AddStatEffectToList(
-                                        abilityName, increaseValue, t.affectMode == AnimatronicStats.AffectMode.Additive, t.increaseStatTime, AllStatsMods.StatType.DEF
+                                        abilityName, increaseValue, statsToAffect[o].affectMode == AnimatronicStats.AffectMode.Additive, statsToAffect[o].increaseStatTime, AllStatsMods.StatType.DEF
                                     );
                                 }
                             }
@@ -133,27 +163,37 @@ public class StatAbility : AnimatronicAbility
                                 for (int i = 0; i < aliveIdx.Count; i++)
                                 {
                                     manager.enemyParty[aliveIdx[i]].enemyItem.AddStatEffectToList(
-                                        abilityName, t.pointValue, t.affectMode == AnimatronicStats.AffectMode.Additive, t.increaseStatTime, AllStatsMods.StatType.DEF
+                                        abilityName, statsToAffect[o].pointValue, statsToAffect[o].affectMode == AnimatronicStats.AffectMode.Additive, statsToAffect[o].increaseStatTime, AllStatsMods.StatType.DEF
                                     );
+                                }
+                            }
+
+                            for (int i = 0; i < manager.enemyStats.Length; i++)
+                            {
+                                if (manager.enemyStats[i].statUIMod == AllStatsMods.StatType.DEF)
+                                {
+                                    if (statsToAffect[o].affectMode == AnimatronicStats.AffectMode.Additive) manager.enemyStats[i].Buff(true, abilityName);
+                                    else manager.enemyStats[i].Nerf(true, abilityName);
+                                    break;
                                 }
                             }
                         }
                     }
 
-                    if (t.abilityToAffect == AnimatronicStats.AbilityToAffect.CriticalChance)
+                    if (statsToAffect[o].abilityToAffect == AnimatronicStats.AbilityToAffect.CriticalChance)
                     {
                         if (supposedToAffect == SupposedToAffect.SameEntity)
                         {
                             List<int> aliveIdx = manager.GetEntityList("animatronic", targets, randomTargets);
 
-                            if (t.affectValue == AnimatronicStats.AffectValue.PercentageBased)
+                            if (statsToAffect[o].affectValue == AnimatronicStats.AffectValue.PercentageBased)
                             {
                                 for (int i = 0; i < aliveIdx.Count; i++)
                                 {
                                     int increaseValue = manager.GetValueFromPercentage(
-                                    manager.animatronicParty[aliveIdx[i]].animatronicItem.currentAttack, t.percentageValue);
+                                    manager.animatronicParty[aliveIdx[i]].animatronicItem.currentAttack, statsToAffect[o].percentageValue);
                                     manager.animatronicParty[aliveIdx[i]].animatronicItem.AddStatEffectToList(
-                                        abilityName, increaseValue, t.affectMode == AnimatronicStats.AffectMode.Additive, t.increaseStatTime, AllStatsMods.StatType.CRT
+                                        abilityName, increaseValue, statsToAffect[o].affectMode == AnimatronicStats.AffectMode.Additive, statsToAffect[o].increaseStatTime, AllStatsMods.StatType.CRT
                                     );
                                 }
                             }
@@ -163,8 +203,18 @@ public class StatAbility : AnimatronicAbility
                                 for (int i = 0; i < aliveIdx.Count; i++)
                                 {
                                     manager.animatronicParty[aliveIdx[i]].animatronicItem.AddStatEffectToList(
-                                        abilityName, t.pointValue, t.affectMode == AnimatronicStats.AffectMode.Additive, t.increaseStatTime, AllStatsMods.StatType.CRT
+                                        abilityName, statsToAffect[o].pointValue, statsToAffect[o].affectMode == AnimatronicStats.AffectMode.Additive, statsToAffect[o].increaseStatTime, AllStatsMods.StatType.CRT
                                     );
+                                }
+                            }
+
+                            for (int i = 0; i < manager.animatronicStats.Length; i++)
+                            {
+                                if (manager.animatronicStats[i].statUIMod == AllStatsMods.StatType.CRT)
+                                {
+                                    if (statsToAffect[o].affectMode == AnimatronicStats.AffectMode.Additive) manager.animatronicStats[i].Buff(true, abilityName);
+                                    else manager.animatronicStats[i].Nerf(true, abilityName);
+                                    break;
                                 }
                             }
                         }
@@ -173,14 +223,14 @@ public class StatAbility : AnimatronicAbility
                         {
                             List<int> aliveIdx = manager.GetEntityList("enemy", targets, randomTargets);
 
-                            if (t.affectValue == AnimatronicStats.AffectValue.PercentageBased)
+                            if (statsToAffect[o].affectValue == AnimatronicStats.AffectValue.PercentageBased)
                             {
                                 for (int i = 0; i < aliveIdx.Count; i++)
                                 {
                                     int increaseValue = manager.GetValueFromPercentage(
-                                    manager.enemyParty[aliveIdx[i]].enemyItem.currentAttack, t.percentageValue);
+                                    manager.enemyParty[aliveIdx[i]].enemyItem.currentAttack, statsToAffect[o].percentageValue);
                                     manager.enemyParty[aliveIdx[i]].enemyItem.AddStatEffectToList(
-                                        abilityName, increaseValue, t.affectMode == AnimatronicStats.AffectMode.Additive, t.increaseStatTime, AllStatsMods.StatType.DEF
+                                        abilityName, increaseValue, statsToAffect[o].affectMode == AnimatronicStats.AffectMode.Additive, statsToAffect[o].increaseStatTime, AllStatsMods.StatType.CRT
                                     );
                                 }
                             }
@@ -190,43 +240,53 @@ public class StatAbility : AnimatronicAbility
                                 for (int i = 0; i < aliveIdx.Count; i++)
                                 {
                                     manager.enemyParty[aliveIdx[i]].enemyItem.AddStatEffectToList(
-                                        abilityName, t.pointValue, t.affectMode == AnimatronicStats.AffectMode.Additive, t.increaseStatTime, AllStatsMods.StatType.DEF
+                                        abilityName, statsToAffect[o].pointValue, statsToAffect[o].affectMode == AnimatronicStats.AffectMode.Additive, statsToAffect[o].increaseStatTime, AllStatsMods.StatType.CRT
                                     );
+                                }
+                            }
+
+                            for (int i = 0; i < manager.enemyStats.Length; i++)
+                            {
+                                if (manager.enemyStats[i].statUIMod == AllStatsMods.StatType.CRT)
+                                {
+                                    if (statsToAffect[o].affectMode == AnimatronicStats.AffectMode.Additive) manager.enemyStats[i].Buff(true, abilityName);
+                                    else manager.enemyStats[i].Nerf(true, abilityName);
+                                    break;
                                 }
                             }
                         }
                     }
 
-                    if (t.abilityToAffect == AnimatronicStats.AbilityToAffect.Gifts)
+                    if (statsToAffect[o].abilityToAffect == AnimatronicStats.AbilityToAffect.Gifts)
                     {
                         for (int i = 0; i < manager.animatronicParty.Length; i++)
                             if (!manager.animatronicParty[i].animatronicItem.hasGift)
                                 manager.animatronicParty[i].animatronicItem.TriggerGift();
                     }
 
-                    if (t.abilityToAffect == AnimatronicStats.AbilityToAffect.Stun)
+                    if (statsToAffect[o].abilityToAffect == AnimatronicStats.AbilityToAffect.Stun)
                     {
                         List<int> aliveIdx = manager.GetEntityList("enemy", targets, randomTargets);
 
                         for (int i = 0; i < aliveIdx.Count; i++)
-                            manager.enemyParty[aliveIdx[i]].enemyItem.TriggerStunEffect(t.stunTime);
+                            manager.enemyParty[aliveIdx[i]].enemyItem.TriggerStunEffect(statsToAffect[o].stunTime);
                     }
 
-                    if (t.abilityToAffect == AnimatronicStats.AbilityToAffect.OtherSpecific)
+                    if (statsToAffect[o].abilityToAffect == AnimatronicStats.AbilityToAffect.OtherSpecific)
                     {
-                        foreach (AnimatronicAbility aa in t.specificAbilities)
+                        foreach (AnimatronicAbility aa in statsToAffect[o].specificAbilities)
                             aa.ApplyEffect(entity, flip, offset);
                     }
 
-                    if (t.abilityToAffect == AnimatronicStats.AbilityToAffect.InstaKill)
+                    if (statsToAffect[o].abilityToAffect == AnimatronicStats.AbilityToAffect.InstaKill)
                     {
                         List<int> aliveIdx = manager.GetEntityList("enemy", targets, randomTargets);
 
-                        switch (t.instaKillMode)
+                        switch (statsToAffect[o].instaKillMode)
                         {
                             case AnimatronicStats.InstaKillMode.ChanceBased:
                                 for (int i = 0; i < aliveIdx.Count; i++)
-                                    if (manager.GetRandomBoolChance(t.chanceToInstaKill))
+                                    if (manager.GetRandomBoolChance(statsToAffect[o].chanceToInstaKill))
                                         manager.enemyParty[aliveIdx[i]].enemyItem.InstaKill();
                                     
                                     else
@@ -236,7 +296,7 @@ public class StatAbility : AnimatronicAbility
                             case AnimatronicStats.InstaKillMode.HealthBased:
                                 for (int i = 0; i < aliveIdx.Count; i++)
                                 {   
-                                    int minHealthValue = manager.GetValueFromPercentage(manager.animatronicParty[aliveIdx[i]].animatronicItem.GetComponent<Animatronic>().animatronicData.maxHealth, t.minHealthPercentageToKill);
+                                    int minHealthValue = manager.GetValueFromPercentage(manager.animatronicParty[aliveIdx[i]].animatronicItem.GetComponent<Animatronic>().animatronicData.maxHealth, statsToAffect[o].minHealthPercentageToKill);
 
                                     if (manager.enemyParty[aliveIdx[i]].enemyItem.currentHealth <= minHealthValue)
                                         manager.enemyParty[aliveIdx[i]].enemyItem.InstaKill();
@@ -253,26 +313,26 @@ public class StatAbility : AnimatronicAbility
                         }
                     }
 
-                    if (t.abilityToAffect == AnimatronicStats.AbilityToAffect.NeonWall)
-                        manager.NeonWallActivation("animatronic", t.neonWallType, t.neonWallDuration);
+                    if (statsToAffect[o].abilityToAffect == AnimatronicStats.AbilityToAffect.NeonWall)
+                        manager.NeonWallActivation("animatronic", statsToAffect[o].neonWallType, statsToAffect[o].neonWallDuration);
                     
-                    if (t.abilityToAffect == AnimatronicStats.AbilityToAffect.BubbleBreath)
-                        manager.BubbleBreathActivation("animatronic", t.bubbleBreathDuration);
+                    if (statsToAffect[o].abilityToAffect == AnimatronicStats.AbilityToAffect.BubbleBreath)
+                        manager.BubbleBreathActivation("animatronic", statsToAffect[o].bubbleBreathDuration);
                     
-                    if (t.abilityToAffect == AnimatronicStats.AbilityToAffect.Munchies)
+                    if (statsToAffect[o].abilityToAffect == AnimatronicStats.AbilityToAffect.Munchies)
                     {
                         var affectedByMunchie = manager.GetEntityList("enemy", targets, randomTargets);
                         
                         for (int j = 0; j < affectedByMunchie.Count; j++)
-                            manager.enemyParty[affectedByMunchie[j]].enemyItem.TriggerMunchies(t.munchiesDuration, t.munchiesDamage, t.timeBtwMunchiesAttack);
+                            manager.enemyParty[affectedByMunchie[j]].enemyItem.TriggerMunchies(statsToAffect[o].munchiesDuration, statsToAffect[o].munchiesDamage, statsToAffect[o].timeBtwMunchiesAttack);
                     }
 
-                    if (t.abilityToAffect == AnimatronicStats.AbilityToAffect.Haunt)
+                    if (statsToAffect[o].abilityToAffect == AnimatronicStats.AbilityToAffect.Haunt)
                     {
                         List<int> entityIdxHaunt = manager.GetEntityList("enemy", targets, randomTargets);
 
                         for (int j = 0; j < entityIdxHaunt.Count; j++)
-                            manager.enemyParty[entityIdxHaunt[j]].enemyItem.TriggerHauntingEffect(t.hauntDuration, timeBeforeAbility);
+                            manager.enemyParty[entityIdxHaunt[j]].enemyItem.TriggerHauntingEffect(statsToAffect[o].hauntDuration, timeBeforeAbility);
                     }
                 }       
                 //Enemies
@@ -280,20 +340,20 @@ public class StatAbility : AnimatronicAbility
                 {   //Regular Battle
                     if (manager.battleMusicContext == GameManager.BattleMusicContext.Fight)
                     {
-                        if (t.abilityToAffect == AnimatronicStats.AbilityToAffect.Attack)
+                        if (statsToAffect[o].abilityToAffect == AnimatronicStats.AbilityToAffect.Attack)
                         {
                             if (supposedToAffect == SupposedToAffect.SameEntity)
                             {
                                 List<int> aliveIdx = manager.GetEntityList("enemy", targets, randomTargets);
 
-                                if (t.affectValue == AnimatronicStats.AffectValue.PercentageBased)
+                                if (statsToAffect[o].affectValue == AnimatronicStats.AffectValue.PercentageBased)
                                 {
                                     for (int i = 0; i < aliveIdx.Count; i++)
                                     {
                                         int increaseValue = manager.GetValueFromPercentage(
-                                        manager.enemyParty[aliveIdx[i]].enemyItem.currentAttack, t.percentageValue);
+                                        manager.enemyParty[aliveIdx[i]].enemyItem.currentAttack, statsToAffect[o].percentageValue);
                                         manager.enemyParty[aliveIdx[i]].enemyItem.AddStatEffectToList(
-                                            abilityName, increaseValue, t.affectMode == AnimatronicStats.AffectMode.Additive, t.increaseStatTime, AllStatsMods.StatType.ATK
+                                            abilityName, increaseValue, statsToAffect[o].affectMode == AnimatronicStats.AffectMode.Additive, statsToAffect[o].increaseStatTime, AllStatsMods.StatType.ATK
                                         );
                                     }
                                 }
@@ -303,24 +363,34 @@ public class StatAbility : AnimatronicAbility
                                     for (int i = 0; i < aliveIdx.Count; i++)
                                     {
                                         manager.enemyParty[aliveIdx[i]].enemyItem.AddStatEffectToList(
-                                            abilityName, t.pointValue, t.affectMode == AnimatronicStats.AffectMode.Additive, t.increaseStatTime, AllStatsMods.StatType.ATK
+                                            abilityName, statsToAffect[o].pointValue, statsToAffect[o].affectMode == AnimatronicStats.AffectMode.Additive, statsToAffect[o].increaseStatTime, AllStatsMods.StatType.ATK
                                         );
                                     }
-                                }   
+                                }
+
+                                for (int i = 0; i < manager.enemyStats.Length; i++)
+                                {
+                                    if (manager.enemyStats[i].statUIMod == AllStatsMods.StatType.ATK)
+                                    {
+                                        if (statsToAffect[o].affectMode == AnimatronicStats.AffectMode.Additive) manager.enemyStats[i].Buff(true, abilityName);
+                                        else manager.enemyStats[i].Nerf(true, abilityName);
+                                        break;
+                                    }
+                                }
                             }
 
                             else
                             {
                                 List<int> aliveIdx = manager.GetEntityList("animatronic", targets, randomTargets);
 
-                                if (t.affectValue == AnimatronicStats.AffectValue.PercentageBased)
+                                if (statsToAffect[o].affectValue == AnimatronicStats.AffectValue.PercentageBased)
                                 {
                                     for (int i = 0; i < aliveIdx.Count; i++)
                                     {
                                         int increaseValue = manager.GetValueFromPercentage(
-                                        manager.animatronicParty[aliveIdx[i]].animatronicItem.currentAttack, t.percentageValue);
+                                        manager.animatronicParty[aliveIdx[i]].animatronicItem.currentAttack, statsToAffect[o].percentageValue);
                                         manager.animatronicParty[aliveIdx[i]].animatronicItem.AddStatEffectToList(
-                                            abilityName, increaseValue, t.affectMode == AnimatronicStats.AffectMode.Additive, t.increaseStatTime, AllStatsMods.StatType.ATK
+                                            abilityName, increaseValue, statsToAffect[o].affectMode == AnimatronicStats.AffectMode.Additive, statsToAffect[o].increaseStatTime, AllStatsMods.StatType.ATK
                                         );
                                     }
                                 }
@@ -330,27 +400,37 @@ public class StatAbility : AnimatronicAbility
                                     for (int i = 0; i < aliveIdx.Count; i++)
                                     {
                                         manager.animatronicParty[aliveIdx[i]].animatronicItem.AddStatEffectToList(
-                                            abilityName, t.pointValue, t.affectMode == AnimatronicStats.AffectMode.Additive, t.increaseStatTime, AllStatsMods.StatType.ATK
+                                            abilityName, statsToAffect[o].pointValue, statsToAffect[o].affectMode == AnimatronicStats.AffectMode.Additive, statsToAffect[o].increaseStatTime, AllStatsMods.StatType.ATK
                                         );
+                                    }
+                                }
+
+                                for (int i = 0; i < manager.animatronicStats.Length; i++)
+                                {
+                                    if (manager.animatronicStats[i].statUIMod == AllStatsMods.StatType.ATK)
+                                    {
+                                        if (statsToAffect[o].affectMode == AnimatronicStats.AffectMode.Additive) manager.animatronicStats[i].Buff(true, abilityName);
+                                        else manager.animatronicStats[i].Nerf(true, abilityName);
+                                        break;
                                     }
                                 }
                             }
                         }
 
-                        else if (t.abilityToAffect == AnimatronicStats.AbilityToAffect.Defense)
+                        else if (statsToAffect[o].abilityToAffect == AnimatronicStats.AbilityToAffect.Defense)
                         {
                             if (supposedToAffect == SupposedToAffect.SameEntity)
                             {
                                 List<int> aliveIdx = manager.GetEntityList("enemy", targets, randomTargets);
 
-                                if (t.affectValue == AnimatronicStats.AffectValue.PercentageBased)
+                                if (statsToAffect[o].affectValue == AnimatronicStats.AffectValue.PercentageBased)
                                 {
                                     for (int i = 0; i < aliveIdx.Count; i++)
                                     {
                                         int increaseValue = manager.GetValueFromPercentage(
-                                        manager.enemyParty[aliveIdx[i]].enemyItem.currentAttack, t.percentageValue);
+                                        manager.enemyParty[aliveIdx[i]].enemyItem.currentAttack, statsToAffect[o].percentageValue);
                                         manager.enemyParty[aliveIdx[i]].enemyItem.AddStatEffectToList(
-                                            abilityName, increaseValue, t.affectMode == AnimatronicStats.AffectMode.Additive, t.increaseStatTime, AllStatsMods.StatType.DEF
+                                            abilityName, increaseValue, statsToAffect[o].affectMode == AnimatronicStats.AffectMode.Additive, statsToAffect[o].increaseStatTime, AllStatsMods.StatType.DEF
                                         );
                                     }
                                 }
@@ -360,24 +440,34 @@ public class StatAbility : AnimatronicAbility
                                     for (int i = 0; i < aliveIdx.Count; i++)
                                     {
                                         manager.enemyParty[aliveIdx[i]].enemyItem.AddStatEffectToList(
-                                            abilityName, t.pointValue, t.affectMode == AnimatronicStats.AffectMode.Additive, t.increaseStatTime, AllStatsMods.StatType.DEF
+                                            abilityName, statsToAffect[o].pointValue, statsToAffect[o].affectMode == AnimatronicStats.AffectMode.Additive, statsToAffect[o].increaseStatTime, AllStatsMods.StatType.DEF
                                         );
                                     }
-                                }   
+                                }
+
+                                for (int i = 0; i < manager.enemyStats.Length; i++)
+                                {
+                                    if (manager.enemyStats[i].statUIMod == AllStatsMods.StatType.DEF)
+                                    {
+                                        if (statsToAffect[o].affectMode == AnimatronicStats.AffectMode.Additive) manager.enemyStats[i].Buff(true, abilityName);
+                                        else manager.enemyStats[i].Nerf(true, abilityName);
+                                        break;
+                                    }
+                                }  
                             }
 
                             else
                             {
                                 List<int> aliveIdx = manager.GetEntityList("animatronic", targets, randomTargets);
 
-                                if (t.affectValue == AnimatronicStats.AffectValue.PercentageBased)
+                                if (statsToAffect[o].affectValue == AnimatronicStats.AffectValue.PercentageBased)
                                 {
                                     for (int i = 0; i < aliveIdx.Count; i++)
                                     {
                                         int increaseValue = manager.GetValueFromPercentage(
-                                        manager.animatronicParty[aliveIdx[i]].animatronicItem.currentAttack, t.percentageValue);
+                                        manager.animatronicParty[aliveIdx[i]].animatronicItem.currentAttack, statsToAffect[o].percentageValue);
                                         manager.animatronicParty[aliveIdx[i]].animatronicItem.AddStatEffectToList(
-                                            abilityName, increaseValue, t.affectMode == AnimatronicStats.AffectMode.Additive, t.increaseStatTime, AllStatsMods.StatType.DEF
+                                            abilityName, increaseValue, statsToAffect[o].affectMode == AnimatronicStats.AffectMode.Additive, statsToAffect[o].increaseStatTime, AllStatsMods.StatType.DEF
                                         );
                                     }
                                 }
@@ -387,27 +477,37 @@ public class StatAbility : AnimatronicAbility
                                     for (int i = 0; i < aliveIdx.Count; i++)
                                     {
                                         manager.animatronicParty[aliveIdx[i]].animatronicItem.AddStatEffectToList(
-                                            abilityName, t.pointValue, t.affectMode == AnimatronicStats.AffectMode.Additive, t.increaseStatTime, AllStatsMods.StatType.DEF
+                                            abilityName, statsToAffect[o].pointValue, statsToAffect[o].affectMode == AnimatronicStats.AffectMode.Additive, statsToAffect[o].increaseStatTime, AllStatsMods.StatType.DEF
                                         );
+                                    }
+                                }
+
+                                for (int i = 0; i < manager.animatronicStats.Length; i++)
+                                {
+                                    if (manager.animatronicStats[i].statUIMod == AllStatsMods.StatType.DEF)
+                                    {
+                                        if (statsToAffect[o].affectMode == AnimatronicStats.AffectMode.Additive) manager.animatronicStats[i].Buff(true, abilityName);
+                                        else manager.animatronicStats[i].Nerf(true, abilityName);
+                                        break;
                                     }
                                 }
                             }
                         }
 
-                        else if (t.abilityToAffect == AnimatronicStats.AbilityToAffect.CriticalChance)
+                        else if (statsToAffect[o].abilityToAffect == AnimatronicStats.AbilityToAffect.CriticalChance)
                         {
                             if (supposedToAffect == SupposedToAffect.SameEntity)
                             {
                                 List<int> aliveIdx = manager.GetEntityList("enemy", targets, randomTargets);
 
-                                if (t.affectValue == AnimatronicStats.AffectValue.PercentageBased)
+                                if (statsToAffect[o].affectValue == AnimatronicStats.AffectValue.PercentageBased)
                                 {
                                     for (int i = 0; i < aliveIdx.Count; i++)
                                     {
                                         int increaseValue = manager.GetValueFromPercentage(
-                                        manager.enemyParty[aliveIdx[i]].enemyItem.currentAttack, t.percentageValue);
+                                        manager.enemyParty[aliveIdx[i]].enemyItem.currentAttack, statsToAffect[o].percentageValue);
                                         manager.enemyParty[aliveIdx[i]].enemyItem.AddStatEffectToList(
-                                            abilityName, increaseValue, t.affectMode == AnimatronicStats.AffectMode.Additive, t.increaseStatTime, AllStatsMods.StatType.CRT
+                                            abilityName, increaseValue, statsToAffect[o].affectMode == AnimatronicStats.AffectMode.Additive, statsToAffect[o].increaseStatTime, AllStatsMods.StatType.CRT
                                         );
                                     }
                                 }
@@ -417,24 +517,34 @@ public class StatAbility : AnimatronicAbility
                                     for (int i = 0; i < aliveIdx.Count; i++)
                                     {
                                         manager.enemyParty[aliveIdx[i]].enemyItem.AddStatEffectToList(
-                                            abilityName, t.pointValue, t.affectMode == AnimatronicStats.AffectMode.Additive, t.increaseStatTime, AllStatsMods.StatType.CRT
+                                            abilityName, statsToAffect[o].pointValue, statsToAffect[o].affectMode == AnimatronicStats.AffectMode.Additive, statsToAffect[o].increaseStatTime, AllStatsMods.StatType.CRT
                                         );
                                     }
-                                }   
+                                }
+
+                                for (int i = 0; i < manager.enemyStats.Length; i++)
+                                {
+                                    if (manager.enemyStats[i].statUIMod == AllStatsMods.StatType.CRT)
+                                    {
+                                        if (statsToAffect[o].affectMode == AnimatronicStats.AffectMode.Additive) manager.enemyStats[i].Buff(true, abilityName);
+                                        else manager.enemyStats[i].Nerf(true, abilityName);
+                                        break;
+                                    }
+                                }  
                             }
 
                             else
                             {
                                 List<int> aliveIdx = manager.GetEntityList("animatronic", targets, randomTargets);
 
-                                if (t.affectValue == AnimatronicStats.AffectValue.PercentageBased)
+                                if (statsToAffect[o].affectValue == AnimatronicStats.AffectValue.PercentageBased)
                                 {
                                     for (int i = 0; i < aliveIdx.Count; i++)
                                     {
                                         int increaseValue = manager.GetValueFromPercentage(
-                                        manager.animatronicParty[aliveIdx[i]].animatronicItem.currentAttack, t.percentageValue);
+                                        manager.animatronicParty[aliveIdx[i]].animatronicItem.currentAttack, statsToAffect[o].percentageValue);
                                         manager.animatronicParty[aliveIdx[i]].animatronicItem.AddStatEffectToList(
-                                            abilityName, increaseValue, t.affectMode == AnimatronicStats.AffectMode.Additive, t.increaseStatTime, AllStatsMods.StatType.CRT
+                                            abilityName, increaseValue, statsToAffect[o].affectMode == AnimatronicStats.AffectMode.Additive, statsToAffect[o].increaseStatTime, AllStatsMods.StatType.CRT
                                         );
                                     }
                                 }
@@ -444,14 +554,24 @@ public class StatAbility : AnimatronicAbility
                                     for (int i = 0; i < aliveIdx.Count; i++)
                                     {
                                         manager.animatronicParty[aliveIdx[i]].animatronicItem.AddStatEffectToList(
-                                            abilityName, t.pointValue, t.affectMode == AnimatronicStats.AffectMode.Additive, t.increaseStatTime, AllStatsMods.StatType.CRT
+                                            abilityName, statsToAffect[o].pointValue, statsToAffect[o].affectMode == AnimatronicStats.AffectMode.Additive, statsToAffect[o].increaseStatTime, AllStatsMods.StatType.CRT
                                         );
+                                    }
+                                }
+
+                                for (int i = 0; i < manager.animatronicStats.Length; i++)
+                                {
+                                    if (manager.animatronicStats[i].statUIMod == AllStatsMods.StatType.CRT)
+                                    {
+                                        if (statsToAffect[o].affectMode == AnimatronicStats.AffectMode.Additive) manager.animatronicStats[i].Buff(true, abilityName);
+                                        else manager.animatronicStats[i].Nerf(true, abilityName);
+                                        break;
                                     }
                                 }
                             }
                         }
 
-                        else if (t.abilityToAffect == AnimatronicStats.AbilityToAffect.Gifts)
+                        else if (statsToAffect[o].abilityToAffect == AnimatronicStats.AbilityToAffect.Gifts)
                         {
                             List<int> aliveIdx = manager.GetEntityList("enemy", targets, randomTargets);
 
@@ -460,29 +580,29 @@ public class StatAbility : AnimatronicAbility
                                     manager.enemyParty[aliveIdx[i]].enemyItem.TriggerGift();
                         }
 
-                        else if (t.abilityToAffect == AnimatronicStats.AbilityToAffect.Stun)
+                        else if (statsToAffect[o].abilityToAffect == AnimatronicStats.AbilityToAffect.Stun)
                         {
                             List<int> aliveIdx = manager.GetEntityList("animatronic", targets, randomTargets);
 
                             for (int i = 0; i < aliveIdx.Count; i++)
-                                manager.animatronicParty[aliveIdx[i]].animatronicItem.TriggerStunEffect(t.stunTime);
+                                manager.animatronicParty[aliveIdx[i]].animatronicItem.TriggerStunEffect(statsToAffect[o].stunTime);
                         }
 
-                        else if (t.abilityToAffect == AnimatronicStats.AbilityToAffect.OtherSpecific)
+                        else if (statsToAffect[o].abilityToAffect == AnimatronicStats.AbilityToAffect.OtherSpecific)
                         {
-                            foreach (AnimatronicAbility aa in t.specificAbilities)
+                            foreach (AnimatronicAbility aa in statsToAffect[o].specificAbilities)
                                 aa.ApplyEffect(entity, flip, offset);
                         }
 
-                        else if (t.abilityToAffect == AnimatronicStats.AbilityToAffect.InstaKill)
+                        else if (statsToAffect[o].abilityToAffect == AnimatronicStats.AbilityToAffect.InstaKill)
                         {
                             List<int> aliveIdx = manager.GetEntityList("animatronic", targets, randomTargets);
 
-                            switch (t.instaKillMode)
+                            switch (statsToAffect[o].instaKillMode)
                             {
                                 case AnimatronicStats.InstaKillMode.ChanceBased:
                                     for (int i = 0; i < aliveIdx.Count; i++)
-                                        if (manager.GetRandomBoolChance(t.chanceToInstaKill))
+                                        if (manager.GetRandomBoolChance(statsToAffect[o].chanceToInstaKill))
                                             manager.animatronicParty[aliveIdx[i]].animatronicItem.InstaKill();
                                         
                                         else
@@ -492,7 +612,7 @@ public class StatAbility : AnimatronicAbility
                                 case AnimatronicStats.InstaKillMode.HealthBased:
                                     for (int i = 0; i < aliveIdx.Count; i++)
                                     {   
-                                        int minHealthValue = manager.GetValueFromPercentage(manager.animatronicParty[aliveIdx[i]].animatronicItem.GetComponent<Animatronic>().animatronicData.maxHealth, t.minHealthPercentageToKill);
+                                        int minHealthValue = manager.GetValueFromPercentage(manager.animatronicParty[aliveIdx[i]].animatronicItem.GetComponent<Animatronic>().animatronicData.maxHealth, statsToAffect[o].minHealthPercentageToKill);
 
                                         if (manager.animatronicParty[aliveIdx[i]].animatronicItem.currentHealth <= minHealthValue)
                                             manager.animatronicParty[aliveIdx[i]].animatronicItem.InstaKill();
@@ -509,50 +629,50 @@ public class StatAbility : AnimatronicAbility
                             }
                         }
 
-                        else if (t.abilityToAffect == AnimatronicStats.AbilityToAffect.NeonWall)
-                            manager.NeonWallActivation("enemy", t.neonWallType, t.neonWallDuration);
+                        else if (statsToAffect[o].abilityToAffect == AnimatronicStats.AbilityToAffect.NeonWall)
+                            manager.NeonWallActivation("enemy", statsToAffect[o].neonWallType, statsToAffect[o].neonWallDuration);
                         
-                        else if (t.abilityToAffect == AnimatronicStats.AbilityToAffect.BubbleBreath)
-                            manager.BubbleBreathActivation("enemy", t.bubbleBreathDuration);
+                        else if (statsToAffect[o].abilityToAffect == AnimatronicStats.AbilityToAffect.BubbleBreath)
+                            manager.BubbleBreathActivation("enemy", statsToAffect[o].bubbleBreathDuration);
                         
-                        else if (t.abilityToAffect == AnimatronicStats.AbilityToAffect.Munchies)
+                        else if (statsToAffect[o].abilityToAffect == AnimatronicStats.AbilityToAffect.Munchies)
                         {
                             var affectedByMunchie = manager.GetEntityList("animatronic", targets, randomTargets);
                             
                             for (int j = 0; j < affectedByMunchie.Count; j++)
-                                manager.enemyParty[affectedByMunchie[j]].enemyItem.TriggerMunchies(t.munchiesDuration, t.munchiesDamage, t.timeBtwMunchiesAttack);
+                                manager.enemyParty[affectedByMunchie[j]].enemyItem.TriggerMunchies(statsToAffect[o].munchiesDuration, statsToAffect[o].munchiesDamage, statsToAffect[o].timeBtwMunchiesAttack);
                         }
 
-                        else if (t.abilityToAffect == AnimatronicStats.AbilityToAffect.Haunt)
+                        else if (statsToAffect[o].abilityToAffect == AnimatronicStats.AbilityToAffect.Haunt)
                         {
                             List<int> entityIdxHaunt = manager.GetEntityList("animatronic", targets, randomTargets);
 
                             for (int j = 0; j < entityIdxHaunt.Count; j++)
-                                manager.enemyParty[entityIdxHaunt[j]].enemyItem.TriggerHauntingEffect(t.hauntDuration, timeBeforeAbility);
+                                manager.enemyParty[entityIdxHaunt[j]].enemyItem.TriggerHauntingEffect(statsToAffect[o].hauntDuration, timeBeforeAbility);
                         }
                     }
                     //Boss Battle
                     else
                     {
-                        if (t.abilityToAffect == AnimatronicStats.AbilityToAffect.Attack)
+                        if (statsToAffect[o].abilityToAffect == AnimatronicStats.AbilityToAffect.Attack)
                         {
                             if (supposedToAffect == SupposedToAffect.SameEntity)
                             {
-                                if (t.affectValue == AnimatronicStats.AffectValue.PercentageBased)
+                                if (statsToAffect[o].affectValue == AnimatronicStats.AffectValue.PercentageBased)
                                 {
                                     int increaseValue = manager.GetValueFromPercentage(
-                                    manager.bossParty.enemyItem.currentAttack, t.percentageValue);
+                                    manager.bossParty.enemyItem.currentAttack, statsToAffect[o].percentageValue);
                                     manager.bossParty.enemyItem.AddStatEffectToList(
-                                        abilityName, increaseValue, t.affectMode == AnimatronicStats.AffectMode.Additive, t.increaseStatTime, AllStatsMods.StatType.ATK
+                                        abilityName, increaseValue, statsToAffect[o].affectMode == AnimatronicStats.AffectMode.Additive, statsToAffect[o].increaseStatTime, AllStatsMods.StatType.ATK
                                     );
                                 }
 
                                 else
                                 {
                                     int increaseValue = manager.GetValueFromPercentage(
-                                    manager.bossParty.enemyItem.currentAttack, t.percentageValue);
+                                    manager.bossParty.enemyItem.currentAttack, statsToAffect[o].percentageValue);
                                     manager.bossParty.enemyItem.AddStatEffectToList(
-                                        abilityName, t.pointValue, t.affectMode == AnimatronicStats.AffectMode.Additive, t.increaseStatTime, AllStatsMods.StatType.ATK
+                                        abilityName, statsToAffect[o].pointValue, statsToAffect[o].affectMode == AnimatronicStats.AffectMode.Additive, statsToAffect[o].increaseStatTime, AllStatsMods.StatType.ATK
                                     );
                                 }   
                             }
@@ -561,14 +681,14 @@ public class StatAbility : AnimatronicAbility
                             {
                                 List<int> aliveIdx = manager.GetEntityList("animatronic", targets, randomTargets);
 
-                                if (t.affectValue == AnimatronicStats.AffectValue.PercentageBased)
+                                if (statsToAffect[o].affectValue == AnimatronicStats.AffectValue.PercentageBased)
                                 {
                                     for (int i = 0; i < aliveIdx.Count; i++)
                                     {
                                         int increaseValue = manager.GetValueFromPercentage(
-                                        manager.animatronicParty[aliveIdx[i]].animatronicItem.currentAttack, t.percentageValue);
+                                        manager.animatronicParty[aliveIdx[i]].animatronicItem.currentAttack, statsToAffect[o].percentageValue);
                                         manager.animatronicParty[aliveIdx[i]].animatronicItem.AddStatEffectToList(
-                                            abilityName, increaseValue, t.affectMode == AnimatronicStats.AffectMode.Additive, t.increaseStatTime, AllStatsMods.StatType.ATK
+                                            abilityName, increaseValue, statsToAffect[o].affectMode == AnimatronicStats.AffectMode.Additive, statsToAffect[o].increaseStatTime, AllStatsMods.StatType.ATK
                                         );
                                     }
                                 }
@@ -578,32 +698,32 @@ public class StatAbility : AnimatronicAbility
                                     for (int i = 0; i < aliveIdx.Count; i++)
                                     {
                                         manager.animatronicParty[aliveIdx[i]].animatronicItem.AddStatEffectToList(
-                                            abilityName, t.pointValue, t.affectMode == AnimatronicStats.AffectMode.Additive, t.increaseStatTime, AllStatsMods.StatType.ATK
+                                            abilityName, statsToAffect[o].pointValue, statsToAffect[o].affectMode == AnimatronicStats.AffectMode.Additive, statsToAffect[o].increaseStatTime, AllStatsMods.StatType.ATK
                                         );
                                     }
                                 }
                             }
                         }
 
-                        else if (t.abilityToAffect == AnimatronicStats.AbilityToAffect.Defense)
+                        else if (statsToAffect[o].abilityToAffect == AnimatronicStats.AbilityToAffect.Defense)
                         {
                             if (supposedToAffect == SupposedToAffect.SameEntity)
                             {
-                                if (t.affectValue == AnimatronicStats.AffectValue.PercentageBased)
+                                if (statsToAffect[o].affectValue == AnimatronicStats.AffectValue.PercentageBased)
                                 {
                                     int increaseValue = manager.GetValueFromPercentage(
-                                    manager.bossParty.enemyItem.currentAttack, t.percentageValue);
+                                    manager.bossParty.enemyItem.currentAttack, statsToAffect[o].percentageValue);
                                     manager.bossParty.enemyItem.AddStatEffectToList(
-                                        abilityName, increaseValue, t.affectMode == AnimatronicStats.AffectMode.Additive, t.increaseStatTime, AllStatsMods.StatType.DEF
+                                        abilityName, increaseValue, statsToAffect[o].affectMode == AnimatronicStats.AffectMode.Additive, statsToAffect[o].increaseStatTime, AllStatsMods.StatType.DEF
                                     );
                                 }
 
                                 else
                                 {
                                     int increaseValue = manager.GetValueFromPercentage(
-                                    manager.bossParty.enemyItem.currentAttack, t.percentageValue);
+                                    manager.bossParty.enemyItem.currentAttack, statsToAffect[o].percentageValue);
                                     manager.bossParty.enemyItem.AddStatEffectToList(
-                                        abilityName, t.pointValue, t.affectMode == AnimatronicStats.AffectMode.Additive, t.increaseStatTime, AllStatsMods.StatType.DEF
+                                        abilityName, statsToAffect[o].pointValue, statsToAffect[o].affectMode == AnimatronicStats.AffectMode.Additive, statsToAffect[o].increaseStatTime, AllStatsMods.StatType.DEF
                                     );
                                 }
                             }
@@ -612,14 +732,14 @@ public class StatAbility : AnimatronicAbility
                             {
                                 List<int> aliveIdx = manager.GetEntityList("animatronic", targets, randomTargets);
 
-                                if (t.affectValue == AnimatronicStats.AffectValue.PercentageBased)
+                                if (statsToAffect[o].affectValue == AnimatronicStats.AffectValue.PercentageBased)
                                 {
                                     for (int i = 0; i < aliveIdx.Count; i++)
                                     {
                                         int increaseValue = manager.GetValueFromPercentage(
-                                        manager.animatronicParty[aliveIdx[i]].animatronicItem.currentAttack, t.percentageValue);
+                                        manager.animatronicParty[aliveIdx[i]].animatronicItem.currentAttack, statsToAffect[o].percentageValue);
                                         manager.animatronicParty[aliveIdx[i]].animatronicItem.AddStatEffectToList(
-                                            abilityName, increaseValue, t.affectMode == AnimatronicStats.AffectMode.Additive, t.increaseStatTime, AllStatsMods.StatType.DEF
+                                            abilityName, increaseValue, statsToAffect[o].affectMode == AnimatronicStats.AffectMode.Additive, statsToAffect[o].increaseStatTime, AllStatsMods.StatType.DEF
                                         );
                                     }
                                 }
@@ -629,32 +749,32 @@ public class StatAbility : AnimatronicAbility
                                     for (int i = 0; i < aliveIdx.Count; i++)
                                     {
                                         manager.animatronicParty[aliveIdx[i]].animatronicItem.AddStatEffectToList(
-                                            abilityName, t.pointValue, t.affectMode == AnimatronicStats.AffectMode.Additive, t.increaseStatTime, AllStatsMods.StatType.DEF
+                                            abilityName, statsToAffect[o].pointValue, statsToAffect[o].affectMode == AnimatronicStats.AffectMode.Additive, statsToAffect[o].increaseStatTime, AllStatsMods.StatType.DEF
                                         );
                                     }
                                 }
                             }
                         }
 
-                        else if (t.abilityToAffect == AnimatronicStats.AbilityToAffect.CriticalChance)
+                        else if (statsToAffect[o].abilityToAffect == AnimatronicStats.AbilityToAffect.CriticalChance)
                         {
                             if (supposedToAffect == SupposedToAffect.SameEntity)
                             {
-                                if (t.affectValue == AnimatronicStats.AffectValue.PercentageBased)
+                                if (statsToAffect[o].affectValue == AnimatronicStats.AffectValue.PercentageBased)
                                 {
                                     int increaseValue = manager.GetValueFromPercentage(
-                                    manager.bossParty.enemyItem.currentAttack, t.percentageValue);
+                                    manager.bossParty.enemyItem.currentAttack, statsToAffect[o].percentageValue);
                                     manager.bossParty.enemyItem.AddStatEffectToList(
-                                        abilityName, increaseValue, t.affectMode == AnimatronicStats.AffectMode.Additive, t.increaseStatTime, AllStatsMods.StatType.CRT
+                                        abilityName, increaseValue, statsToAffect[o].affectMode == AnimatronicStats.AffectMode.Additive, statsToAffect[o].increaseStatTime, AllStatsMods.StatType.CRT
                                     );
                                 }
 
                                 else
                                 {
                                     int increaseValue = manager.GetValueFromPercentage(
-                                    manager.bossParty.enemyItem.currentAttack, t.percentageValue);
+                                    manager.bossParty.enemyItem.currentAttack, statsToAffect[o].percentageValue);
                                     manager.bossParty.enemyItem.AddStatEffectToList(
-                                        abilityName, t.pointValue, t.affectMode == AnimatronicStats.AffectMode.Additive, t.increaseStatTime, AllStatsMods.StatType.CRT
+                                        abilityName, statsToAffect[o].pointValue, statsToAffect[o].affectMode == AnimatronicStats.AffectMode.Additive, statsToAffect[o].increaseStatTime, AllStatsMods.StatType.CRT
                                     );
                                 } 
                             }
@@ -663,14 +783,14 @@ public class StatAbility : AnimatronicAbility
                             {
                                 List<int> aliveIdx = manager.GetEntityList("animatronic", targets, randomTargets);
 
-                                if (t.affectValue == AnimatronicStats.AffectValue.PercentageBased)
+                                if (statsToAffect[o].affectValue == AnimatronicStats.AffectValue.PercentageBased)
                                 {
                                     for (int i = 0; i < aliveIdx.Count; i++)
                                     {
                                         int increaseValue = manager.GetValueFromPercentage(
-                                        manager.animatronicParty[aliveIdx[i]].animatronicItem.currentAttack, t.percentageValue);
+                                        manager.animatronicParty[aliveIdx[i]].animatronicItem.currentAttack, statsToAffect[o].percentageValue);
                                         manager.animatronicParty[aliveIdx[i]].animatronicItem.AddStatEffectToList(
-                                            abilityName, increaseValue, t.affectMode == AnimatronicStats.AffectMode.Additive, t.increaseStatTime, AllStatsMods.StatType.CRT
+                                            abilityName, increaseValue, statsToAffect[o].affectMode == AnimatronicStats.AffectMode.Additive, statsToAffect[o].increaseStatTime, AllStatsMods.StatType.CRT
                                         );
                                     }
                                 }
@@ -680,42 +800,42 @@ public class StatAbility : AnimatronicAbility
                                     for (int i = 0; i < aliveIdx.Count; i++)
                                     {
                                         manager.animatronicParty[aliveIdx[i]].animatronicItem.AddStatEffectToList(
-                                            abilityName, t.pointValue, t.affectMode == AnimatronicStats.AffectMode.Additive, t.increaseStatTime, AllStatsMods.StatType.CRT
+                                            abilityName, statsToAffect[o].pointValue, statsToAffect[o].affectMode == AnimatronicStats.AffectMode.Additive, statsToAffect[o].increaseStatTime, AllStatsMods.StatType.CRT
                                         );
                                     }
                                 }
                             }
                         }
 
-                        else if (t.abilityToAffect == AnimatronicStats.AbilityToAffect.Gifts)
+                        else if (statsToAffect[o].abilityToAffect == AnimatronicStats.AbilityToAffect.Gifts)
                         {
                             if (!manager.bossParty.enemyItem.hasGift)
                                 manager.bossParty.enemyItem.TriggerGift();
                         }
 
-                        else if (t.abilityToAffect == AnimatronicStats.AbilityToAffect.Stun)
+                        else if (statsToAffect[o].abilityToAffect == AnimatronicStats.AbilityToAffect.Stun)
                         {
                             List<int> aliveIdx = manager.GetEntityList("animatronic", targets, randomTargets);
 
                             for (int i = 0; i < aliveIdx.Count; i++)
-                                manager.animatronicParty[aliveIdx[i]].animatronicItem.TriggerStunEffect(t.stunTime);
+                                manager.animatronicParty[aliveIdx[i]].animatronicItem.TriggerStunEffect(statsToAffect[o].stunTime);
                         }
 
-                        else if (t.abilityToAffect == AnimatronicStats.AbilityToAffect.OtherSpecific)
+                        else if (statsToAffect[o].abilityToAffect == AnimatronicStats.AbilityToAffect.OtherSpecific)
                         {
-                            foreach (AnimatronicAbility aa in t.specificAbilities)
+                            foreach (AnimatronicAbility aa in statsToAffect[o].specificAbilities)
                                 aa.ApplyEffect(entity, flip, offset);
                         }
 
-                        else if (t.abilityToAffect == AnimatronicStats.AbilityToAffect.InstaKill)
+                        else if (statsToAffect[o].abilityToAffect == AnimatronicStats.AbilityToAffect.InstaKill)
                         {
                             List<int> aliveIdx = manager.GetEntityList("animatronic", targets, randomTargets);
 
-                            switch (t.instaKillMode)
+                            switch (statsToAffect[o].instaKillMode)
                             {
                                 case AnimatronicStats.InstaKillMode.ChanceBased:
                                     for (int i = 0; i < aliveIdx.Count; i++)
-                                        if (manager.GetRandomBoolChance(t.chanceToInstaKill))
+                                        if (manager.GetRandomBoolChance(statsToAffect[o].chanceToInstaKill))
                                             manager.animatronicParty[aliveIdx[i]].animatronicItem.InstaKill();
                                         
                                         else
@@ -725,7 +845,7 @@ public class StatAbility : AnimatronicAbility
                                 case AnimatronicStats.InstaKillMode.HealthBased:
                                     for (int i = 0; i < aliveIdx.Count; i++)
                                     {   
-                                        int minHealthValue = manager.GetValueFromPercentage(manager.animatronicParty[aliveIdx[i]].animatronicItem.GetComponent<Animatronic>().animatronicData.maxHealth, t.minHealthPercentageToKill);
+                                        int minHealthValue = manager.GetValueFromPercentage(manager.animatronicParty[aliveIdx[i]].animatronicItem.GetComponent<Animatronic>().animatronicData.maxHealth, statsToAffect[o].minHealthPercentageToKill);
 
                                         if (manager.animatronicParty[aliveIdx[i]].animatronicItem.currentHealth <= minHealthValue)
                                             manager.animatronicParty[aliveIdx[i]].animatronicItem.InstaKill();
@@ -742,26 +862,26 @@ public class StatAbility : AnimatronicAbility
                             }
                         }
 
-                        else if (t.abilityToAffect == AnimatronicStats.AbilityToAffect.NeonWall)
-                            manager.NeonWallActivation("enemy", t.neonWallType, t.neonWallDuration);
+                        else if (statsToAffect[o].abilityToAffect == AnimatronicStats.AbilityToAffect.NeonWall)
+                            manager.NeonWallActivation("enemy", statsToAffect[o].neonWallType, statsToAffect[o].neonWallDuration);
                         
-                        else if (t.abilityToAffect == AnimatronicStats.AbilityToAffect.BubbleBreath)
-                            manager.BubbleBreathActivation("boss", t.bubbleBreathDuration);
+                        else if (statsToAffect[o].abilityToAffect == AnimatronicStats.AbilityToAffect.BubbleBreath)
+                            manager.BubbleBreathActivation("boss", statsToAffect[o].bubbleBreathDuration);
                         
-                        else if (t.abilityToAffect == AnimatronicStats.AbilityToAffect.Munchies)
+                        else if (statsToAffect[o].abilityToAffect == AnimatronicStats.AbilityToAffect.Munchies)
                         {
                             var affectedByMunchie = manager.GetEntityList("animatronic", targets, randomTargets);
                             
                             for (int j = 0; j < affectedByMunchie.Count; j++)
-                                manager.enemyParty[affectedByMunchie[j]].enemyItem.TriggerMunchies(t.munchiesDuration, t.munchiesDamage, t.timeBtwMunchiesAttack);
+                                manager.enemyParty[affectedByMunchie[j]].enemyItem.TriggerMunchies(statsToAffect[o].munchiesDuration, statsToAffect[o].munchiesDamage, statsToAffect[o].timeBtwMunchiesAttack);
                         }
 
-                        else if (t.abilityToAffect == AnimatronicStats.AbilityToAffect.Haunt)
+                        else if (statsToAffect[o].abilityToAffect == AnimatronicStats.AbilityToAffect.Haunt)
                         {
                             List<int> entityIdxHaunt = manager.GetEntityList("animatronic", targets, randomTargets);
 
                             for (int j = 0; j < entityIdxHaunt.Count; j++)
-                                manager.enemyParty[entityIdxHaunt[j]].enemyItem.TriggerHauntingEffect(t.hauntDuration, timeBeforeAbility);
+                                manager.enemyParty[entityIdxHaunt[j]].enemyItem.TriggerHauntingEffect(statsToAffect[o].hauntDuration, timeBeforeAbility);
                         }
                     }
                 }
