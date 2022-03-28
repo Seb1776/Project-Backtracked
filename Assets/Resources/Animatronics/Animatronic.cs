@@ -226,7 +226,7 @@ public class Animatronic : LivingEntity
     public override IEnumerator FailedInstaKill(float delay)
     {
         yield return new WaitForSeconds(delay);
-        GameObject dn = Instantiate(manager.enemyParty[idxInManager].enemyItem.respectiveDamageNumber, manager.enemyParty[idxInManager].enemyItem.respectiveDamageNumber.transform.position, manager.enemyParty[idxInManager].enemyItem.respectiveDamageNumber.transform.rotation, manager.enemyParty[idxInManager].enemyItem.parentCanvas);
+        GameObject dn = Instantiate(manager.animatronicParty[idxInManager].animatronicItem.respectiveDamageNumber, manager.enemyParty[idxInManager].enemyItem.respectiveDamageNumber.transform.position, manager.enemyParty[idxInManager].enemyItem.respectiveDamageNumber.transform.rotation, manager.enemyParty[idxInManager].enemyItem.parentCanvas);
         string[] failedInstaMsgs = {"NOPE", "NAH M8", "GITGUD", "LMAO"};
         dn.GetComponent<DamageNumbers>().AppearText(0, "normal", failedInstaMsgs[Random.Range(0, failedInstaMsgs.Length)]);
         yield return base.FailedInstaKill(delay);

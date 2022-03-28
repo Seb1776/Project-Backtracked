@@ -16,7 +16,7 @@ MonoBehaviour:
   colorGroup: 8
   abilityName: Buzzsaw
   timeBeforeAbility: 0.35
-  timeToDestroyEffect: 1.2
+  timeToDestroyEffect: 1.5
   attackEffect: {fileID: 8036524668391964468, guid: 10fbeb3040a812147aa63fd2bc834921, type: 3}
   effectIsNotCentered: 0
   offsetIfFlipped: {x: 5.49, y: 0}

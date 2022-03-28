@@ -1,0 +1,42 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c21f431352f35c140a7c2707fd4314d8, type: 3}
+  m_Name: MontgomeryGator
+  m_EditorClassIdentifier: 
+  animatronicName: Montgomery Gator
+  animatronicType: 0
+  realityGroup: 7
+  animatronicPrefab: {fileID: 1492772776897681061, guid: 7d987a1c5cd55fb48a1ad8afc35fe17f, type: 3}
+  skins:
+  - skinName: Montgomery Gator
+    skinIndex: 0
+    currentSkinQuality: 0
+  - skinName: Fireland Monty
+    skinIndex: 1
+    currentSkinQuality: 1
+  - skinName: Spiral Dragon Monty
+    skinIndex: 2
+    currentSkinQuality: 2
+  - skinName: Golden Montgomery Gator
+    skinIndex: 3
+    currentSkinQuality: 2
+  defaultSkin: 0
+  animatronicAbilities:
+  - {fileID: 11400000, guid: 8dc4d09c7c1500242880bbd22e39adab, type: 2}
+  - {fileID: 11400000, guid: d4cee0ddcf7355d42b344c3ee0146573, type: 2}
+  - {fileID: 11400000, guid: 79b62b4dba3f6d94baf145d45385c9ba, type: 2}
+  - {fileID: 11400000, guid: 41ff01a791e89e442a155f22d1df5f14, type: 2}
+  animatronicPortrait: {fileID: 5336457299775433909, guid: bc7ac2179ca936f4fa6c50a164ff391a, type: 3}
+  maxHealth: 450
+  maxDefense: 25
+  maxAttack: 155
+  maxCritChance: 15

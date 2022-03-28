@@ -1,0 +1,45 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8cfd646504bdc0e49a26eb8115aeecfc, type: 3}
+  m_Name: MegaClaws
+  m_EditorClassIdentifier: 
+  ability: 0
+  colorGroup: 0
+  abilityName: 
+  timeBeforeAbility: 0
+  timeToDestroyEffect: 0
+  attackEffect: {fileID: 0}
+  effectIsNotCentered: 0
+  offsetIfFlipped: {x: 0, y: 0}
+  sFXPlayMode: 0
+  timeOfRandomIterations: 0
+  globalIntervalsBtwSFX: 0
+  abilitySoundEffect: []
+  abilityHasOverlay: 0
+  abilityOverlay: 0
+  timeBeforeOverlay: 0
+  fadeInOffDurations: {x: 0, y: 0}
+  overlayStayDuration: 0
+  abilityHasCameraShake: 0
+  acs: 0
+  customShakeDuration: -1
+  timeBeforeCameraShake: 0
+  makesDamageTo: 0
+  damageToDo: 0
+  targets: 0
+  instanceOfDamage: 0
+  timeBtwInstancesOfDamage: 0
+  canPoison: 0
+  poisonDamage: 0
+  poisonDuration: 0
+  timeBtwPoisonDamage: 0
+  randomTargetSelection: 0

@@ -15,14 +15,28 @@ MonoBehaviour:
   animatronicName: Glamrock Freddy
   animatronicType: 0
   realityGroup: 7
-  animatronicPrefab: {fileID: 0}
+  animatronicPrefab: {fileID: 6508231783756134901, guid: e52b85d52a8579b40bb9add296e0aff3, type: 3}
+  skins:
+  - skinName: Glamrock Freddy
+    skinIndex: 0
+    currentSkinQuality: 0
+  - skinName: Glamrock Lefty
+    skinIndex: 1
+    currentSkinQuality: 1
+  - skinName: Delta-Glamrock Freddy
+    skinIndex: 2
+    currentSkinQuality: 2
+  - skinName: Glamrock Golden Freddy
+    skinIndex: 3
+    currentSkinQuality: 3
+  defaultSkin: 0
   animatronicAbilities:
   - {fileID: 11400000, guid: 8dc4d09c7c1500242880bbd22e39adab, type: 2}
-  - {fileID: 11400000, guid: 504a346ddea84ab478ee0332738a9b64, type: 2}
-  - {fileID: 11400000, guid: 832eb8386bdc0814dad189593636a8db, type: 2}
-  - {fileID: 11400000, guid: 968ddeea9d95ebc47a1fc2d25d016cfd, type: 2}
+  - {fileID: 11400000, guid: 7c25ed805ad5d9c43b20d0ef6c541f03, type: 2}
+  - {fileID: 11400000, guid: 292354040907189489531a9b42838ae1, type: 2}
+  - {fileID: 11400000, guid: 9a662dc0645e2974bb2c24c1aaf1ae0a, type: 2}
   animatronicPortrait: {fileID: -3501227945813038133, guid: c32a1052aa558634c8db75b968fe3c0d, type: 3}
-  maxHealth: 550
-  maxDefense: 85
+  maxHealth: 475
+  maxDefense: 45
   maxAttack: 175
   maxCritChance: 15
