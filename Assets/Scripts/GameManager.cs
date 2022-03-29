@@ -782,6 +782,7 @@ public class AnimatronicParty
     public GameObject animatronicTombstone;
     public GameObject animatronicGift;
     public GameObject munchieObject;
+    public Animator slasherKnife;
     public Transform posSpawn;
     public Animator bubbleBreathBubble;
     [Header ("UI")]
@@ -852,6 +853,7 @@ public class EnemyParty
     public GameObject munchieObject;
     public GameObject enemyGift;
     public Animator bubbleBreathBubble;
+    public Animator slasherKnife;
     public Text enemyBossName;
     public bool alive;
 

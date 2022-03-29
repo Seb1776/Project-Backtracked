@@ -334,6 +334,20 @@ public class StatAbility : AnimatronicAbility
                         for (int j = 0; j < entityIdxHaunt.Count; j++)
                             manager.enemyParty[entityIdxHaunt[j]].enemyItem.TriggerHauntingEffect(statsToAffect[o].hauntDuration, timeBeforeAbility);
                     }
+
+                    if (statsToAffect[o].abilityToAffect == AnimatronicStats.AbilityToAffect.Slasher)
+                    {
+                        List<int> aliveIdx = manager.GetEntityList("enemy", targets, randomTargets);
+
+                        for (int j = 0; j < aliveIdx.Count; j++)
+                            if (manager.GetRandomBoolChance(statsToAffect[o].slasherChanceToActivate))
+                                manager.enemyParty[aliveIdx[j]].enemyItem.TriggerSlasher();
+                    }
+
+                    if (statsToAffect[o].abilityToAffect == AnimatronicStats.AbilityToAffect.HocusPocus)
+                    {
+
+                    }
                 }       
                 //Enemies
                 else
@@ -983,7 +997,9 @@ public class AnimatronicStats
         Munchies,
         NeonWall,
         BubbleBreath,
-        MimicBall
+        MimicBall,
+        Slasher,
+        HocusPocus
     }
 
     public AbilityToAffect abilityToAffect;
@@ -1025,4 +1041,7 @@ public class AnimatronicStats
     public float neonWallDuration;
     [Header ("Bubble Breath Specific Fields")]
     public float bubbleBreathDuration;
+    [Header ("Slasher Fields")]
+    [Range (0f, 100f)]
+    public float slasherChanceToActivate;
 }

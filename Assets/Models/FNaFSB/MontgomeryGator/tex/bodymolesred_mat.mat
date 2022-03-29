@@ -93,7 +93,7 @@ Material:
     - MolesDensity: 2.8
     - MolesOffset: 23.88
     - MolesPower: 2.5
-    - Smoothness: 0
+    - Smoothness: 1
     - _AlphaClip: 0
     - _Blend: 0
     - _BumpScale: 1

@@ -15,7 +15,6 @@ public class Animatronic : LivingEntity
     public int idxInManager;
 
     Animator animator;
-    Coroutine munchiesCoroutine;
 
     public override void Awake()
     {
@@ -163,6 +162,8 @@ public class Animatronic : LivingEntity
                 {
                     manager.animatronicParty[idxInManager].munchieObject.GetComponent<Animator>().SetTrigger("attack_munchie");
                     MakeDamage(munchieDamage, "normal");
+                    currentTimeBtwMunchieDamage = 0f;
+                    newTimeMunchieDamage = Random.Range(timeBtwMunchieDamage.x, timeBtwMunchieDamage.y);
                 }
             }
 
@@ -172,6 +173,29 @@ public class Animatronic : LivingEntity
                 manager.animatronicParty[idxInManager].munchieObject.GetComponent<Animator>().SetBool("appear_munchie", false);
             }
         }
+    }
+
+    public override void TriggerSlasher()
+    {
+        if (!hasSlasher)
+        {
+            hasSlasher = true;
+            manager.animatronicParty[idxInManager].slasherKnife.SetTrigger("aim");
+            CheckForSlasher();
+        }
+
+        base.TriggerSlasher();
+    }
+
+    public override void CheckForSlasher()
+    {
+        if (currentHealth <= (int)(currentHealth / 2f))
+        {
+            manager.animatronicParty[idxInManager].slasherKnife.gameObject.SetActive(false);
+            InstaKill();
+        }
+
+        base.CheckForSlasher();
     }
 
     public override void InstaKill()

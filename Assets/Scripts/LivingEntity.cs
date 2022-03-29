@@ -16,6 +16,7 @@ public class LivingEntity : MonoBehaviour
     public bool stunned;
     public bool playingFeedback;
     public bool hasGift;
+    public bool hasSlasher;
     public bool hasMunchies;
     public bool hasNeonWall;
     public bool haunted;
@@ -58,6 +59,16 @@ public class LivingEntity : MonoBehaviour
         StartCoroutine(GeneralPoisonEffect(_poisonDuration));
         StartCoroutine(PoisonDamageEffect(_poisonDamage, _timeBtwPoisonDamage));
     }
+
+    public void TriggerHocusPocus()
+    {
+        int halfHealth = (int)(currentHealth / 2f);
+        currentHealth = (int)(Random.Range(1, halfHealth));
+    }
+
+    public virtual void TriggerSlasher() {}
+
+    public virtual void CheckForSlasher() {}
 
     public void TriggerStunEffect(float _stunDuration)
     {

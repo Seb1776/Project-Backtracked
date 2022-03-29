@@ -16,7 +16,7 @@ MonoBehaviour:
   colorGroup: 0
   abilityName: Jumpscare III
   timeBeforeAbility: 0
-  timeToDestroyEffect: 0
+  timeToDestroyEffect: 15
   attackEffect: {fileID: 7403424481109706824, guid: ce9c9abba80b0e8408bd95dbd55aa75d, type: 3}
   effectIsNotCentered: 1
   offsetIfFlipped: {x: 0, y: 0}

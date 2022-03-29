@@ -116,6 +116,35 @@ public class Enemy : LivingEntity
         base.UnTriggerGift();
     }
 
+    public override void TriggerSlasher()
+    {
+        if (!hasSlasher)
+        {
+            hasSlasher = true;
+            manager.enemyParty[idxInManager].slasherKnife.SetTrigger("aim");
+            setSlasherHealth = (int)(currentHealth / 2f);
+            CheckForSlasher();
+        }
+
+        base.TriggerSlasher();
+    }
+
+    int setSlasherHealth;
+
+    public override void CheckForSlasher()
+    {
+        Debug.Log(currentHealth + " - " + setSlasherHealth);
+
+        if (currentHealth <= setSlasherHealth)
+        {
+            manager.enemyParty[idxInManager].slasherKnife.gameObject.SetActive(false);
+            setSlasherHealth = 0;
+            InstaKill();
+        }
+
+        base.CheckForSlasher();
+    }
+
     public override void AddStatEffectToList(string _statID, int _amountToMod, bool _operation, float _timeToAffect, AllStatsMods.StatType _statType)
     {
         bool exists = false;
@@ -298,6 +327,9 @@ public class Enemy : LivingEntity
 
         if (manager.enemyParty[idxInManager].alive)
         {
+            if (hasSlasher && !hasGift)
+                CheckForSlasher();
+
             playingFeedback = true;
             entityMesh.SetActive(false);
         }
@@ -413,6 +445,8 @@ public class Enemy : LivingEntity
                     else
                         manager.bossParty.munchieObject.GetComponent<Animator>().SetTrigger("attack_munchie");
                     
+                    currentTimeBtwMunchieDamage = 0f;
+                    newTimeMunchieDamage = Random.Range(timeBtwMunchieDamage.x, timeBtwMunchieDamage.y);
                     MakeDamage(munchieDamage, "normal");
                 }
             }
