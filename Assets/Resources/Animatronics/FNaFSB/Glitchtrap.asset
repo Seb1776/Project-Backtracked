@@ -1,0 +1,48 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c21f431352f35c140a7c2707fd4314d8, type: 3}
+  m_Name: Glitchtrap
+  m_EditorClassIdentifier: 
+  animatronicName: Glitchtrap
+  animatronicType: 0
+  realityGroup: 7
+  animatronicPrefab: {fileID: 8533403856697185986, guid: e99f527a61fc391438d18712e44397ff, type: 3}
+  skins:
+  - skinName: Glitchtrap
+    skinIndex: 0
+    currentSkinQuality: 0
+  - skinName: Quest Villain Glitchtrap
+    skinIndex: 1
+    currentSkinQuality: 2
+  - skinName: Ghostly Glitchtrap
+    skinIndex: 2
+    currentSkinQuality: 3
+  - skinName: 1987 Glitchtrap
+    skinIndex: 3
+    currentSkinQuality: 2
+  - skinName: Bun-Bun Glitchtrap
+    skinIndex: 4
+    currentSkinQuality: 1
+  - skinName: Ultimate Glitch
+    skinIndex: 5
+    currentSkinQuality: 4
+  defaultSkin: 0
+  animatronicAbilities:
+  - {fileID: 11400000, guid: 31fcf64fb29c6ee4ab35793bd15ea097, type: 2}
+  - {fileID: 11400000, guid: a51baf6f05bd99048ae8521c763f2ff6, type: 2}
+  - {fileID: 11400000, guid: a0601379cbfb6c645be84a3b2b8fc826, type: 2}
+  - {fileID: 11400000, guid: 87f4572731883e044b9340d68b0506d9, type: 2}
+  animatronicPortrait: {fileID: -4144794241086307255, guid: 555d3e63249712746b9aa22f8833b2cf, type: 3}
+  maxHealth: 400
+  maxDefense: 15
+  maxAttack: 95
+  maxCritChance: 20

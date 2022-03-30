@@ -38,7 +38,7 @@ MonoBehaviour:
   - skinName: Clowntrap
     skinIndex: 6
     currentSkinQuality: 4
-  defaultSkin: 5
+  defaultSkin: 0
   animatronicAbilities:
   - {fileID: 11400000, guid: 2c2f445d878e52c4185f5af53912c21b, type: 2}
   - {fileID: 11400000, guid: f6570f06969cf14448654e93819c0467, type: 2}

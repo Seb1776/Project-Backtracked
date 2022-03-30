@@ -222,6 +222,7 @@ public class GameManager : MonoBehaviour
             {
                 neonWallAnimatronics[activatedNWTypeA].SetBool("neonwall", false);
                 neonWallCurrentDurationA = 0f;
+                activatedNWTypeA = -1;
                 actNeonWallA = false;
 
                 foreach (AnimatronicParty ap in animatronicParty)
@@ -268,6 +269,7 @@ public class GameManager : MonoBehaviour
             {
                 neonWallAnimatronics[activatedNWTypeE].SetBool("neonwall", false);
                 neonWallCurrentDurationE = 0f;
+                activatedNWTypeE = -1;
                 actNeonWallE = false;
 
                 foreach (EnemyParty ep in enemyParty)
@@ -307,7 +309,7 @@ public class GameManager : MonoBehaviour
 
     public void NeonWallActivation(string createFor, int neonWallType, float duration)
     {
-        if (createFor == "animatronic")
+        if (createFor == "animatronic" && activatedNWTypeA == -1)
         {
             if (actNeonWallA)
                 neonWallCurrentDurationA = 0f;
@@ -318,7 +320,7 @@ public class GameManager : MonoBehaviour
             neonWallAnimatronics[neonWallType].SetBool("neonwall", true);
         }
 
-        else
+        else if (createFor == "enemy" && activatedNWTypeE == -1)
         {
             if (actNeonWallE)
                 neonWallCurrentDurationE = 0f;

@@ -19,7 +19,7 @@ public class StatAbility : AnimatronicAbility
     {
         GameManager manager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
 
-        for (int o = 0; o < statsToAffect.Length; o++/*var statsToAffect[o] in statsToAffect*/)
+        for (int o = 0; o < statsToAffect.Length; o++)
         {
             if (statsToAffect[o].abilityToAffect != AnimatronicStats.AbilityToAffect.MimicBall)
             {   //Animatronics
@@ -999,7 +999,8 @@ public class AnimatronicStats
         BubbleBreath,
         MimicBall,
         Slasher,
-        HocusPocus
+        HocusPocus,
+        IllusionDisk
     }
 
     public AbilityToAffect abilityToAffect;

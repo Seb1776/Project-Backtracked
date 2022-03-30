@@ -23,7 +23,11 @@ MonoBehaviour:
   sFXPlayMode: 0
   timeOfRandomIterations: 0
   globalIntervalsBtwSFX: 0
-  abilitySoundEffect: []
+  abilitySoundEffect:
+  - SFX: {fileID: 8300000, guid: 4e281635cbdb617499f6535ddb62719e, type: 3}
+    amountToPlayAudio: 1
+    intervalsBtwPlays: {x: 0, y: 0}
+    delayToPlaySFX: 0
   abilityHasOverlay: 0
   abilityOverlay: 0
   timeBeforeOverlay: 0
@@ -34,9 +38,9 @@ MonoBehaviour:
   customShakeDuration: -1
   timeBeforeCameraShake: 0
   makesDamageTo: 0
-  damageToDo: 0
-  targets: 0
-  instanceOfDamage: 0
+  damageToDo: 20
+  targets: 1
+  instanceOfDamage: 1
   timeBtwInstancesOfDamage: 0
   canPoison: 0
   poisonDamage: 0
