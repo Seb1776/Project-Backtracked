@@ -17,6 +17,8 @@ public class AnimatronicAbility : ScriptableObject
     public Vector2 offsetIfFlipped;
     public enum SFXPlayMode { Continuous, SelectOneRandom, SelectMultipleRandom }
     public SFXPlayMode sFXPlayMode;
+    public bool overrideParticleDuration;
+    public float particleDuration;
     [Header("Random SFX Select Properties")]
     public int timeOfRandomIterations;
     public float globalIntervalsBtwSFX;
@@ -57,6 +59,16 @@ public class AnimatronicAbility : ScriptableObject
         if (attackEffect != null)
         {
             _attackEffect = Instantiate(attackEffect, attackEffect.transform.position, Quaternion.identity);
+
+            if (overrideParticleDuration)
+            {
+                ParticleSystem effectPS = _attackEffect.transform.GetChild(0).GetComponent<ParticleSystem>();
+                effectPS.Stop();
+                var main = effectPS.main;
+                main.loop = false;
+                main.duration = particleDuration;
+                effectPS.Play();
+            }
 
             if (flip)
             {

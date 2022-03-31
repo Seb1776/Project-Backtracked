@@ -1,0 +1,70 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93fc9c1632a49f949a0a1eb89a8dcc1f, type: 3}
+  m_Name: Somniphobia
+  m_EditorClassIdentifier: 
+  ability: 0
+  colorGroup: 1
+  abilityName: Somniphobia
+  timeBeforeAbility: 0
+  timeToDestroyEffect: 15
+  attackEffect: {fileID: 8278036865426243379, guid: 47cd4efe7f221fd4e970331a2ee3cbcf, type: 3}
+  effectIsNotCentered: 0
+  offsetIfFlipped: {x: 0, y: 0}
+  sFXPlayMode: 1
+  overrideParticleDuration: 1
+  particleDuration: 15
+  timeOfRandomIterations: 0
+  globalIntervalsBtwSFX: 0
+  abilitySoundEffect:
+  - SFX: {fileID: 8300000, guid: 22fd5ea29d186d6469fd11849cf8115d, type: 3}
+    amountToPlayAudio: 1
+    intervalsBtwPlays: {x: 0, y: 0}
+    delayToPlaySFX: 0
+  - SFX: {fileID: 8300000, guid: 22fd5ea29d186d6469fd11849cf8115d, type: 3}
+    amountToPlayAudio: 1
+    intervalsBtwPlays: {x: 0, y: 0}
+    delayToPlaySFX: 0
+  abilityHasOverlay: 1
+  abilityOverlay: 5
+  timeBeforeOverlay: 0
+  fadeInOffDurations: {x: 0.15, y: 0.15}
+  overlayStayDuration: 0.25
+  abilityHasCameraShake: 0
+  acs: 0
+  customShakeDuration: -1
+  timeBeforeCameraShake: 0
+  supposedToAffect: 1
+  targets: 4
+  randomTargets: 0
+  statsToAffect:
+  - abilityToAffect: 3
+    entityToAffect: 0
+    affectMode: 1
+    affectValue: 1
+    instaKillMode: 0
+    percentageValue: 25
+    pointValue: 0
+    increaseStatTime: 15
+    stunTime: 0
+    chanceToInstaKill: 0
+    minHealthPercentageToKill: 0
+    hauntDuration: 0
+    specificAbilities: []
+    otherSpecificExecution: 0
+    timeBtwMunchiesAttack: {x: 0, y: 0}
+    munchiesDamage: 0
+    munchiesDuration: 0
+    neonWallType: 0
+    neonWallDuration: 0
+    bubbleBreathDuration: 0
+    slasherChanceToActivate: 0

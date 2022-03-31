@@ -21,6 +21,8 @@ MonoBehaviour:
   effectIsNotCentered: 0
   offsetIfFlipped: {x: 0, y: 0}
   sFXPlayMode: 0
+  overrideParticleDuration: 0
+  particleDuration: 0
   timeOfRandomIterations: 0
   globalIntervalsBtwSFX: 0
   abilitySoundEffect:
@@ -61,6 +63,7 @@ MonoBehaviour:
     neonWallType: 0
     neonWallDuration: 0
     bubbleBreathDuration: 0
+    slasherChanceToActivate: 0
   - abilityToAffect: 1
     entityToAffect: 0
     affectMode: 0
@@ -81,6 +84,7 @@ MonoBehaviour:
     neonWallType: 0
     neonWallDuration: 0
     bubbleBreathDuration: 0
+    slasherChanceToActivate: 0
   - abilityToAffect: 2
     entityToAffect: 0
     affectMode: 0
@@ -101,3 +105,25 @@ MonoBehaviour:
     neonWallType: 0
     neonWallDuration: 0
     bubbleBreathDuration: 0
+    slasherChanceToActivate: 0
+  - abilityToAffect: 3
+    entityToAffect: 0
+    affectMode: 0
+    affectValue: 1
+    instaKillMode: 0
+    percentageValue: 35
+    pointValue: 0
+    increaseStatTime: 15
+    stunTime: 0
+    chanceToInstaKill: 0
+    minHealthPercentageToKill: 0
+    hauntDuration: 0
+    specificAbilities: []
+    otherSpecificExecution: 0
+    timeBtwMunchiesAttack: {x: 0, y: 0}
+    munchiesDamage: 0
+    munchiesDuration: 0
+    neonWallType: 0
+    neonWallDuration: 0
+    bubbleBreathDuration: 0
+    slasherChanceToActivate: 0

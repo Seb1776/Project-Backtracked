@@ -33,9 +33,6 @@ public class LivingEntity : MonoBehaviour
     [Header ("Stats")]
     public List<AllStatsMods> allStats = new List<AllStatsMods>();
 
-    Coroutine stunCoroutine;
-    Coroutine buffCoroutine;
-
     public virtual void Awake()
     {
         source = GetComponent<AudioSource>();
@@ -87,10 +84,12 @@ public class LivingEntity : MonoBehaviour
         AllStatsMods STRStat = new AllStatsMods(AllStatsMods.StatType.ATK);
         AllStatsMods DEFStat = new AllStatsMods(AllStatsMods.StatType.DEF);
         AllStatsMods CRTStat = new AllStatsMods(AllStatsMods.StatType.CRT);
+        AllStatsMods SPDStat = new AllStatsMods(AllStatsMods.StatType.SPD);
 
         allStats.Add(STRStat);
         allStats.Add(DEFStat);
         allStats.Add(CRTStat);
+        allStats.Add(SPDStat);
     }
 
     float stunDuration, currentStunDuration;
@@ -123,7 +122,7 @@ public class LivingEntity : MonoBehaviour
 
     public virtual void InstaKill() {}
 
-    public virtual void AddStatEffectToList(string _statID, int _amountToMod, bool _operation, float _timeToAffect, AllStatsMods.StatType _statType) {}
+    public virtual void AddStatEffectToList(string _statID, float _amountToMod, bool _operation, float _timeToAffect, AllStatsMods.StatType _statType) {}
 
     public virtual IEnumerator FailedInstaKill(float delay) { yield return null; }
 
@@ -194,9 +193,9 @@ public class LivingEntity : MonoBehaviour
                 attackingEntityAtk = attackingEntity.currentAttack;
                 attackedEntityDef = attackedEntity.currentDefense;
 
-                dmgWithAtk = manager.GetValueFromPercentage(damageValue, attackingEntityAtk);
+                dmgWithAtk = (int)manager.GetValueFromPercentage(damageValue, attackingEntityAtk, false);
                 totalDamage = dmgWithAtk + damageValue;
-                dmgWithDef = manager.GetValueFromPercentage(totalDamage, attackedEntityDef);
+                dmgWithDef = (int)manager.GetValueFromPercentage(totalDamage, attackedEntityDef, false);
                 finalDamage = totalDamage - dmgWithDef;
 
                 if (gotCritical)
@@ -206,7 +205,7 @@ public class LivingEntity : MonoBehaviour
                     finalDamage = 0;
                 
                 if (hasNeonWall)
-                    finalDamage = manager.GetValueFromPercentage(finalDamage, neonWallType == 0 ? 50f : 85f);
+                    finalDamage = (int)manager.GetValueFromPercentage(finalDamage, neonWallType == 0 ? 50f : 85f, false);
 
                 if (attackedEntity.GetComponent<Animatronic>() != null)
                 {
@@ -335,7 +334,7 @@ public class LivingEntity : MonoBehaviour
 [System.Serializable]
 public class AllStatsMods
 {
-    public enum StatType { ATK, DEF, CRT }
+    public enum StatType { ATK, DEF, CRT, SPD }
     public StatType statType;
     public List<StatModification> allStatMods = new List<StatModification>();
 
@@ -349,11 +348,11 @@ public class AllStatsMods
 public class StatModification
 {
     public string statID;
-    public int amountToMod;
+    public float amountToMod;
     public float timeToAffect, currentTimeToAffect;
     public bool operation;
 
-    public StatModification(string statID, int amountToMod, bool operation, float timeToAffect)
+    public StatModification(string statID, float amountToMod, bool operation, float timeToAffect)
     {
         this.statID = statID;
         this.amountToMod = amountToMod;
@@ -366,15 +365,23 @@ public class StatModification
         switch (_stat)
         {
             case AllStatsMods.StatType.ATK:
-                ent.currentAttack += amountToMod;
+                ent.currentAttack += (int)amountToMod;
             break;
 
             case AllStatsMods.StatType.DEF:
-                ent.currentDefense += amountToMod;
+                ent.currentDefense += (int)amountToMod;
             break;
 
             case AllStatsMods.StatType.CRT:
-                ent.currentCritChance += amountToMod;
+                ent.currentCritChance += (int)amountToMod;
+            break;
+
+            case AllStatsMods.StatType.SPD:
+                if (ent.GetComponent<Animatronic>() != null)
+                    ent.manager.animatronicParty[ent.GetComponent<Animatronic>().idxInManager].speedMultiplier += amountToMod;
+                
+                else
+                    ent.manager.enemyParty[ent.GetComponent<Enemy>().idxInManager].speedMultiplier += amountToMod;
             break;
         }
     }
@@ -384,15 +391,23 @@ public class StatModification
         switch (_stat)
         {
             case AllStatsMods.StatType.ATK:
-                ent.currentAttack -= amountToMod;
+                ent.currentAttack -= (int)amountToMod;
             break;
 
             case AllStatsMods.StatType.DEF:
-                ent.currentDefense -= amountToMod;
+                ent.currentDefense -= (int)amountToMod;
             break;
 
             case AllStatsMods.StatType.CRT:
-                ent.currentCritChance -= amountToMod;
+                ent.currentCritChance -= (int)amountToMod;
+            break;
+
+            case AllStatsMods.StatType.SPD:
+                if (ent.GetComponent<Animatronic>() != null)
+                    ent.manager.animatronicParty[ent.GetComponent<Animatronic>().idxInManager].speedMultiplier -= amountToMod;
+                
+                else
+                    ent.manager.enemyParty[ent.GetComponent<Enemy>().idxInManager].speedMultiplier -= amountToMod;
             break;
         }
     }

@@ -71,7 +71,7 @@ public class HealAbility : AnimatronicAbility
                         int healValue = 0;
 
                         if (healPercentage > 0)
-                            healValue = _manager.GetValueFromPercentage(_manager.enemyParty[idxes[j]].enemyItem.currentHealth, healPercentage);
+                            healValue = (int)_manager.GetValueFromPercentage(_manager.enemyParty[idxes[j]].enemyItem.currentHealth, healPercentage);
                         
                         else if (healAmount > 0)
                             healValue = healAmount;
@@ -89,7 +89,7 @@ public class HealAbility : AnimatronicAbility
                     int healValue = 0;
 
                     if (healPercentage > 0)
-                        healValue = _manager.GetValueFromPercentage(_manager.bossParty.enemyItem.currentHealth, healPercentage);
+                        healValue = (int)_manager.GetValueFromPercentage(_manager.bossParty.enemyItem.currentHealth, healPercentage);
                         
                     else if (healAmount > 0)
                         healValue = healAmount;
@@ -119,7 +119,7 @@ public class HealAbility : AnimatronicAbility
                     int healValue = 0;
 
                     if (healPercentage > 0)
-                        healValue = _manager.GetValueFromPercentage(_manager.animatronicParty[idxes[j]].animatronicItem.currentHealth, healPercentage);
+                        healValue = (int)_manager.GetValueFromPercentage(_manager.animatronicParty[idxes[j]].animatronicItem.currentHealth, healPercentage);
                         
                     else if (healAmount > 0)
                         healValue = healAmount;

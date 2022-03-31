@@ -18,7 +18,11 @@ MonoBehaviour:
   timeBeforeAbility: 0
   timeToDestroyEffect: 0
   attackEffect: {fileID: 0}
+  effectIsNotCentered: 0
+  offsetIfFlipped: {x: 0, y: 0}
   sFXPlayMode: 0
+  overrideParticleDuration: 0
+  particleDuration: 0
   timeOfRandomIterations: 0
   globalIntervalsBtwSFX: 0
   abilitySoundEffect:
@@ -39,10 +43,11 @@ MonoBehaviour:
   acs: 0
   customShakeDuration: -1
   timeBeforeCameraShake: 0
+  supposedToAffect: 0
   targets: 0
   randomTargets: 0
   statsToAffect:
-  - abilityToAffect: 11
+  - abilityToAffect: 12
     entityToAffect: 0
     affectMode: 0
     affectValue: 0
@@ -62,3 +67,4 @@ MonoBehaviour:
     neonWallType: 0
     neonWallDuration: 0
     bubbleBreathDuration: 0
+    slasherChanceToActivate: 0

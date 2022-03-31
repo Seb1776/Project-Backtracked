@@ -145,7 +145,7 @@ public class Enemy : LivingEntity
         base.CheckForSlasher();
     }
 
-    public override void AddStatEffectToList(string _statID, int _amountToMod, bool _operation, float _timeToAffect, AllStatsMods.StatType _statType)
+    public override void AddStatEffectToList(string _statID, float _amountToMod, bool _operation, float _timeToAffect, AllStatsMods.StatType _statType)
     {
         bool exists = false;
 
@@ -158,6 +158,8 @@ public class Enemy : LivingEntity
             }
         }
 
+        Debug.Log(_statID + "0");
+
         if (!exists)
         {
             StatModification _sm = new StatModification(_statID, _amountToMod, _operation, _timeToAffect);
@@ -166,6 +168,8 @@ public class Enemy : LivingEntity
                 if (allStats[i].statType == _statType)
                     allStats[i].allStatMods.Add(_sm);
             
+            Debug.Log(_statID + "1");
+
             if (_operation) _sm.AddStat(_statType, this);
             else  _sm.SubtractStat(_statType, this);
         }

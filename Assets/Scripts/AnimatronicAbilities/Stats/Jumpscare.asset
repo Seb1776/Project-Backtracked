@@ -21,6 +21,8 @@ MonoBehaviour:
   effectIsNotCentered: 0
   offsetIfFlipped: {x: 0, y: 0}
   sFXPlayMode: 0
+  overrideParticleDuration: 0
+  particleDuration: 0
   timeOfRandomIterations: 0
   globalIntervalsBtwSFX: 0
   abilitySoundEffect:
@@ -41,7 +43,7 @@ MonoBehaviour:
   targets: 4
   randomTargets: 0
   statsToAffect:
-  - abilityToAffect: 3
+  - abilityToAffect: 4
     entityToAffect: 1
     affectMode: 0
     affectValue: 0
@@ -61,3 +63,4 @@ MonoBehaviour:
     neonWallType: 0
     neonWallDuration: 0
     bubbleBreathDuration: 0
+    slasherChanceToActivate: 0

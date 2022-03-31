@@ -18,7 +18,11 @@ MonoBehaviour:
   timeBeforeAbility: 0.45
   timeToDestroyEffect: 1.22
   attackEffect: {fileID: 5133334004606939198, guid: 6e693b320e7320748b11df33621071f2, type: 3}
+  effectIsNotCentered: 0
+  offsetIfFlipped: {x: 0, y: 0}
   sFXPlayMode: 0
+  overrideParticleDuration: 0
+  particleDuration: 0
   timeOfRandomIterations: 0
   globalIntervalsBtwSFX: 0
   abilitySoundEffect:
@@ -26,10 +30,20 @@ MonoBehaviour:
     amountToPlayAudio: 1
     intervalsBtwPlays: {x: 0, y: 0}
     delayToPlaySFX: 0
+  abilityHasOverlay: 0
+  abilityOverlay: 0
+  timeBeforeOverlay: 0
+  fadeInOffDurations: {x: 0, y: 0}
+  overlayStayDuration: 0
+  abilityHasCameraShake: 0
+  acs: 0
+  customShakeDuration: -1
+  timeBeforeCameraShake: 0
+  supposedToAffect: 0
   targets: 4
   randomTargets: 0
   statsToAffect:
-  - abilityToAffect: 4
+  - abilityToAffect: 5
     entityToAffect: 0
     affectMode: 0
     affectValue: 0
@@ -41,9 +55,12 @@ MonoBehaviour:
     chanceToInstaKill: 15
     minHealthPercentageToKill: 30
     hauntDuration: 0
-    targetsToHaunt: 0
     specificAbilities: []
     otherSpecificExecution: 0
     timeBtwMunchiesAttack: {x: 0, y: 0}
     munchiesDamage: 0
     munchiesDuration: 0
+    neonWallType: 0
+    neonWallDuration: 0
+    bubbleBreathDuration: 0
+    slasherChanceToActivate: 0

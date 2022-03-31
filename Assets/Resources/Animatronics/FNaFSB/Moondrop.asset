@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c21f431352f35c140a7c2707fd4314d8, type: 3}
+  m_Name: Moondrop
+  m_EditorClassIdentifier: 
+  animatronicName: Moondrop
+  animatronicType: 0
+  realityGroup: 7
+  animatronicPrefab: {fileID: 9129789649972521653, guid: 74a050bc3b28d314e822fa7f9cd6db74, type: 3}
+  skins:
+  - skinName: Moondrop
+    skinIndex: 0
+    currentSkinQuality: 0
+  - skinName: Inverted Moondrop
+    skinIndex: 1
+    currentSkinQuality: 1
+  - skinName: Eclipse Moondrop
+    skinIndex: 2
+    currentSkinQuality: 2
+  defaultSkin: 0
+  animatronicAbilities:
+  - {fileID: 11400000, guid: a7598e3d8892cc845ae31fbde8d9c84b, type: 2}
+  - {fileID: 11400000, guid: 31fcf64fb29c6ee4ab35793bd15ea097, type: 2}
+  - {fileID: 11400000, guid: 34342a996ba340340b3648c2b8db88e3, type: 2}
+  - {fileID: 11400000, guid: 08094b51c9b71f94392db8fbc82d86ef, type: 2}
+  animatronicPortrait: {fileID: -4309693117837699697, guid: 536c938a4b2709a42970cf55a73c4868, type: 3}
+  maxHealth: 375
+  maxDefense: 15
+  maxAttack: 85
+  maxCritChance: 25

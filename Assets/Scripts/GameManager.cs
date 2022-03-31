@@ -127,7 +127,7 @@ public class GameManager : MonoBehaviour
             {
                 if (ap.remainingTimeToPlay < timeBtwTurns)
                 {
-                    ap.remainingTimeToPlay += Time.deltaTime * ap.turnMultiplier;
+                    ap.remainingTimeToPlay += Time.deltaTime * ap.turnMultiplier * ap.speedMultiplier;
                     ap.turnSlider.value = ap.remainingTimeToPlay;
                 }
                     
@@ -150,7 +150,7 @@ public class GameManager : MonoBehaviour
                 {
                     if (ep.remainingTimeToPlay < timeBtwTurns)
                     {
-                        ep.remainingTimeToPlay += Time.deltaTime * ep.turnMultiplier;
+                        ep.remainingTimeToPlay += Time.deltaTime * ep.turnMultiplier * ep.speedMultiplier;
                     }
 
                     if (ep.remainingTimeToPlay >= timeBtwTurns)
@@ -671,9 +671,13 @@ public class GameManager : MonoBehaviour
             attackButtons[i].AppearButton(currentTurn.animatronicData.animatronicAbilities[i]);
     }
 
-    public int GetValueFromPercentage(float fullValue, float percentageToTake)
-    {
-        return (int)((fullValue * percentageToTake) / 100f);
+    public float GetValueFromPercentage(float fullValue, float percentageToTake, bool returnFloat = false)
+    {   
+        if (!returnFloat)
+            return (int)((fullValue * percentageToTake) / 100f);
+        
+        else
+            return (fullValue * percentageToTake) / 100f;
     }
 
     public bool GetRandomBoolChance(float percentageChance)
@@ -779,6 +783,7 @@ public class AnimatronicParty
     public LivingEntity animatronicItem;
     public float remainingTimeToPlay;
     public float turnMultiplier;
+    public float speedMultiplier;
     public Animator turnModel;
     public GameObject animatronicDeathEffect;
     public GameObject animatronicTombstone;
@@ -847,6 +852,7 @@ public class EnemyParty
     public LivingEntity enemyItem;
     public float remainingTimeToPlay;
     public float turnMultiplier;
+    public float speedMultiplier;
     public Animator positionAnimatior;
     public Transform canvasParent;
     public GameObject enemyDeathEffect;

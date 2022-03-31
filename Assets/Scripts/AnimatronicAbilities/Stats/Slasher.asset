@@ -21,6 +21,8 @@ MonoBehaviour:
   effectIsNotCentered: 0
   offsetIfFlipped: {x: 0, y: 0}
   sFXPlayMode: 0
+  overrideParticleDuration: 0
+  particleDuration: 0
   timeOfRandomIterations: 0
   globalIntervalsBtwSFX: 0
   abilitySoundEffect: []
@@ -37,7 +39,7 @@ MonoBehaviour:
   targets: 1
   randomTargets: 1
   statsToAffect:
-  - abilityToAffect: 12
+  - abilityToAffect: 13
     entityToAffect: 0
     affectMode: 0
     affectValue: 0

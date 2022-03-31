@@ -256,7 +256,7 @@ public class Animatronic : LivingEntity
         yield return base.FailedInstaKill(delay);
     }
 
-    public override void AddStatEffectToList(string _statID, int _amountToMod, bool _operation, float _timeToAffect, AllStatsMods.StatType _statType)
+    public override void AddStatEffectToList(string _statID, float _amountToMod, bool _operation, float _timeToAffect, AllStatsMods.StatType _statType)
     {
         bool exists = false;
 
@@ -268,6 +268,8 @@ public class Animatronic : LivingEntity
                     exists = true;
             }
         }
+
+        
 
         if (!exists)
         {
