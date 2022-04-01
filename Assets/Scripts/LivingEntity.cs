@@ -17,6 +17,7 @@ public class LivingEntity : MonoBehaviour
     public bool playingFeedback;
     public bool hasGift;
     public bool hasSlasher;
+    public bool hasIllusionDisk;
     public bool hasMunchies;
     public bool hasNeonWall;
     public bool haunted;
@@ -64,6 +65,8 @@ public class LivingEntity : MonoBehaviour
     }
 
     public virtual void TriggerSlasher() {}
+
+    public virtual void TriggerIllusionDisk (float illusionDuration) {}
 
     public virtual void CheckForSlasher() {}
 
@@ -170,8 +173,13 @@ public class LivingEntity : MonoBehaviour
     }
 
     public virtual void MakeDamage(int damageValue, string context = "", LivingEntity attackingEntity = null, LivingEntity attackedEntity = null)
-    {   
-        if (!manager.battleEnded)
+    {
+        bool hit = true;
+
+        if (hasIllusionDisk)
+            hit = manager.GetRandomBoolChance(50f);
+
+        if (!manager.battleEnded && hit)
         {
             int dmgWithAtk = 0;
             int dmgWithDef = 0;

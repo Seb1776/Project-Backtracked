@@ -38,6 +38,9 @@ public class Enemy : LivingEntity
         if (!manager.enemyParty[idxInManager].alive && entityMesh.activeSelf)
             entityMesh.SetActive(false);
         
+        if (!manager.enemyParty[idxInManager].alive && manager.enemyParty[idxInManager].slasherKnife.gameObject.activeSelf)
+            manager.enemyParty[idxInManager].slasherKnife.gameObject.SetActive(false);
+        
         if (hasMunchies)
             MunchiesBehaviour();
         

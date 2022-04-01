@@ -9,6 +9,7 @@ public class AnimatronicAbility : ScriptableObject
     public enum ColorGroup { Red, Yellow, Pink, Purple, White, Orange, Green, Black, BlazeOrange }
     public ColorGroup colorGroup;
     public string abilityName;
+    public string abilityDescription;
     public float timeBeforeAbility;
     public float timeToDestroyEffect;
     [Header ("Ability Effect Properties")]

@@ -50,6 +50,9 @@ public class Animatronic : LivingEntity
         if (haunted)
             StartHaunt();
         
+        if (hasIllusionDisk)
+            IllusionDiskBehaviour();
+        
         HandleStatEffects();
         
         base.Update();
@@ -118,6 +121,36 @@ public class Animatronic : LivingEntity
             currentHauntTime = 0f;
 
         base.TriggerHauntingEffect(_hauntTime, _timeBeforeAbility);
+    }
+
+    float illusionDiskDuration, illusionDiskCurrentDuration;
+
+    public override void TriggerIllusionDisk(float illusionDuration)
+    {
+        if (!hasIllusionDisk)
+        {
+            hasIllusionDisk = true;
+            illusionDiskDuration = illusionDuration;
+        }
+
+        else
+            illusionDiskCurrentDuration = 0f;
+
+        base.TriggerIllusionDisk(illusionDuration);
+    }
+
+    void IllusionDiskBehaviour()
+    {
+        if (illusionDiskCurrentDuration < illusionDiskDuration)
+        {
+            illusionDiskCurrentDuration += Time.deltaTime;
+
+            if (illusionDiskCurrentDuration >= illusionDiskDuration)
+            {
+                hasIllusionDisk = false;
+                illusionDiskCurrentDuration = 0f;
+            }
+        }
     }
 
     float hauntTime, delay, currentHauntTime, currentDelay;

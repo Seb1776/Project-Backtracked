@@ -197,15 +197,15 @@ public class GameManager : MonoBehaviour
         mimicBall.mimicBallAnim.SetTrigger("mimic");
     }
 
-    bool actNeonWallA, actEndoArmyA, actBubbleBreathA,
-        actNeonWallE, actEndoArmyE, actBubbleBreathE;
+    bool actNeonWallA, actBubbleBreathA,
+        actNeonWallE, actBubbleBreathE;
 
     float neonWallCurrentDurationA, neonWallCurrentDurationE,
-          endoACurrentDurationA, endoACurrentDurationE,
+          illusionDiskCurrentDurationA, illusionDiskCurrentDurationE,
           bubbleBCurrentDurationA, bubbleBCurrentDurationE;
     
     float neonWallDurationA, neonWallDurationE,
-          endoADurationA, endoAtDurationE,
+          illusionDiskDurationA, illusionDiskDurationE,
           bubbleBDurationA, bubbleBDurationE;
     
     int activatedNWTypeA, activatedNWTypeE;
@@ -254,11 +254,6 @@ public class GameManager : MonoBehaviour
             }
         }
 
-        if (actEndoArmyA)
-        {
-            //Animatronic EndoArmy
-        }
-
         //Enemies
         if (actNeonWallE)
         {
@@ -300,11 +295,6 @@ public class GameManager : MonoBehaviour
                 }
             }
         }
-
-        if (actEndoArmyE)
-        {
-            //Enemies EndoArmy
-        }
     }
 
     public void NeonWallActivation(string createFor, int neonWallType, float duration)
@@ -334,7 +324,7 @@ public class GameManager : MonoBehaviour
     }
 
     public void BubbleBreathActivation(string invokeFor, float duration)
-    {   
+    {
         if (invokeFor == "animatronic")
         {
             if (!actBubbleBreathA)
