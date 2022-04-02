@@ -208,7 +208,7 @@ public class GameManager : MonoBehaviour
           illusionDiskDurationA, illusionDiskDurationE,
           bubbleBDurationA, bubbleBDurationE;
     
-    int activatedNWTypeA, activatedNWTypeE;
+    int activatedNWTypeA = -1, activatedNWTypeE = -1;
 
     void TimedAbilitiesBehaviour()
     {

@@ -15,6 +15,7 @@ MonoBehaviour:
   ability: 0
   colorGroup: 1
   abilityName: Neon Wall II
+  abilityDescription: 
   timeBeforeAbility: 0
   timeToDestroyEffect: 0
   attackEffect: {fileID: 0}
@@ -40,7 +41,7 @@ MonoBehaviour:
   customShakeDuration: -1
   timeBeforeCameraShake: 0
   supposedToAffect: 0
-  targets: 0
+  targets: 1
   randomTargets: 0
   statsToAffect:
   - abilityToAffect: 10
@@ -64,3 +65,4 @@ MonoBehaviour:
     neonWallDuration: 7.5
     bubbleBreathDuration: 0
     slasherChanceToActivate: 0
+    illusionDiskDuration: 0
