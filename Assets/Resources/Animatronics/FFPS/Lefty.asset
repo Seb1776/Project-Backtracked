@@ -30,7 +30,7 @@ MonoBehaviour:
   animatronicAbilities:
   - {fileID: 11400000, guid: 0e5cff2203e795448aaf767d2e006e61, type: 2}
   - {fileID: 11400000, guid: 8e5ea41d7e4244949a40686f9fc46bf4, type: 2}
-  - {fileID: 11400000, guid: ceff901681a9d8442a0c9d7d90126d2b, type: 2}
+  - {fileID: 11400000, guid: 6d292196a65c547448df43917f0bdcb3, type: 2}
   - {fileID: 11400000, guid: 87f4572731883e044b9340d68b0506d9, type: 2}
   animatronicPortrait: {fileID: -6445716448545914606, guid: 401d742830290b04daedd5a1a57cb501, type: 3}
   maxHealth: 375

@@ -49,6 +49,9 @@ public class LivingEntity : MonoBehaviour
     {
         if (stunned)
             StunBehaviour();
+        
+        if (hasIllusionDisk)
+            IllusionDiskBehaviour();
     }
 
     public void TriggerPoisonousEffect(int _poisonDamage, float _poisonDuration, float _timeBtwPoisonDamage)
@@ -146,6 +149,8 @@ public class LivingEntity : MonoBehaviour
     public virtual void ApplyDEF() {}
 
     public virtual void ApplyCRT() {}
+
+    public virtual void IllusionDiskBehaviour() {}
 
     public virtual void IncreaseStatTimer(string _stat, int _value, float _duration, bool _operation, float _deltaBefore) {}
 

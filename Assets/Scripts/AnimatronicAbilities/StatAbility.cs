@@ -400,15 +400,19 @@ public class StatAbility : AnimatronicAbility
 
                     if (statsToAffect[o].abilityToAffect == AnimatronicStats.AbilityToAffect.IllusionDisk)
                     {
-                        for (int j = 0; j < aliveEnems.Count; j++)
-                            manager.enemyParty[aliveEnems[j]].enemyItem.TriggerIllusionDisk(statsToAffect[o].illusionDiskDuration);
+                        for (int j = 0; j < aliveAnims.Count; j++)
+                            manager.animatronicParty[aliveAnims[j]].animatronicItem.TriggerIllusionDisk(statsToAffect[o].illusionDiskDuration);
                     }
                 }       
                 //Enemies
                 else
                 {   //Regular Battle
+                    List<int> aliveAnims = manager.GetEntityList("animatronic", targets, randomTargets);
+
                     if (manager.battleMusicContext == GameManager.BattleMusicContext.Fight)
                     {
+                        List<int> aliveEnems = manager.GetEntityList("enemy", targets, randomTargets);
+
                         if (statsToAffect[o].abilityToAffect == AnimatronicStats.AbilityToAffect.Attack)
                         {
                             if (supposedToAffect == SupposedToAffect.SameEntity)
@@ -486,7 +490,7 @@ public class StatAbility : AnimatronicAbility
                             }
                         }
 
-                        else if (statsToAffect[o].abilityToAffect == AnimatronicStats.AbilityToAffect.Defense)
+                        if (statsToAffect[o].abilityToAffect == AnimatronicStats.AbilityToAffect.Defense)
                         {
                             if (supposedToAffect == SupposedToAffect.SameEntity)
                             {
@@ -563,7 +567,7 @@ public class StatAbility : AnimatronicAbility
                             }
                         }
 
-                        else if (statsToAffect[o].abilityToAffect == AnimatronicStats.AbilityToAffect.CriticalChance)
+                        if (statsToAffect[o].abilityToAffect == AnimatronicStats.AbilityToAffect.CriticalChance)
                         {
                             if (supposedToAffect == SupposedToAffect.SameEntity)
                             {
@@ -640,7 +644,7 @@ public class StatAbility : AnimatronicAbility
                             }
                         }
 
-                        else if (statsToAffect[o].abilityToAffect == AnimatronicStats.AbilityToAffect.Gifts)
+                        if (statsToAffect[o].abilityToAffect == AnimatronicStats.AbilityToAffect.Gifts)
                         {
                             List<int> aliveIdx = manager.GetEntityList("enemy", targets, randomTargets);
 
@@ -649,7 +653,7 @@ public class StatAbility : AnimatronicAbility
                                     manager.enemyParty[aliveIdx[i]].enemyItem.TriggerGift();
                         }
 
-                        else if (statsToAffect[o].abilityToAffect == AnimatronicStats.AbilityToAffect.Stun)
+                        if (statsToAffect[o].abilityToAffect == AnimatronicStats.AbilityToAffect.Stun)
                         {
                             List<int> aliveIdx = manager.GetEntityList("animatronic", targets, randomTargets);
 
@@ -657,13 +661,13 @@ public class StatAbility : AnimatronicAbility
                                 manager.animatronicParty[aliveIdx[i]].animatronicItem.TriggerStunEffect(statsToAffect[o].stunTime);
                         }
 
-                        else if (statsToAffect[o].abilityToAffect == AnimatronicStats.AbilityToAffect.OtherSpecific)
+                        if (statsToAffect[o].abilityToAffect == AnimatronicStats.AbilityToAffect.OtherSpecific)
                         {
                             foreach (AnimatronicAbility aa in statsToAffect[o].specificAbilities)
                                 aa.ApplyEffect(entity, flip, offset);
                         }
 
-                        else if (statsToAffect[o].abilityToAffect == AnimatronicStats.AbilityToAffect.InstaKill)
+                        if (statsToAffect[o].abilityToAffect == AnimatronicStats.AbilityToAffect.InstaKill)
                         {
                             List<int> aliveIdx = manager.GetEntityList("animatronic", targets, randomTargets);
 
@@ -698,13 +702,13 @@ public class StatAbility : AnimatronicAbility
                             }
                         }
 
-                        else if (statsToAffect[o].abilityToAffect == AnimatronicStats.AbilityToAffect.NeonWall)
+                        if (statsToAffect[o].abilityToAffect == AnimatronicStats.AbilityToAffect.NeonWall)
                             manager.NeonWallActivation("enemy", statsToAffect[o].neonWallType, statsToAffect[o].neonWallDuration);
                         
-                        else if (statsToAffect[o].abilityToAffect == AnimatronicStats.AbilityToAffect.BubbleBreath)
+                        if (statsToAffect[o].abilityToAffect == AnimatronicStats.AbilityToAffect.BubbleBreath)
                             manager.BubbleBreathActivation("enemy", statsToAffect[o].bubbleBreathDuration);
                         
-                        else if (statsToAffect[o].abilityToAffect == AnimatronicStats.AbilityToAffect.Munchies)
+                        if (statsToAffect[o].abilityToAffect == AnimatronicStats.AbilityToAffect.Munchies)
                         {
                             var affectedByMunchie = manager.GetEntityList("animatronic", targets, randomTargets);
                             
@@ -712,12 +716,18 @@ public class StatAbility : AnimatronicAbility
                                 manager.enemyParty[affectedByMunchie[j]].enemyItem.TriggerMunchies(statsToAffect[o].munchiesDuration, statsToAffect[o].munchiesDamage, statsToAffect[o].timeBtwMunchiesAttack);
                         }
 
-                        else if (statsToAffect[o].abilityToAffect == AnimatronicStats.AbilityToAffect.Haunt)
+                        if (statsToAffect[o].abilityToAffect == AnimatronicStats.AbilityToAffect.Haunt)
                         {
                             List<int> entityIdxHaunt = manager.GetEntityList("animatronic", targets, randomTargets);
 
                             for (int j = 0; j < entityIdxHaunt.Count; j++)
                                 manager.enemyParty[entityIdxHaunt[j]].enemyItem.TriggerHauntingEffect(statsToAffect[o].hauntDuration, timeBeforeAbility);
+                        }
+
+                        if (statsToAffect[o].abilityToAffect == AnimatronicStats.AbilityToAffect.IllusionDisk)
+                        {
+                            for (int j = 0; j < aliveEnems.Count; j++)
+                                manager.enemyParty[aliveEnems[j]].enemyItem.TriggerIllusionDisk(statsToAffect[o].illusionDiskDuration);
                         }
                     }
                     //Boss Battle

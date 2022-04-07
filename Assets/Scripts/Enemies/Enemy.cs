@@ -124,7 +124,7 @@ public class Enemy : LivingEntity
         if (!hasSlasher)
         {
             hasSlasher = true;
-            manager.enemyParty[idxInManager].slasherKnife.SetTrigger("aim");
+            manager.enemyParty[idxInManager].slasherKnife.SetBool("aim", true);
             setSlasherHealth = (int)(currentHealth / 2f);
             CheckForSlasher();
         }
@@ -140,7 +140,7 @@ public class Enemy : LivingEntity
 
         if (currentHealth <= setSlasherHealth)
         {
-            manager.enemyParty[idxInManager].slasherKnife.gameObject.SetActive(false);
+            manager.enemyParty[idxInManager].slasherKnife.SetBool("aim", false);
             setSlasherHealth = 0;
             InstaKill();
         }
@@ -390,6 +390,38 @@ public class Enemy : LivingEntity
         entityMesh.SetActive(false);
 
         base.TriggerEntityDeath();
+    }
+
+    float illusionDiskDuration, illusionDiskCurrentDuration;
+
+    public override void TriggerIllusionDisk(float illusionDuration)
+    {
+        if (!hasIllusionDisk)
+        {
+            hasIllusionDisk = true;
+            illusionDiskDuration = illusionDuration;
+        }
+
+        else
+            illusionDiskCurrentDuration = 0f;
+
+        base.TriggerIllusionDisk(illusionDuration);
+    }
+
+    public override void IllusionDiskBehaviour()
+    {
+        if (illusionDiskCurrentDuration < illusionDiskDuration)
+        {
+            illusionDiskCurrentDuration += Time.deltaTime;
+
+            if (illusionDiskCurrentDuration >= illusionDiskDuration)
+            {
+                hasIllusionDisk = false;
+                illusionDiskCurrentDuration = 0f;
+            }
+        }
+
+        base.IllusionDiskBehaviour();
     }
 
     public override void InstaKill()

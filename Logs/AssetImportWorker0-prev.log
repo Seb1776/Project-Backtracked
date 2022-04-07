@@ -1,23 +1,23 @@
 Using pre-set license
 Built from '2021.1/staging' branch; Version is '2021.1.23f1 (b50729e604a9) revision 11863849'; Using compiler version '192528614'; Build Type 'Release'
-OS: 'Windows 10 Pro; OS build 19044.1586; Version 2009; 64bit' Language: 'en' Physical Memory: 7908 MB
+OS: 'Windows 10 Pro; OS build 22000.556; Version 2009; 64bit' Language: 'es' Physical Memory: 22476 MB
 BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 0
 
 COMMAND LINE ARGUMENTS:
-C:\Program Files\Unity 2021.1.23f1\Editor\Unity.exe
+C:\Program Files\Unity\Hub\Editor\2021.1.23f1\Editor\Unity.exe
 -adb2
 -batchMode
 -noUpm
 -name
 AssetImportWorker0
 -projectPath
-C:/Users/Holberton/Documents/GitHub/Project-Backtracked
+D:/GithubRepos/Project Backtracked
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
-50051
-Successfully changed project path to: C:/Users/Holberton/Documents/GitHub/Project-Backtracked
-C:/Users/Holberton/Documents/GitHub/Project-Backtracked
+56268
+Successfully changed project path to: D:/GithubRepos/Project Backtracked
+D:/GithubRepos/Project Backtracked
 Using Asset Import Pipeline V2.
 Assets/Models/FNaF4/Fetch/Fetch.c4d: Unity no longer supports importing Cinema 4D files directly, but we're working with Maxon to make the experience better. To import Cinema 4D files, install Maxon's external importer. You can find more information on the Unity Forum: https://on.unity.com/c4d.
 
@@ -31,28 +31,32 @@ Please note that FBX files exported from Cinema4D are still supported.
 Assets/Models/FNaF4/TwistedChica/TwistedChica.c4d: Unity no longer supports importing Cinema 4D files directly, but we're working with Maxon to make the experience better. To import Cinema 4D files, install Maxon's external importer. You can find more information on the Unity Forum: https://on.unity.com/c4d.
 
 Please note that FBX files exported from Cinema4D are still supported.
-Refreshing native plugins compatible for Editor in 274.35 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 229.19 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2021.1.23f1 (b50729e604a9)
-[Subsystems] Discovering subsystems at path C:/Program Files/Unity 2021.1.23f1/Editor/Data/Resources/UnitySubsystems
-[Subsystems] Discovering subsystems at path C:/Users/Holberton/Documents/GitHub/Project-Backtracked/Assets
+[Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2021.1.23f1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path D:/GithubRepos/Project Backtracked/Assets
 GfxDevice: creating device client; threaded=0; jobified=0
 Direct3D:
     Version:  Direct3D 11.0 [level 11.1]
-    Renderer: Intel(R) UHD Graphics 620 (ID=0x3ea0)
-    Vendor:   Intel
-    VRAM:     3954 MB
-    Driver:   27.20.100.8729
+    Renderer: AMD Radeon(TM) RX Vega 11 Graphics (ID=0x15d8)
+    Vendor:   ATI
+    VRAM:     11238 MB
+    Driver:   30.0.14029.5006
 Initialize mono
-Mono path[0] = 'C:/Program Files/Unity 2021.1.23f1/Editor/Data/Managed'
-Mono path[1] = 'C:/Program Files/Unity 2021.1.23f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
-Mono config path = 'C:/Program Files/Unity 2021.1.23f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56796
+Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2021.1.23f1/Editor/Data/Managed'
+Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2021.1.23f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
+Mono config path = 'C:/Program Files/Unity/Hub/Editor/2021.1.23f1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56760
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
-Register platform support module: C:/Program Files/Unity 2021.1.23f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.005683 seconds.
+Register platform support module: C:/Program Files/Unity/Hub/Editor/2021.1.23f1/Editor/Data/PlaybackEngines/MacStandaloneSupport/UnityEditor.OSXStandalone.Extensions.dll
+Register platform support module: C:/Program Files/Unity/Hub/Editor/2021.1.23f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Register platform support module: C:/Program Files/Unity/Hub/Editor/2021.1.23f1/Editor/Data/PlaybackEngines/LinuxStandaloneSupport/UnityEditor.LinuxStandalone.Extensions.dll
+Registered in 0.103615 seconds.
+Native extension for LinuxStandalone target not found
 Native extension for WindowsStandalone target not found
+Native extension for OSXStandalone target not found
 Assets/Models/FNaF4/Fetch/Fetch.c4d: Unity no longer supports importing Cinema 4D files directly, but we're working with Maxon to make the experience better. To import Cinema 4D files, install Maxon's external importer. You can find more information on the Unity Forum: https://on.unity.com/c4d.
 
 Please note that FBX files exported from Cinema4D are still supported.
@@ -65,43 +69,43 @@ Please note that FBX files exported from Cinema4D are still supported.
 Assets/Models/FNaF4/TwistedChica/TwistedChica.c4d: Unity no longer supports importing Cinema 4D files directly, but we're working with Maxon to make the experience better. To import Cinema 4D files, install Maxon's external importer. You can find more information on the Unity Forum: https://on.unity.com/c4d.
 
 Please note that FBX files exported from Cinema4D are still supported.
-Refreshing native plugins compatible for Editor in 252.55 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 277.32 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  4.955 seconds
+- Completed reload, in  4.642 seconds
 Domain Reload Profiling:
-	ReloadAssembly (4956ms)
-		BeginReloadAssembly (158ms)
+	ReloadAssembly (4642ms)
+		BeginReloadAssembly (78ms)
 			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (0ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
 			CreateAndSetChildDomain (1ms)
-		EndReloadAssembly (870ms)
-			LoadAssemblies (156ms)
+		EndReloadAssembly (946ms)
+			LoadAssemblies (77ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (295ms)
+			SetupTypeCache (349ms)
 			ReleaseScriptCaches (0ms)
-			RebuildScriptCaches (59ms)
-			SetupLoadedEditorAssemblies (444ms)
+			RebuildScriptCaches (32ms)
+			SetupLoadedEditorAssemblies (486ms)
 				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (11ms)
+				InitializePlatformSupportModulesInManaged (12ms)
 				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (253ms)
-				BeforeProcessingInitializeOnLoad (2ms)
-				ProcessInitializeOnLoadAttributes (125ms)
-				ProcessInitializeOnLoadMethodAttributes (53ms)
+				RefreshPlugins (277ms)
+				BeforeProcessingInitializeOnLoad (4ms)
+				ProcessInitializeOnLoadAttributes (151ms)
+				ProcessInitializeOnLoadMethodAttributes (41ms)
 				AfterProcessingInitializeOnLoad (0ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
 			AwakeInstancesAfterBackupRestoration (0ms)
 Platform modules already initialized, skipping
 Registering precompiled user dll's ...
-Registered in 0.021647 seconds.
+Registered in 0.008372 seconds.
 Begin MonoManager ReloadAssembly
-Symbol file LoadedFromMemory doesn't match image C:\Users\Holberton\Documents\GitHub\Project-Backtracked\Library\PackageCache\com.unity.visualscripting@1.7.2\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
-Symbol file LoadedFromMemory doesn't match image C:\Users\Holberton\Documents\GitHub\Project-Backtracked\Library\PackageCache\com.unity.visualscripting@1.7.2\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+Native extension for LinuxStandalone target not found
 Native extension for WindowsStandalone target not found
+Native extension for OSXStandalone target not found
 Assets/Models/FNaF4/Fetch/Fetch.c4d: Unity no longer supports importing Cinema 4D files directly, but we're working with Maxon to make the experience better. To import Cinema 4D files, install Maxon's external importer. You can find more information on the Unity Forum: https://on.unity.com/c4d.
 
 Please note that FBX files exported from Cinema4D are still supported.
@@ -114,36 +118,36 @@ Please note that FBX files exported from Cinema4D are still supported.
 Assets/Models/FNaF4/TwistedChica/TwistedChica.c4d: Unity no longer supports importing Cinema 4D files directly, but we're working with Maxon to make the experience better. To import Cinema 4D files, install Maxon's external importer. You can find more information on the Unity Forum: https://on.unity.com/c4d.
 
 Please note that FBX files exported from Cinema4D are still supported.
-Refreshing native plugins compatible for Editor in 371.33 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 280.57 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  3.356 seconds
+- Completed reload, in  2.349 seconds
 Domain Reload Profiling:
-	ReloadAssembly (3366ms)
-		BeginReloadAssembly (353ms)
+	ReloadAssembly (3278ms)
+		BeginReloadAssembly (1207ms)
 			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (6ms)
+			DisableScriptedObjects (23ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (35ms)
-		EndReloadAssembly (2902ms)
-			LoadAssemblies (324ms)
+			CreateAndSetChildDomain (29ms)
+		EndReloadAssembly (1960ms)
+			LoadAssemblies (141ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (840ms)
-			ReleaseScriptCaches (10ms)
-			RebuildScriptCaches (122ms)
-			SetupLoadedEditorAssemblies (1388ms)
+			SetupTypeCache (639ms)
+			ReleaseScriptCaches (2ms)
+			RebuildScriptCaches (119ms)
+			SetupLoadedEditorAssemblies (836ms)
 				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (26ms)
-				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (372ms)
-				BeforeProcessingInitializeOnLoad (245ms)
-				ProcessInitializeOnLoadAttributes (559ms)
-				ProcessInitializeOnLoadMethodAttributes (85ms)
-				AfterProcessingInitializeOnLoad (96ms)
-				EditorAssembliesLoaded (3ms)
+				InitializePlatformSupportModulesInManaged (15ms)
+				SetLoadedEditorAssemblies (1ms)
+				RefreshPlugins (281ms)
+				BeforeProcessingInitializeOnLoad (150ms)
+				ProcessInitializeOnLoadAttributes (356ms)
+				ProcessInitializeOnLoadMethodAttributes (26ms)
+				AfterProcessingInitializeOnLoad (8ms)
+				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (17ms)
+			AwakeInstancesAfterBackupRestoration (10ms)
 Platform modules already initialized, skipping
 Assets/Models/FNaF4/Fetch/Fetch.c4d: Unity no longer supports importing Cinema 4D files directly, but we're working with Maxon to make the experience better. To import Cinema 4D files, install Maxon's external importer. You can find more information on the Unity Forum: https://on.unity.com/c4d.
 
@@ -171,15 +175,15 @@ Please note that FBX files exported from Cinema4D are still supported.
 Assets/Models/FNaF4/TwistedChica/TwistedChica.c4d: Unity no longer supports importing Cinema 4D files directly, but we're working with Maxon to make the experience better. To import Cinema 4D files, install Maxon's external importer. You can find more information on the Unity Forum: https://on.unity.com/c4d.
 
 Please note that FBX files exported from Cinema4D are still supported.
-Launched and connected shader compiler UnityShaderCompiler.exe after 0.12 seconds
-Refreshing native plugins compatible for Editor in 3.77 ms, found 3 plugins.
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.07 seconds
+Refreshing native plugins compatible for Editor in 1.51 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 4658 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 194.2 MB.
-System memory in use after: 194.4 MB.
+Unloading 4670 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 275.8 MB.
+System memory in use after: 276.1 MB.
 
-Unloading 27 unused Assets to reduce memory usage. Loaded Objects now: 5110.
-Total: 13.560200 ms (FindLiveObjects: 1.631000 ms CreateObjectMapping: 0.906300 ms MarkObjects: 10.374500 ms  DeleteObjects: 0.264200 ms)
+Unloading 27 unused Assets to reduce memory usage. Loaded Objects now: 5128.
+Total: 5.314500 ms (FindLiveObjects: 0.642800 ms CreateObjectMapping: 0.334900 ms MarkObjects: 4.227500 ms  DeleteObjects: 0.107200 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
@@ -188,394 +192,12 @@ AssetImportParameters requested are different than current active one (requested
   custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
   custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
   custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
   custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
   custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
   custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 ========================================================================
 Received Import Request.
-  path: Assets/Resources/Prefabs/AttackEffects/AlarmEffect.prefab
-  artifactKey: Guid(d932f19c389e4034ca905260fbf7c89a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/Prefabs/AttackEffects/AlarmEffect.prefab using Guid(d932f19c389e4034ca905260fbf7c89a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '68a67250ec85176b0a745889bfcbb796') in 0.892628 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.001210 seconds.
-  path: Assets/Resources/Prefabs/AttackEffects/BuzzsawEffect.prefab
-  artifactKey: Guid(10fbeb3040a812147aa63fd2bc834921) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/Prefabs/AttackEffects/BuzzsawEffect.prefab using Guid(10fbeb3040a812147aa63fd2bc834921) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9385d189a843efd2cefc0a4d0042853d') in 0.263670 seconds 
-========================================================================
-Received Prepare
-Assets/Models/FNaF4/Fetch/Fetch.c4d: Unity no longer supports importing Cinema 4D files directly, but we're working with Maxon to make the experience better. To import Cinema 4D files, install Maxon's external importer. You can find more information on the Unity Forum: https://on.unity.com/c4d.
-
-Please note that FBX files exported from Cinema4D are still supported.
-Assets/Models/FNaF4/TwistedBonnie/TwistedBonnie.c4d: Unity no longer supports importing Cinema 4D files directly, but we're working with Maxon to make the experience better. To import Cinema 4D files, install Maxon's external importer. You can find more information on the Unity Forum: https://on.unity.com/c4d.
-
-Please note that FBX files exported from Cinema4D are still supported.
-Assets/Models/FNaF4/TwistedFreddy/TwistedFreddy.c4d: Unity no longer supports importing Cinema 4D files directly, but we're working with Maxon to make the experience better. To import Cinema 4D files, install Maxon's external importer. You can find more information on the Unity Forum: https://on.unity.com/c4d.
-
-Please note that FBX files exported from Cinema4D are still supported.
-Assets/Models/FNaF4/TwistedChica/TwistedChica.c4d: Unity no longer supports importing Cinema 4D files directly, but we're working with Maxon to make the experience better. To import Cinema 4D files, install Maxon's external importer. You can find more information on the Unity Forum: https://on.unity.com/c4d.
-
-Please note that FBX files exported from Cinema4D are still supported.
-Registering precompiled user dll's ...
-Registered in 0.019676 seconds.
-Begin MonoManager ReloadAssembly
-Symbol file LoadedFromMemory doesn't match image C:\Users\Holberton\Documents\GitHub\Project-Backtracked\Library\PackageCache\com.unity.visualscripting@1.7.2\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
-Symbol file LoadedFromMemory doesn't match image C:\Users\Holberton\Documents\GitHub\Project-Backtracked\Library\PackageCache\com.unity.visualscripting@1.7.2\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 2.91 ms, found 3 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  1.791 seconds
-Domain Reload Profiling:
-	ReloadAssembly (1792ms)
-		BeginReloadAssembly (308ms)
-			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (23ms)
-			BackupInstance (0ms)
-			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (131ms)
-		EndReloadAssembly (1408ms)
-			LoadAssemblies (149ms)
-			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (525ms)
-			ReleaseScriptCaches (2ms)
-			RebuildScriptCaches (59ms)
-			SetupLoadedEditorAssemblies (461ms)
-				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (6ms)
-				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (3ms)
-				BeforeProcessingInitializeOnLoad (104ms)
-				ProcessInitializeOnLoadAttributes (324ms)
-				ProcessInitializeOnLoadMethodAttributes (16ms)
-				AfterProcessingInitializeOnLoad (7ms)
-				EditorAssembliesLoaded (0ms)
-			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (59ms)
-Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 2.12 ms, found 3 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 4508 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 189.4 MB.
-System memory in use after: 189.7 MB.
-
-Unloading 18 unused Assets to reduce memory usage. Loaded Objects now: 5163.
-Total: 5.041500 ms (FindLiveObjects: 0.678400 ms CreateObjectMapping: 0.367300 ms MarkObjects: 3.971600 ms  DeleteObjects: 0.022300 ms)
-
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-========================================================================
-Received Prepare
-Assets/Models/FNaF4/Fetch/Fetch.c4d: Unity no longer supports importing Cinema 4D files directly, but we're working with Maxon to make the experience better. To import Cinema 4D files, install Maxon's external importer. You can find more information on the Unity Forum: https://on.unity.com/c4d.
-
-Please note that FBX files exported from Cinema4D are still supported.
-Assets/Models/FNaF4/TwistedBonnie/TwistedBonnie.c4d: Unity no longer supports importing Cinema 4D files directly, but we're working with Maxon to make the experience better. To import Cinema 4D files, install Maxon's external importer. You can find more information on the Unity Forum: https://on.unity.com/c4d.
-
-Please note that FBX files exported from Cinema4D are still supported.
-Assets/Models/FNaF4/TwistedFreddy/TwistedFreddy.c4d: Unity no longer supports importing Cinema 4D files directly, but we're working with Maxon to make the experience better. To import Cinema 4D files, install Maxon's external importer. You can find more information on the Unity Forum: https://on.unity.com/c4d.
-
-Please note that FBX files exported from Cinema4D are still supported.
-Assets/Models/FNaF4/TwistedChica/TwistedChica.c4d: Unity no longer supports importing Cinema 4D files directly, but we're working with Maxon to make the experience better. To import Cinema 4D files, install Maxon's external importer. You can find more information on the Unity Forum: https://on.unity.com/c4d.
-
-Please note that FBX files exported from Cinema4D are still supported.
-Registering precompiled user dll's ...
-Registered in 0.008657 seconds.
-Begin MonoManager ReloadAssembly
-Symbol file LoadedFromMemory doesn't match image C:\Users\Holberton\Documents\GitHub\Project-Backtracked\Library\PackageCache\com.unity.visualscripting@1.7.2\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
-Symbol file LoadedFromMemory doesn't match image C:\Users\Holberton\Documents\GitHub\Project-Backtracked\Library\PackageCache\com.unity.visualscripting@1.7.2\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 1.54 ms, found 3 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  1.970 seconds
-Domain Reload Profiling:
-	ReloadAssembly (1971ms)
-		BeginReloadAssembly (223ms)
-			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (7ms)
-			BackupInstance (0ms)
-			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (52ms)
-		EndReloadAssembly (1677ms)
-			LoadAssemblies (179ms)
-			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (665ms)
-			ReleaseScriptCaches (2ms)
-			RebuildScriptCaches (55ms)
-			SetupLoadedEditorAssemblies (520ms)
-				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (5ms)
-				SetLoadedEditorAssemblies (1ms)
-				RefreshPlugins (2ms)
-				BeforeProcessingInitializeOnLoad (152ms)
-				ProcessInitializeOnLoadAttributes (337ms)
-				ProcessInitializeOnLoadMethodAttributes (15ms)
-				AfterProcessingInitializeOnLoad (8ms)
-				EditorAssembliesLoaded (0ms)
-			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (80ms)
-Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 2.20 ms, found 3 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 4508 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 189.5 MB.
-System memory in use after: 189.8 MB.
-
-Unloading 18 unused Assets to reduce memory usage. Loaded Objects now: 5165.
-Total: 4.568800 ms (FindLiveObjects: 0.361500 ms CreateObjectMapping: 0.203400 ms MarkObjects: 3.981100 ms  DeleteObjects: 0.021600 ms)
-
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-========================================================================
-Received Import Request.
-  Time since last request: 245.295968 seconds.
-  path: Assets/Scripts/AnimatronicAbilities/Stats/BubbleBreath.asset
-  artifactKey: Guid(cafa2bfc3f4667449b3f1748402af57f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts/AnimatronicAbilities/Stats/BubbleBreath.asset using Guid(cafa2bfc3f4667449b3f1748402af57f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '895f8c217461bf25ad0d18888fbbd121') in 0.029964 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000296 seconds.
-  path: Assets/Scripts/AnimatronicAbilities/Stats/Jumpscare3.asset
-  artifactKey: Guid(79b62b4dba3f6d94baf145d45385c9ba) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts/AnimatronicAbilities/Stats/Jumpscare3.asset using Guid(79b62b4dba3f6d94baf145d45385c9ba) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0e5b3ab70b8c65a86528f1a06521ee37') in 0.013850 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000447 seconds.
-  path: Assets/Scripts/AnimatronicAbilities/Stats/EscKey.asset
-  artifactKey: Guid(df5f75084fdebfc4085b1f0ff07e064b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts/AnimatronicAbilities/Stats/EscKey.asset using Guid(df5f75084fdebfc4085b1f0ff07e064b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '342bc071e28314dabdc5825117067083') in 0.018255 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000507 seconds.
-  path: Assets/Scripts/AnimatronicAbilities/Stats/Munchies.asset
-  artifactKey: Guid(56278c9f3dc74ec4e89b6efbb029db65) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts/AnimatronicAbilities/Stats/Munchies.asset using Guid(56278c9f3dc74ec4e89b6efbb029db65) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0d3dc9ce8defe49c02eea6e976e03f52') in 0.008742 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000448 seconds.
-  path: Assets/Scripts/AnimatronicAbilities/Stats/GiftBoxes.asset
-  artifactKey: Guid(87f4572731883e044b9340d68b0506d9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts/AnimatronicAbilities/Stats/GiftBoxes.asset using Guid(87f4572731883e044b9340d68b0506d9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c9f0b3c207fa5a1b4c3b32bbca6cf15a') in 0.008661 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000343 seconds.
-  path: Assets/Scripts/AnimatronicAbilities/Stats/NeonWall2.asset
-  artifactKey: Guid(a0601379cbfb6c645be84a3b2b8fc826) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts/AnimatronicAbilities/Stats/NeonWall2.asset using Guid(a0601379cbfb6c645be84a3b2b8fc826) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2451ace645bbe7a42346c251a17e15a2') in 0.014024 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000412 seconds.
-  path: Assets/Scripts/AnimatronicAbilities/Stats/Jumpscare.asset
-  artifactKey: Guid(8c72ff43b55d3154db4f8f10c89bb2a4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts/AnimatronicAbilities/Stats/Jumpscare.asset using Guid(8c72ff43b55d3154db4f8f10c89bb2a4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5109719d5eef2136f54add5e29759b23') in 0.014358 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000355 seconds.
-  path: Assets/Scripts/AnimatronicAbilities/Stats/GloomBalloon.asset
-  artifactKey: Guid(e0b2328817b9db144af01de4940dcc97) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts/AnimatronicAbilities/Stats/GloomBalloon.asset using Guid(e0b2328817b9db144af01de4940dcc97) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '366009add1d50f5eb635f08b14d5c98a') in 0.022688 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000399 seconds.
-  path: Assets/Scripts/AnimatronicAbilities/Stats/Jumpscare3Damage.asset
-  artifactKey: Guid(5cb699052c1c20d4eaf3dc7c43a2fbfb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts/AnimatronicAbilities/Stats/Jumpscare3Damage.asset using Guid(5cb699052c1c20d4eaf3dc7c43a2fbfb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '553c1208af8ad8411f8cbfd3da63236c') in 0.010997 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000361 seconds.
-  path: Assets/Scripts/AnimatronicAbilities/Stats/DefensiveSong.asset
-  artifactKey: Guid(a7598e3d8892cc845ae31fbde8d9c84b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts/AnimatronicAbilities/Stats/DefensiveSong.asset using Guid(a7598e3d8892cc845ae31fbde8d9c84b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3e8370d470a2743bc1f597774d0f4aab') in 0.012334 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000485 seconds.
   path: Assets/Scripts/AnimatronicAbilities/Stats/IllusionDisk.asset
   artifactKey: Guid(6d292196a65c547448df43917f0bdcb3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts/AnimatronicAbilities/Stats/IllusionDisk.asset using Guid(6d292196a65c547448df43917f0bdcb3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7d74508c9c63a79bd0ccaf1ba943bc54') in 0.008679 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000375 seconds.
-  path: Assets/Scripts/AnimatronicAbilities/Stats/NeonWall.asset
-  artifactKey: Guid(9a662dc0645e2974bb2c24c1aaf1ae0a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts/AnimatronicAbilities/Stats/NeonWall.asset using Guid(9a662dc0645e2974bb2c24c1aaf1ae0a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e531d0b1efce9e7cdd0e750a548d5ca7') in 0.009403 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000487 seconds.
-  path: Assets/Scripts/AnimatronicAbilities/Stats/MimicBall.asset
-  artifactKey: Guid(2e0d8429e27fd8140ad4e79267106f4a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts/AnimatronicAbilities/Stats/MimicBall.asset using Guid(2e0d8429e27fd8140ad4e79267106f4a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1808c40a7b8aa83e1ded833669b00a2a') in 0.009977 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000419 seconds.
-  path: Assets/Scripts/AnimatronicAbilities/Stats/Jumpscare2.asset
-  artifactKey: Guid(e74ed70131f528845af7a92dc02e0c49) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts/AnimatronicAbilities/Stats/Jumpscare2.asset using Guid(e74ed70131f528845af7a92dc02e0c49) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2bafd8280fcb1256fb959bf26e450c72') in 0.013494 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000412 seconds.
-  path: Assets/Scripts/AnimatronicAbilities/Stats/Haunting.asset
-  artifactKey: Guid(8e5ea41d7e4244949a40686f9fc46bf4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts/AnimatronicAbilities/Stats/Haunting.asset using Guid(8e5ea41d7e4244949a40686f9fc46bf4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '53b429fbba41d53bd3b4bccf3b813428') in 0.015917 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 1.512163 seconds.
-  path: Assets/Scripts/AnimatronicAbilities/Stats/RainyDay2.asset
-  artifactKey: Guid(d4cee0ddcf7355d42b344c3ee0146573) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts/AnimatronicAbilities/Stats/RainyDay2.asset using Guid(d4cee0ddcf7355d42b344c3ee0146573) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e2526f7ff1efc2b058eaeca050bc635d') in 0.031896 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000358 seconds.
-  path: Assets/Scripts/AnimatronicAbilities/Stats/Somniphobia.asset
-  artifactKey: Guid(08094b51c9b71f94392db8fbc82d86ef) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts/AnimatronicAbilities/Stats/Somniphobia.asset using Guid(08094b51c9b71f94392db8fbc82d86ef) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7b0e15b0cb20bcbaf4f18153d9bdc823') in 0.012518 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000543 seconds.
-  path: Assets/Scripts/AnimatronicAbilities/Stats/Slasher.asset
-  artifactKey: Guid(ed2cbcdc7fed08742a750396277dd789) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts/AnimatronicAbilities/Stats/Slasher.asset using Guid(ed2cbcdc7fed08742a750396277dd789) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ab7c1bd2785ee70f01798aa0ed868c3b') in 0.012329 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.708641 seconds.
-  path: Assets/Scripts/AnimatronicAbilities/Stats/Somniphobia2.asset
-  artifactKey: Guid(67348d60a8b268c43b6a4974a258059b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts/AnimatronicAbilities/Stats/Somniphobia2.asset using Guid(67348d60a8b268c43b6a4974a258059b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '79a98b1009518e9eecb0e932a68b7988') in 0.011090 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000377 seconds.
-  path: Assets/Scripts/AnimatronicAbilities/Stats/Unscrew2.asset
-  artifactKey: Guid(a51baf6f05bd99048ae8521c763f2ff6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts/AnimatronicAbilities/Stats/Unscrew2.asset using Guid(a51baf6f05bd99048ae8521c763f2ff6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '17f0aa49b45c8be1f2c3b22767608d71') in 0.012974 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000470 seconds.
-  path: Assets/Scripts/AnimatronicAbilities/Stats/SuperSong.asset
-  artifactKey: Guid(70c4345b370b96b478ce9f73e3d02090) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts/AnimatronicAbilities/Stats/SuperSong.asset using Guid(70c4345b370b96b478ce9f73e3d02090) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0c26e0f0e7c283f37d7a442ce38fd317') in 0.015542 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000343 seconds.
-  path: Assets/Scripts/AnimatronicAbilities/Stats/Waterhose.asset
-  artifactKey: Guid(75627c1799d6128458794798745704f2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts/AnimatronicAbilities/Stats/Waterhose.asset using Guid(75627c1799d6128458794798745704f2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b113c49ebd5abb1f0f08a7e1d2fdfb25') in 0.013929 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000459 seconds.
-  path: Assets/Scripts/AnimatronicAbilities/Stats/Unscrew.asset
-  artifactKey: Guid(84e4ac474bd0e7f4e9f8f3a86ac2b83b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts/AnimatronicAbilities/Stats/Unscrew.asset using Guid(84e4ac474bd0e7f4e9f8f3a86ac2b83b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ae3c26631fd7b599afa3482800fea626') in 0.012825 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000413 seconds.
-  path: Assets/Scripts/AnimatronicAbilities/Stats/Waterhose2.asset
-  artifactKey: Guid(bec3bb6cc150bc743b2585e71dbca5a9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts/AnimatronicAbilities/Stats/Waterhose2.asset using Guid(bec3bb6cc150bc743b2585e71dbca5a9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '89cffe2dff40a69cb3c20472e53c0783') in 0.011595 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 25.719453 seconds.
-  path: Assets/Scripts/AnimatronicAbilities/Stats/NeonWall2.asset
-  artifactKey: Guid(a0601379cbfb6c645be84a3b2b8fc826) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts/AnimatronicAbilities/Stats/NeonWall2.asset using Guid(a0601379cbfb6c645be84a3b2b8fc826) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fe8f552499e53d4b978ba55051975c74') in 0.004665 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 13.537536 seconds.
-  path: Assets/Animations/AnimationEffects/NeonWall.controller
-  artifactKey: Guid(ede70120a937e82409b554f2ed844517) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Animations/AnimationEffects/NeonWall.controller using Guid(ede70120a937e82409b554f2ed844517) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1e041d07f9599452a77b7a1ce2567c10') in 0.013205 seconds 
-========================================================================
-Received Prepare
-Assets/Models/FNaF4/Fetch/Fetch.c4d: Unity no longer supports importing Cinema 4D files directly, but we're working with Maxon to make the experience better. To import Cinema 4D files, install Maxon's external importer. You can find more information on the Unity Forum: https://on.unity.com/c4d.
-
-Please note that FBX files exported from Cinema4D are still supported.
-Assets/Models/FNaF4/TwistedBonnie/TwistedBonnie.c4d: Unity no longer supports importing Cinema 4D files directly, but we're working with Maxon to make the experience better. To import Cinema 4D files, install Maxon's external importer. You can find more information on the Unity Forum: https://on.unity.com/c4d.
-
-Please note that FBX files exported from Cinema4D are still supported.
-Assets/Models/FNaF4/TwistedFreddy/TwistedFreddy.c4d: Unity no longer supports importing Cinema 4D files directly, but we're working with Maxon to make the experience better. To import Cinema 4D files, install Maxon's external importer. You can find more information on the Unity Forum: https://on.unity.com/c4d.
-
-Please note that FBX files exported from Cinema4D are still supported.
-Assets/Models/FNaF4/TwistedChica/TwistedChica.c4d: Unity no longer supports importing Cinema 4D files directly, but we're working with Maxon to make the experience better. To import Cinema 4D files, install Maxon's external importer. You can find more information on the Unity Forum: https://on.unity.com/c4d.
-
-Please note that FBX files exported from Cinema4D are still supported.
-Registering precompiled user dll's ...
-Registered in 0.007537 seconds.
-Begin MonoManager ReloadAssembly
-Symbol file LoadedFromMemory doesn't match image C:\Users\Holberton\Documents\GitHub\Project-Backtracked\Library\PackageCache\com.unity.visualscripting@1.7.2\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
-Symbol file LoadedFromMemory doesn't match image C:\Users\Holberton\Documents\GitHub\Project-Backtracked\Library\PackageCache\com.unity.visualscripting@1.7.2\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 1.59 ms, found 3 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  1.986 seconds
-Domain Reload Profiling:
-	ReloadAssembly (1986ms)
-		BeginReloadAssembly (220ms)
-			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (8ms)
-			BackupInstance (0ms)
-			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (56ms)
-		EndReloadAssembly (1626ms)
-			LoadAssemblies (135ms)
-			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (653ms)
-			ReleaseScriptCaches (2ms)
-			RebuildScriptCaches (68ms)
-			SetupLoadedEditorAssemblies (538ms)
-				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (5ms)
-				SetLoadedEditorAssemblies (1ms)
-				RefreshPlugins (2ms)
-				BeforeProcessingInitializeOnLoad (99ms)
-				ProcessInitializeOnLoadAttributes (406ms)
-				ProcessInitializeOnLoadMethodAttributes (17ms)
-				AfterProcessingInitializeOnLoad (8ms)
-				EditorAssembliesLoaded (0ms)
-			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (22ms)
-Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 1.66 ms, found 3 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 4508 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 189.6 MB.
-System memory in use after: 189.8 MB.
-
-Unloading 18 unused Assets to reduce memory usage. Loaded Objects now: 5167.
-Total: 5.289900 ms (FindLiveObjects: 0.508900 ms CreateObjectMapping: 0.470900 ms MarkObjects: 4.280900 ms  DeleteObjects: 0.027500 ms)
-
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-========================================================================
-Received Import Request.
-  Time since last request: 28.000030 seconds.
-  path: Assets/Scripts/AnimatronicAbilities/StatAbility.cs
-  artifactKey: Guid(93fc9c1632a49f949a0a1eb89a8dcc1f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts/AnimatronicAbilities/StatAbility.cs using Guid(93fc9c1632a49f949a0a1eb89a8dcc1f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6dfbde9d6edcad97d58ad3b40968d979') in 0.024654 seconds 
+Start importing Assets/Scripts/AnimatronicAbilities/Stats/IllusionDisk.asset using Guid(6d292196a65c547448df43917f0bdcb3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '99cbae4a4764bf86ebd28f4762954fd9') in 0.062955 seconds 
 AssetImportWorkerClient::OnTransportError - code=2 error=End of file
