@@ -15,8 +15,10 @@ MonoBehaviour:
   ability: 3
   colorGroup: 4
   abilityName: Jumpscare
+  abilityDescription: 
   timeBeforeAbility: 0
   timeToDestroyEffect: 5
+  overrideCreatedEffect: 1
   attackEffect: {fileID: 7403424481109706824, guid: 30485868eb65a1342b2e22652cf5f0a0, type: 3}
   effectIsNotCentered: 0
   offsetIfFlipped: {x: 0, y: 0}
@@ -64,3 +66,4 @@ MonoBehaviour:
     neonWallDuration: 0
     bubbleBreathDuration: 0
     slasherChanceToActivate: 0
+    illusionDiskDuration: 0

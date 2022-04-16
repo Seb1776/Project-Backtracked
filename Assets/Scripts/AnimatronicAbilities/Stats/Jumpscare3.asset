@@ -15,8 +15,10 @@ MonoBehaviour:
   ability: 0
   colorGroup: 0
   abilityName: Jumpscare III
+  abilityDescription: 
   timeBeforeAbility: 0
   timeToDestroyEffect: 15
+  overrideCreatedEffect: 1
   attackEffect: {fileID: 7403424481109706824, guid: ce9c9abba80b0e8408bd95dbd55aa75d, type: 3}
   effectIsNotCentered: 1
   offsetIfFlipped: {x: 0, y: 0}
@@ -64,6 +66,7 @@ MonoBehaviour:
     neonWallDuration: 0
     bubbleBreathDuration: 0
     slasherChanceToActivate: 0
+    illusionDiskDuration: 0
   - abilityToAffect: 1
     entityToAffect: 1
     affectMode: 1
@@ -85,6 +88,7 @@ MonoBehaviour:
     neonWallDuration: 0
     bubbleBreathDuration: 0
     slasherChanceToActivate: 0
+    illusionDiskDuration: 0
   - abilityToAffect: 4
     entityToAffect: 0
     affectMode: 0
@@ -107,6 +111,7 @@ MonoBehaviour:
     neonWallDuration: 0
     bubbleBreathDuration: 0
     slasherChanceToActivate: 35.6
+    illusionDiskDuration: 0
   - abilityToAffect: 4
     entityToAffect: 1
     affectMode: 0
@@ -129,3 +134,4 @@ MonoBehaviour:
     neonWallDuration: 0
     bubbleBreathDuration: 0
     slasherChanceToActivate: 0
+    illusionDiskDuration: 0

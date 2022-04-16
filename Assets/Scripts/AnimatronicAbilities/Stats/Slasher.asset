@@ -15,8 +15,10 @@ MonoBehaviour:
   ability: 0
   colorGroup: 1
   abilityName: Slasher
+  abilityDescription: 
   timeBeforeAbility: 0
   timeToDestroyEffect: 0
+  overrideCreatedEffect: 0
   attackEffect: {fileID: 0}
   effectIsNotCentered: 0
   offsetIfFlipped: {x: 0, y: 0}
@@ -25,7 +27,11 @@ MonoBehaviour:
   particleDuration: 0
   timeOfRandomIterations: 0
   globalIntervalsBtwSFX: 0
-  abilitySoundEffect: []
+  abilitySoundEffect:
+  - SFX: {fileID: 8300000, guid: 6eea2e5e404846e41bf831cacd258a22, type: 3}
+    amountToPlayAudio: 1
+    intervalsBtwPlays: {x: 0, y: 0}
+    delayToPlaySFX: 0
   abilityHasOverlay: 1
   abilityOverlay: 3
   timeBeforeOverlay: 0
@@ -60,3 +66,4 @@ MonoBehaviour:
     neonWallDuration: 0
     bubbleBreathDuration: 0
     slasherChanceToActivate: 100
+    illusionDiskDuration: 0

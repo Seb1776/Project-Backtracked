@@ -1,0 +1,487 @@
+Using pre-set license
+Built from '2021.1/staging' branch; Version is '2021.1.23f1 (b50729e604a9) revision 11863849'; Using compiler version '192528614'; Build Type 'Release'
+OS: 'Windows 10 Pro; OS build 19044.1586; Version 2009; 64bit' Language: 'en' Physical Memory: 7908 MB
+BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 0
+
+COMMAND LINE ARGUMENTS:
+C:\Program Files\Unity 2021.1.23f1\Editor\Unity.exe
+-adb2
+-batchMode
+-noUpm
+-name
+AssetImportWorker1
+-projectPath
+C:/Users/Holberton/Documents/GitHub/Project-Backtracked
+-logFile
+Logs/AssetImportWorker1.log
+-srvPort
+53403
+Successfully changed project path to: C:/Users/Holberton/Documents/GitHub/Project-Backtracked
+C:/Users/Holberton/Documents/GitHub/Project-Backtracked
+Using Asset Import Pipeline V2.
+Assets/Models/FNaF4/Fetch/Fetch.c4d: Unity no longer supports importing Cinema 4D files directly, but we're working with Maxon to make the experience better. To import Cinema 4D files, install Maxon's external importer. You can find more information on the Unity Forum: https://on.unity.com/c4d.
+
+Please note that FBX files exported from Cinema4D are still supported.
+Assets/Models/FNaF4/TwistedBonnie/TwistedBonnie.c4d: Unity no longer supports importing Cinema 4D files directly, but we're working with Maxon to make the experience better. To import Cinema 4D files, install Maxon's external importer. You can find more information on the Unity Forum: https://on.unity.com/c4d.
+
+Please note that FBX files exported from Cinema4D are still supported.
+Assets/Models/FNaF4/TwistedFreddy/TwistedFreddy.c4d: Unity no longer supports importing Cinema 4D files directly, but we're working with Maxon to make the experience better. To import Cinema 4D files, install Maxon's external importer. You can find more information on the Unity Forum: https://on.unity.com/c4d.
+
+Please note that FBX files exported from Cinema4D are still supported.
+Assets/Models/FNaF4/TwistedChica/TwistedChica.c4d: Unity no longer supports importing Cinema 4D files directly, but we're working with Maxon to make the experience better. To import Cinema 4D files, install Maxon's external importer. You can find more information on the Unity Forum: https://on.unity.com/c4d.
+
+Please note that FBX files exported from Cinema4D are still supported.
+Refreshing native plugins compatible for Editor in 289.83 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Initialize engine version: 2021.1.23f1 (b50729e604a9)
+[Subsystems] Discovering subsystems at path C:/Program Files/Unity 2021.1.23f1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path C:/Users/Holberton/Documents/GitHub/Project-Backtracked/Assets
+GfxDevice: creating device client; threaded=0; jobified=0
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.1]
+    Renderer: Intel(R) UHD Graphics 620 (ID=0x3ea0)
+    Vendor:   Intel
+    VRAM:     3954 MB
+    Driver:   27.20.100.8729
+Initialize mono
+Mono path[0] = 'C:/Program Files/Unity 2021.1.23f1/Editor/Data/Managed'
+Mono path[1] = 'C:/Program Files/Unity 2021.1.23f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
+Mono config path = 'C:/Program Files/Unity 2021.1.23f1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56308
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: C:/Program Files/Unity 2021.1.23f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Registered in 0.001759 seconds.
+Native extension for WindowsStandalone target not found
+Assets/Models/FNaF4/Fetch/Fetch.c4d: Unity no longer supports importing Cinema 4D files directly, but we're working with Maxon to make the experience better. To import Cinema 4D files, install Maxon's external importer. You can find more information on the Unity Forum: https://on.unity.com/c4d.
+
+Please note that FBX files exported from Cinema4D are still supported.
+Assets/Models/FNaF4/TwistedBonnie/TwistedBonnie.c4d: Unity no longer supports importing Cinema 4D files directly, but we're working with Maxon to make the experience better. To import Cinema 4D files, install Maxon's external importer. You can find more information on the Unity Forum: https://on.unity.com/c4d.
+
+Please note that FBX files exported from Cinema4D are still supported.
+Assets/Models/FNaF4/TwistedFreddy/TwistedFreddy.c4d: Unity no longer supports importing Cinema 4D files directly, but we're working with Maxon to make the experience better. To import Cinema 4D files, install Maxon's external importer. You can find more information on the Unity Forum: https://on.unity.com/c4d.
+
+Please note that FBX files exported from Cinema4D are still supported.
+Assets/Models/FNaF4/TwistedChica/TwistedChica.c4d: Unity no longer supports importing Cinema 4D files directly, but we're working with Maxon to make the experience better. To import Cinema 4D files, install Maxon's external importer. You can find more information on the Unity Forum: https://on.unity.com/c4d.
+
+Please note that FBX files exported from Cinema4D are still supported.
+Refreshing native plugins compatible for Editor in 218.57 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.508 seconds
+Domain Reload Profiling:
+	ReloadAssembly (1508ms)
+		BeginReloadAssembly (71ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (0ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (1ms)
+		EndReloadAssembly (768ms)
+			LoadAssemblies (69ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (210ms)
+			ReleaseScriptCaches (0ms)
+			RebuildScriptCaches (40ms)
+			SetupLoadedEditorAssemblies (464ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (7ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (219ms)
+				BeforeProcessingInitializeOnLoad (5ms)
+				ProcessInitializeOnLoadAttributes (191ms)
+				ProcessInitializeOnLoadMethodAttributes (43ms)
+				AfterProcessingInitializeOnLoad (0ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (0ms)
+Platform modules already initialized, skipping
+Registering precompiled user dll's ...
+Registered in 0.007758 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image C:\Users\Holberton\Documents\GitHub\Project-Backtracked\Library\PackageCache\com.unity.visualscripting@1.7.2\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image C:\Users\Holberton\Documents\GitHub\Project-Backtracked\Library\PackageCache\com.unity.visualscripting@1.7.2\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+Native extension for WindowsStandalone target not found
+Assets/Models/FNaF4/Fetch/Fetch.c4d: Unity no longer supports importing Cinema 4D files directly, but we're working with Maxon to make the experience better. To import Cinema 4D files, install Maxon's external importer. You can find more information on the Unity Forum: https://on.unity.com/c4d.
+
+Please note that FBX files exported from Cinema4D are still supported.
+Assets/Models/FNaF4/TwistedBonnie/TwistedBonnie.c4d: Unity no longer supports importing Cinema 4D files directly, but we're working with Maxon to make the experience better. To import Cinema 4D files, install Maxon's external importer. You can find more information on the Unity Forum: https://on.unity.com/c4d.
+
+Please note that FBX files exported from Cinema4D are still supported.
+Assets/Models/FNaF4/TwistedFreddy/TwistedFreddy.c4d: Unity no longer supports importing Cinema 4D files directly, but we're working with Maxon to make the experience better. To import Cinema 4D files, install Maxon's external importer. You can find more information on the Unity Forum: https://on.unity.com/c4d.
+
+Please note that FBX files exported from Cinema4D are still supported.
+Assets/Models/FNaF4/TwistedChica/TwistedChica.c4d: Unity no longer supports importing Cinema 4D files directly, but we're working with Maxon to make the experience better. To import Cinema 4D files, install Maxon's external importer. You can find more information on the Unity Forum: https://on.unity.com/c4d.
+
+Please note that FBX files exported from Cinema4D are still supported.
+Refreshing native plugins compatible for Editor in 202.12 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  2.139 seconds
+Domain Reload Profiling:
+	ReloadAssembly (2140ms)
+		BeginReloadAssembly (211ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (8ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (25ms)
+		EndReloadAssembly (1860ms)
+			LoadAssemblies (131ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (641ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (99ms)
+			SetupLoadedEditorAssemblies (808ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (5ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (202ms)
+				BeforeProcessingInitializeOnLoad (125ms)
+				ProcessInitializeOnLoadAttributes (444ms)
+				ProcessInitializeOnLoadMethodAttributes (26ms)
+				AfterProcessingInitializeOnLoad (5ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (32ms)
+Platform modules already initialized, skipping
+Assets/Models/FNaF4/Fetch/Fetch.c4d: Unity no longer supports importing Cinema 4D files directly, but we're working with Maxon to make the experience better. To import Cinema 4D files, install Maxon's external importer. You can find more information on the Unity Forum: https://on.unity.com/c4d.
+
+Please note that FBX files exported from Cinema4D are still supported.
+Assets/Models/FNaF4/TwistedBonnie/TwistedBonnie.c4d: Unity no longer supports importing Cinema 4D files directly, but we're working with Maxon to make the experience better. To import Cinema 4D files, install Maxon's external importer. You can find more information on the Unity Forum: https://on.unity.com/c4d.
+
+Please note that FBX files exported from Cinema4D are still supported.
+Assets/Models/FNaF4/TwistedFreddy/TwistedFreddy.c4d: Unity no longer supports importing Cinema 4D files directly, but we're working with Maxon to make the experience better. To import Cinema 4D files, install Maxon's external importer. You can find more information on the Unity Forum: https://on.unity.com/c4d.
+
+Please note that FBX files exported from Cinema4D are still supported.
+Assets/Models/FNaF4/TwistedChica/TwistedChica.c4d: Unity no longer supports importing Cinema 4D files directly, but we're working with Maxon to make the experience better. To import Cinema 4D files, install Maxon's external importer. You can find more information on the Unity Forum: https://on.unity.com/c4d.
+
+Please note that FBX files exported from Cinema4D are still supported.
+========================================================================
+Worker process is ready to serve import requests
+Assets/Models/FNaF4/Fetch/Fetch.c4d: Unity no longer supports importing Cinema 4D files directly, but we're working with Maxon to make the experience better. To import Cinema 4D files, install Maxon's external importer. You can find more information on the Unity Forum: https://on.unity.com/c4d.
+
+Please note that FBX files exported from Cinema4D are still supported.
+Assets/Models/FNaF4/TwistedBonnie/TwistedBonnie.c4d: Unity no longer supports importing Cinema 4D files directly, but we're working with Maxon to make the experience better. To import Cinema 4D files, install Maxon's external importer. You can find more information on the Unity Forum: https://on.unity.com/c4d.
+
+Please note that FBX files exported from Cinema4D are still supported.
+Assets/Models/FNaF4/TwistedFreddy/TwistedFreddy.c4d: Unity no longer supports importing Cinema 4D files directly, but we're working with Maxon to make the experience better. To import Cinema 4D files, install Maxon's external importer. You can find more information on the Unity Forum: https://on.unity.com/c4d.
+
+Please note that FBX files exported from Cinema4D are still supported.
+Assets/Models/FNaF4/TwistedChica/TwistedChica.c4d: Unity no longer supports importing Cinema 4D files directly, but we're working with Maxon to make the experience better. To import Cinema 4D files, install Maxon's external importer. You can find more information on the Unity Forum: https://on.unity.com/c4d.
+
+Please note that FBX files exported from Cinema4D are still supported.
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.11 seconds
+Refreshing native plugins compatible for Editor in 3.19 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 4658 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 194.2 MB.
+System memory in use after: 194.4 MB.
+
+Unloading 27 unused Assets to reduce memory usage. Loaded Objects now: 5110.
+Total: 15.568600 ms (FindLiveObjects: 1.324800 ms CreateObjectMapping: 1.752600 ms MarkObjects: 11.999500 ms  DeleteObjects: 0.488900 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  path: Assets/Resources/SFX/Update 2 Minigames/Foxy Fighters/Background Music
+  artifactKey: Guid(cf1d851699d903b45b6a6544fd7d70c9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/SFX/Update 2 Minigames/Foxy Fighters/Background Music using Guid(cf1d851699d903b45b6a6544fd7d70c9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0e5a1f4c0cc4812d4461a611c58cf011') in 0.041541 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000328 seconds.
+  path: Assets/Resources/SFX/Update 2 Minigames/Foxy Fighters/Damage Effects/Plane Damaged/hurt.wav
+  artifactKey: Guid(ad1159fb17140b64fa56a55b78b2594f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/SFX/Update 2 Minigames/Foxy Fighters/Damage Effects/Plane Damaged/hurt.wav using Guid(ad1159fb17140b64fa56a55b78b2594f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f90d138991b88154252063e15c70f647') in 0.445672 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000329 seconds.
+  path: Assets/Resources/SFX/Update 2 Minigames/Foxy.EXE/Won Game/scream2.wav
+  artifactKey: Guid(759c675747f892e4b8d25aab15f428ae) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/SFX/Update 2 Minigames/Foxy.EXE/Won Game/scream2.wav using Guid(759c675747f892e4b8d25aab15f428ae) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '94cbfc9765b46c6a2b7e0a5c17188955') in 0.082669 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000574 seconds.
+  path: Assets/Resources/SFX/Update 2 Minigames/Foxy Fighters/Lost the Game
+  artifactKey: Guid(855b9eb7c6a715b418b6f4869c36bd57) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/SFX/Update 2 Minigames/Foxy Fighters/Lost the Game using Guid(855b9eb7c6a715b418b6f4869c36bd57) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b724f43e38cb496135cd6465c01d57b9') in 0.036534 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000544 seconds.
+  path: Assets/Resources/SFX/Update 2 Minigames/Foxy.EXE/Bootup/boot.wav
+  artifactKey: Guid(f7d8bb0c53056c94fb290673a50527d0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/SFX/Update 2 Minigames/Foxy.EXE/Bootup/boot.wav using Guid(f7d8bb0c53056c94fb290673a50527d0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '977b62e4c054f2f3cd6bc013fcbdb745') in 0.074080 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000336 seconds.
+  path: Assets/Resources/SFX/Update 2 Minigames/Foxy.EXE/Foxy Voice/SureStep.wav
+  artifactKey: Guid(591cc5c40325f734bb02619a75863d3e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/SFX/Update 2 Minigames/Foxy.EXE/Foxy Voice/SureStep.wav using Guid(591cc5c40325f734bb02619a75863d3e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9e07a97079b3bae74392a6b308fb3e48') in 0.104379 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000464 seconds.
+  path: Assets/Resources/SFX/Update 2 Minigames/Foxy Fighters/Damage Effects/N. Chica Shot Down/pow2.wav
+  artifactKey: Guid(7e8857df95b0ab74a8f17284be8135c7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/SFX/Update 2 Minigames/Foxy Fighters/Damage Effects/N. Chica Shot Down/pow2.wav using Guid(7e8857df95b0ab74a8f17284be8135c7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6a5f9f4ad27a14f6af24e0957370b345') in 0.095728 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000570 seconds.
+  path: Assets/Resources/SFX/Update 2 Minigames/Foxy.EXE/Foxy Voice/Flee.wav
+  artifactKey: Guid(9e19838d13df06d4192e5f22a203f70f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/SFX/Update 2 Minigames/Foxy.EXE/Foxy Voice/Flee.wav using Guid(9e19838d13df06d4192e5f22a203f70f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7da5f093b32f4711f53621a9ece27bd8') in 0.095384 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000585 seconds.
+  path: Assets/Resources/SFX/Update 2 Minigames/Foxy Fighters/Damage Effects/Plane Damaged
+  artifactKey: Guid(d73fccd950701ca41ad5a5dc108cc10a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/SFX/Update 2 Minigames/Foxy Fighters/Damage Effects/Plane Damaged using Guid(d73fccd950701ca41ad5a5dc108cc10a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'dfe19fb3bcacc42ce83b69c0fd7435be') in 0.015522 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000781 seconds.
+  path: Assets/Resources/SFX/Update 2 Minigames/Foxy.EXE/Foxy Voice/Game Over
+  artifactKey: Guid(53fab0215a115c64eb36b44ec5287f64) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/SFX/Update 2 Minigames/Foxy.EXE/Foxy Voice/Game Over using Guid(53fab0215a115c64eb36b44ec5287f64) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7af60455d79195e80bc52458f13d108e') in 0.018145 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.001414 seconds.
+  path: Assets/Resources/SFX/Update 2 Minigames/Foxy.EXE/Withered Freddy/XSCREAM2.wav
+  artifactKey: Guid(a06340ca74d1dd6439c146e80b367ec2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/SFX/Update 2 Minigames/Foxy.EXE/Withered Freddy/XSCREAM2.wav using Guid(a06340ca74d1dd6439c146e80b367ec2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7ffce7e5914975eb1fff69e8f92caa03') in 0.057207 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000692 seconds.
+  path: Assets/Scripts/AnimatronicAbilities/Stats/IllusionDisk.asset
+  artifactKey: Guid(6d292196a65c547448df43917f0bdcb3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/AnimatronicAbilities/Stats/IllusionDisk.asset using Guid(6d292196a65c547448df43917f0bdcb3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '77bd953359bfc48205bb493bb4845b41') in 0.074784 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000348 seconds.
+  path: Assets/Resources/SFX/Update 2 Minigames/Foxy.EXE/Jumpscare/scream (2).wav
+  artifactKey: Guid(2b8f73c14e655eb4a88e7353f4ced892) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/SFX/Update 2 Minigames/Foxy.EXE/Jumpscare/scream (2).wav using Guid(2b8f73c14e655eb4a88e7353f4ced892) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3dae14fd24f58d0a807edfcaf3c630f5') in 0.085578 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000222 seconds.
+  path: Assets/Resources/SFX/Update 2 Minigames/Foxy.EXE/Foxy Voice/Game Over/base.wav
+  artifactKey: Guid(e40265a70b6f68b4d994eef323adb3cd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/SFX/Update 2 Minigames/Foxy.EXE/Foxy Voice/Game Over/base.wav using Guid(e40265a70b6f68b4d994eef323adb3cd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7dcd52cb5d1a1bff2b68b45af0471d6b') in 0.091305 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000744 seconds.
+  path: Assets/Resources/SFX/Update 2 Minigames/Foxy Fighters/Character Voices
+  artifactKey: Guid(7290c710d7febc74ba61ebb51c33d0ab) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/SFX/Update 2 Minigames/Foxy Fighters/Character Voices using Guid(7290c710d7febc74ba61ebb51c33d0ab) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1bfbd2cd8995a1701e6ffc6354ed193a') in 0.022820 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000451 seconds.
+  path: Assets/Resources/SFX/Update 2 Minigames/Foxy Fighters/Damage Effects/Enemy Damaged
+  artifactKey: Guid(bd4e7205bbbb4514eb5d2467d0ec28af) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/SFX/Update 2 Minigames/Foxy Fighters/Damage Effects/Enemy Damaged using Guid(bd4e7205bbbb4514eb5d2467d0ec28af) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5bb7c6bd9c269904bbd3dffb23c3aced') in 0.012456 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000403 seconds.
+  path: Assets/Resources/SFX/Update 2 Minigames/Foxy Fighters/Damage Effects
+  artifactKey: Guid(118737287f99cd94297a44e2ca46a318) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/SFX/Update 2 Minigames/Foxy Fighters/Damage Effects using Guid(118737287f99cd94297a44e2ca46a318) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '08b93efb1d219b1702c4576db68a6c6a') in 0.011621 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000288 seconds.
+  path: Assets/Resources/SFX/Update 2 Minigames/Foxy Fighters/Damage Effects/N. Chica Shot Down/hit5.wav
+  artifactKey: Guid(4c2a667887f84ec4d9b0b8edf94789c8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/SFX/Update 2 Minigames/Foxy Fighters/Damage Effects/N. Chica Shot Down/hit5.wav using Guid(4c2a667887f84ec4d9b0b8edf94789c8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2149d45a235d9af1638dd068147cc52c') in 0.041197 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000672 seconds.
+  path: Assets/Resources/SFX/Update 2 Minigames/Foxy.EXE/Foxy Voice/Listen.wav
+  artifactKey: Guid(f5995c39b15ef0d40a5131593a4d95b4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/SFX/Update 2 Minigames/Foxy.EXE/Foxy Voice/Listen.wav using Guid(f5995c39b15ef0d40a5131593a4d95b4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '403a037414bb443b51407231406c6e8d') in 0.066629 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000420 seconds.
+  path: Assets/Resources/SFX/Update 2 Minigames/Foxy Fighters/Damage Effects/N. Chica Shot Down
+  artifactKey: Guid(c3ddfe26095d14b49b05e55cf375eee9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/SFX/Update 2 Minigames/Foxy Fighters/Damage Effects/N. Chica Shot Down using Guid(c3ddfe26095d14b49b05e55cf375eee9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4b2c3a26f970a50a358d88ad8a01a780') in 0.009930 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 4.542700 seconds.
+  path: Assets/Resources/SFX/Update 2 Minigames/Foxy Fighters/Damage Effects/Enemy Damaged/hit4.wav
+  artifactKey: Guid(30788149501328748ae60e65e9166fb2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/SFX/Update 2 Minigames/Foxy Fighters/Damage Effects/Enemy Damaged/hit4.wav using Guid(30788149501328748ae60e65e9166fb2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7711b4a15dd86da5c3aae1b46e298f0d') in 0.020812 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000486 seconds.
+  path: Assets/Resources/SFX/Update 2 Minigames/Foxy Fighters/Damage Effects/Enemy Damaged/pow2.wav
+  artifactKey: Guid(2bf719797cd976b4d9827f23a19cc66c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/SFX/Update 2 Minigames/Foxy Fighters/Damage Effects/Enemy Damaged/pow2.wav using Guid(2bf719797cd976b4d9827f23a19cc66c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '752abb6ba295f9c95eb79e2eef6ed428') in 0.078158 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 7.405068 seconds.
+  path: Assets/Resources/SFX/Update 2 Minigames/Freddy in Space/Enemy Projectiles
+  artifactKey: Guid(4a9524b3bd9edc94b838628161fbe009) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/SFX/Update 2 Minigames/Freddy in Space/Enemy Projectiles using Guid(4a9524b3bd9edc94b838628161fbe009) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '104ca05ecb338176a40ed2a1f119200e') in 0.009138 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 1.134486 seconds.
+  path: Assets/Resources/SFX/Update 2 Minigames/Freddy in Space/Interactables
+  artifactKey: Guid(f1c54249758fb7e4abf58cabbc12a9e2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/SFX/Update 2 Minigames/Freddy in Space/Interactables using Guid(f1c54249758fb7e4abf58cabbc12a9e2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c27fedf6616b167bfd5b96b7c6bcf179') in 0.009276 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 1.061354 seconds.
+  path: Assets/Resources/SFX/Update 2 Minigames/Freddy in Space/Interactables/Heart
+  artifactKey: Guid(6369ccfea4b4f05408d2666c409c02d1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/SFX/Update 2 Minigames/Freddy in Space/Interactables/Heart using Guid(6369ccfea4b4f05408d2666c409c02d1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd1093f6f729c76441a8e159223d17b29') in 0.007332 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.286687 seconds.
+  path: Assets/Resources/SFX/Update 2 Minigames/Freddy in Space/Interactables/Portal
+  artifactKey: Guid(cbcbf4338fe8bb94a849a65964f51ded) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/SFX/Update 2 Minigames/Freddy in Space/Interactables/Portal using Guid(cbcbf4338fe8bb94a849a65964f51ded) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd53adf7eed04a827dbe231ea4c63e19b') in 0.017893 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.368216 seconds.
+  path: Assets/Resources/SFX/Update 2 Minigames/Freddy in Space/Interactables/Powerup
+  artifactKey: Guid(328a3085261645d4987a244f0e790d15) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/SFX/Update 2 Minigames/Freddy in Space/Interactables/Powerup using Guid(328a3085261645d4987a244f0e790d15) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2e657d14e30a0491c1c239d275ca8edb') in 0.007471 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.065623 seconds.
+  path: Assets/Resources/SFX/Update 2 Minigames/Freddy in Space/Interactables/Powerup/powerup.wav
+  artifactKey: Guid(d378f2fab865afe4795a637bf28193b1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/SFX/Update 2 Minigames/Freddy in Space/Interactables/Powerup/powerup.wav using Guid(d378f2fab865afe4795a637bf28193b1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2df1f0cc734b1f516eb711e674034eea') in 0.039547 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 3.329157 seconds.
+  path: Assets/Resources/SFX/Update 2 Minigames/Freddy in Space/Interactables/Portal/teleport.wav
+  artifactKey: Guid(e7aa72bb6dc33c74b948442a6871dca6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/SFX/Update 2 Minigames/Freddy in Space/Interactables/Portal/teleport.wav using Guid(e7aa72bb6dc33c74b948442a6871dca6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e9419c3c8410e0cf3896c87d0b94a330') in 0.036564 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 2.542151 seconds.
+  path: Assets/Resources/SFX/Update 2 Minigames/Freddy in Space/Interactables/Heart/heart.wav
+  artifactKey: Guid(96552e1c2ee66c84094174be35390bb1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/SFX/Update 2 Minigames/Freddy in Space/Interactables/Heart/heart.wav using Guid(96552e1c2ee66c84094174be35390bb1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e5e37811e090efc7057f209a5d72d72b') in 0.030907 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 3.398000 seconds.
+  path: Assets/Resources/SFX/Update 2 Minigames/Freddy in Space/Freddy/Died/die1.wav
+  artifactKey: Guid(cf1b444c23d75914f842aa796eb43457) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/SFX/Update 2 Minigames/Freddy in Space/Freddy/Died/die1.wav using Guid(cf1b444c23d75914f842aa796eb43457) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8b746a44491822f7021e6a3d67023e40') in 0.058489 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000581 seconds.
+  path: Assets/Resources/SFX/Update 2 Minigames/Freddy in Space/Freddy/Died/die2.wav
+  artifactKey: Guid(2744398929294d545ba9d20b750d9962) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/SFX/Update 2 Minigames/Freddy in Space/Freddy/Died/die2.wav using Guid(2744398929294d545ba9d20b750d9962) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '95b9c8cdea95ea3a36de9b11111f052f') in 0.072534 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 1.451372 seconds.
+  path: Assets/Resources/SFX/Update 2 Minigames/Freddy in Space/Freddy/Jumping/jump1.wav
+  artifactKey: Guid(125381dac82f9db46a9c60cb1a1ec7f9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/SFX/Update 2 Minigames/Freddy in Space/Freddy/Jumping/jump1.wav using Guid(125381dac82f9db46a9c60cb1a1ec7f9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a8daf603554dfddbb2e7f043981fadff') in 0.042061 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000356 seconds.
+  path: Assets/Resources/SFX/Update 2 Minigames/Freddy in Space/Freddy/Jumping/jump2.wav
+  artifactKey: Guid(16f0dc3b05cb0e944b4108921eff5fa9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/SFX/Update 2 Minigames/Freddy in Space/Freddy/Jumping/jump2.wav using Guid(16f0dc3b05cb0e944b4108921eff5fa9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '55b8836a9cb13f079a79ae167001b527') in 0.062156 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 1.619925 seconds.
+  path: Assets/Resources/SFX/Update 2 Minigames/Freddy in Space/Freddy/Taking Damage/hurt.wav
+  artifactKey: Guid(163e4000da793984c9816760b0e04c1f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/SFX/Update 2 Minigames/Freddy in Space/Freddy/Taking Damage/hurt.wav using Guid(163e4000da793984c9816760b0e04c1f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1ff7052b595fcba3272b6cbcaed373e3') in 0.037900 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 1.892034 seconds.
+  path: Assets/Resources/SFX/Update 2 Minigames/Freddy in Space/Damaging Enemies/hit.wav
+  artifactKey: Guid(6eea2e5e404846e41bf831cacd258a22) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/SFX/Update 2 Minigames/Freddy in Space/Damaging Enemies/hit.wav using Guid(6eea2e5e404846e41bf831cacd258a22) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '52fdc55e2939dcf8836323559288f102') in 0.045446 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000537 seconds.
+  path: Assets/Resources/SFX/Update 2 Minigames/Freddy in Space/Damaging Enemies/pow2.wav
+  artifactKey: Guid(c7a186de74395544da0ca89b67454fc3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/SFX/Update 2 Minigames/Freddy in Space/Damaging Enemies/pow2.wav using Guid(c7a186de74395544da0ca89b67454fc3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e01d44cdf4091e870a70bcacf6161f5e') in 0.073002 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 25.035063 seconds.
+  path: Assets/Resources/SFX/Update 2 Minigames/Freddy in Space/Freddy/Firing Gun/shot1.wav
+  artifactKey: Guid(465b40e15053a7f4d90b215932459e0a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/SFX/Update 2 Minigames/Freddy in Space/Freddy/Firing Gun/shot1.wav using Guid(465b40e15053a7f4d90b215932459e0a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '208c657657d9ea8004c2c6130f96ff07') in 0.045966 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000397 seconds.
+  path: Assets/Resources/SFX/Update 2 Minigames/Freddy in Space/Freddy/Firing Gun/shot2.wav
+  artifactKey: Guid(e1101fe28ed696848be07a36c0efaf2b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/SFX/Update 2 Minigames/Freddy in Space/Freddy/Firing Gun/shot2.wav using Guid(e1101fe28ed696848be07a36c0efaf2b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '449e8ba4eea09ed2f8f69cff249b7775') in 0.072275 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000356 seconds.
+  path: Assets/Resources/SFX/Update 2 Minigames/Freddy in Space/Freddy/Firing Gun/shot6.wav
+  artifactKey: Guid(e6d3db43ea44b724d83ca946f68bc492) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/SFX/Update 2 Minigames/Freddy in Space/Freddy/Firing Gun/shot6.wav using Guid(e6d3db43ea44b724d83ca946f68bc492) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b9463fa6c8a1677b45f8ba5c4b4e2ad6') in 0.051559 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000354 seconds.
+  path: Assets/Resources/SFX/Update 2 Minigames/Freddy in Space/Freddy/Firing Gun/shot9.wav
+  artifactKey: Guid(62bee8e48c4b4cf4fbb230223257f1bb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/SFX/Update 2 Minigames/Freddy in Space/Freddy/Firing Gun/shot9.wav using Guid(62bee8e48c4b4cf4fbb230223257f1bb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b12161e8464dd5bd4ead3eaf156ef98d') in 0.077629 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000548 seconds.
+  path: Assets/Resources/SFX/Update 2 Minigames/Freddy in Space/Freddy/Firing Gun/shot7.wav
+  artifactKey: Guid(89ed8e87fa80da34aa77562a810e0b4f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/SFX/Update 2 Minigames/Freddy in Space/Freddy/Firing Gun/shot7.wav using Guid(89ed8e87fa80da34aa77562a810e0b4f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '263f770ba375b5d8c75fab1b6e928fa5') in 0.076754 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000311 seconds.
+  path: Assets/Resources/SFX/Update 2 Minigames/Freddy in Space/Freddy/Firing Gun/shot8.wav
+  artifactKey: Guid(05f586b2041337045ab6cc040acbf80f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/SFX/Update 2 Minigames/Freddy in Space/Freddy/Firing Gun/shot8.wav using Guid(05f586b2041337045ab6cc040acbf80f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a9e79d6ac6283c8a719476bdd3b1d5c6') in 0.061952 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000396 seconds.
+  path: Assets/Resources/SFX/Update 2 Minigames/Freddy in Space/Freddy/Firing Gun/shot3.wav
+  artifactKey: Guid(658d5da634f0e3848aa5828364f77a25) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/SFX/Update 2 Minigames/Freddy in Space/Freddy/Firing Gun/shot3.wav using Guid(658d5da634f0e3848aa5828364f77a25) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b96258a5c4528499275a87df7134e615') in 0.061081 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000377 seconds.
+  path: Assets/Resources/SFX/Update 2 Minigames/Freddy in Space/Freddy/Firing Gun/shot4.wav
+  artifactKey: Guid(3d8898b3edcd9c54081eb823020b1ea2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/SFX/Update 2 Minigames/Freddy in Space/Freddy/Firing Gun/shot4.wav using Guid(3d8898b3edcd9c54081eb823020b1ea2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '60ac8777ee8e6f8f91c16027b89bd53b') in 0.062345 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000318 seconds.
+  path: Assets/Resources/SFX/Update 2 Minigames/Freddy in Space/Freddy/Firing Gun/shot5.wav
+  artifactKey: Guid(f91863f0ab24ce54fa4f03c176bccd6c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/SFX/Update 2 Minigames/Freddy in Space/Freddy/Firing Gun/shot5.wav using Guid(f91863f0ab24ce54fa4f03c176bccd6c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '71743fbed9a8cee38e5dca2a68b42c97') in 0.051252 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 6.925420 seconds.
+  path: Assets/Scripts/AnimatronicAbilities/Stats/Slasher.asset
+  artifactKey: Guid(ed2cbcdc7fed08742a750396277dd789) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/AnimatronicAbilities/Stats/Slasher.asset using Guid(ed2cbcdc7fed08742a750396277dd789) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1bb7a66409d53089b06c933a95bc3525') in 0.009937 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 6.446715 seconds.
+  path: Assets/Resources/SFX/Update 2 Minigames/Freddy in Space/Scott Speech/Walkie_Talkie_Squelch_03.wav
+  artifactKey: Guid(36544a0b16cc6b34691d0151b53b0760) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/SFX/Update 2 Minigames/Freddy in Space/Scott Speech/Walkie_Talkie_Squelch_03.wav using Guid(36544a0b16cc6b34691d0151b53b0760) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '97ad21a40c6e5446cc2041f73068d80f') in 0.037911 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000392 seconds.
+  path: Assets/Resources/SFX/Update 2 Minigames/Freddy in Space/Scott Speech/Walkie_Talkie_Squelch_05.wav
+  artifactKey: Guid(8b8040f342c051f42b0bbca1c5905571) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/SFX/Update 2 Minigames/Freddy in Space/Scott Speech/Walkie_Talkie_Squelch_05.wav using Guid(8b8040f342c051f42b0bbca1c5905571) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '25e4662ac1abfd5eb161a9b3f43bcb9b') in 0.063860 seconds 

@@ -21,6 +21,7 @@ public class GameManager : MonoBehaviour
     public AudioMixerGroup sfxMixer;
     public Animator[] neonWallAnimatronics;
     public Animator[] neonWallEnemies;
+    public List<GameObject> attackEffects = new List<GameObject>();
     [Header ("UI")]
     public Transform overlaysParent;
     public GameObject overlayObj;
@@ -47,6 +48,8 @@ public class GameManager : MonoBehaviour
         LoadAnimatronics();
         GetInitialTurns();
         PlayMusicContext();
+
+        StartCoroutine(CheckForNullStuffOnEffectList());
 
         foreach (AnimatronicParty ap in animatronicParty)
         {
@@ -186,6 +189,40 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public void SwapTeam()
+    {
+
+    }
+
+    public void AddEffectToList(GameObject effectToAdd, bool lookToReplace = false)
+    {
+        if (!attackEffects.Contains(effectToAdd))
+            attackEffects.Add(effectToAdd);
+        
+        else
+        {
+            if (lookToReplace)
+            {
+                GameObject fObj = attackEffects[attackEffects.IndexOf(effectToAdd)];
+                attackEffects.Remove(fObj);
+                Destroy(fObj.gameObject);
+                attackEffects.Add(effectToAdd);
+            }
+        }
+    }
+
+    IEnumerator CheckForNullStuffOnEffectList()
+    {
+        while (!battleEnded)
+        {
+            yield return new WaitForSeconds(1.5f);
+
+            for (int i = 0; i < attackEffects.Count; i++)
+                if (attackEffects[i] == null)
+                    attackEffects.Remove(attackEffects[i]);
+        }
+    }
+
     public void TriggerMimicBall()
     {
         mimicBall.mimicBallAnim.SetTrigger("mimic_appear");
@@ -299,26 +336,50 @@ public class GameManager : MonoBehaviour
 
     public void NeonWallActivation(string createFor, int neonWallType, float duration)
     {
-        if (createFor == "animatronic" && activatedNWTypeA == -1)
+        if (createFor == "animatronic")
         {
             if (actNeonWallA)
-                neonWallCurrentDurationA = 0f;
+            {   
+                if (activatedNWTypeA != neonWallType)
+                {
+                    neonWallAnimatronics[activatedNWTypeA].SetBool("neonwall", false);
+                    neonWallDurationA = duration;
+                    neonWallAnimatronics[neonWallType].SetBool("neonwall", true);
+                }
 
-            actNeonWallA = true;
-            neonWallDurationA = duration;
-            activatedNWTypeA = neonWallType;
-            neonWallAnimatronics[neonWallType].SetBool("neonwall", true);
+                neonWallCurrentDurationA = 0f;
+            }
+
+            else
+            {
+                actNeonWallA = true;
+                neonWallDurationA = duration;
+                activatedNWTypeA = neonWallType;
+                neonWallAnimatronics[neonWallType].SetBool("neonwall", true);
+            }
         }
 
-        else if (createFor == "enemy" && activatedNWTypeE == -1)
+        else if (createFor == "enemy")
         {
             if (actNeonWallE)
-                neonWallCurrentDurationE = 0f;
+            {
+                if (activatedNWTypeE != neonWallType)
+                {
+                    neonWallEnemies[activatedNWTypeE].SetBool("neonwall", false);
+                    neonWallDurationE = duration;
+                    neonWallEnemies[neonWallType].SetBool("neonwwall", true);
+                }
 
-            actNeonWallE = true;
-            neonWallDurationE = duration;
-            activatedNWTypeE = neonWallType;
-            neonWallEnemies[neonWallType].SetBool("neonwall", true);
+                neonWallCurrentDurationE = 0f;
+            }
+
+            else
+            {
+                actNeonWallE = true;
+                neonWallDurationE = duration;
+                activatedNWTypeE = neonWallType;
+                neonWallEnemies[neonWallType].SetBool("neonwall", true);
+            }
 
         }
     }
@@ -396,8 +457,8 @@ public class GameManager : MonoBehaviour
     {
         for (int i = 0; i < partyToLoad.Length; i++)
         {
-            AnimatronicData animData = Resources.Load<AnimatronicData>("Animatronics/" + partyToLoad[i].animatronicGame.ToString() + "/" + partyToLoad[i].animatronicName);
-            GameObject animPrefab = Instantiate(animData.animatronicPrefab, animatronicParty[partyToLoad[i].position].posSpawn.position, animatronicParty[partyToLoad[i].position].posSpawn.rotation, animatronicParty[partyToLoad[i].position].posSpawn);
+            AnimatronicData animData = Resources.Load<AnimatronicData>("Animatronics/" + partyToLoad[i].animatronicGame.ToString() + "/" + partyToLoadA[i].animatronicName);
+            GameObject animPrefab = Instantiate(animData.animatronicPrefab, animatronicParty[partyToLoad[i].position].posSpawn.position, animatronicParty[partyToLoadA[i].position].posSpawn.rotation, animatronicParty[partyToLoadA[i].position].posSpawn);
             animatronicParty[partyToLoad[i].position].animatronicItem = animPrefab.GetComponent<Animatronic>();
             animPrefab.GetComponent<Animatronic>().currentSkinIndex = animData.defaultSkin;
         }
@@ -513,6 +574,12 @@ public class GameManager : MonoBehaviour
         
         foreach (AttackButton ab in attackButtons)
             ab.GetComponent<Animator>().SetBool("appear", false);
+        
+        foreach (GameObject go in attackEffects)
+            if (go != null)
+                Destroy(go.gameObject);
+            
+        attackEffects.Clear();
         
         battleWonPanel.SetTrigger("battlewon");
         musicSource.clip = battleVictory;
@@ -690,6 +757,12 @@ public class GameManager : MonoBehaviour
 
         return false;
     }
+}
+
+[System.Serializable]
+public class EnemyWaves
+{
+    
 }
 
 [System.Serializable]

@@ -12,6 +12,7 @@ public class AnimatronicAbility : ScriptableObject
     public string abilityDescription;
     public float timeBeforeAbility;
     public float timeToDestroyEffect;
+    public bool overrideCreatedEffect;
     [Header ("Ability Effect Properties")]
     public GameObject attackEffect;
     public bool effectIsNotCentered;
@@ -57,6 +58,8 @@ public class AnimatronicAbility : ScriptableObject
 
     public virtual void ApplyEffect(bool entity, bool flip = false, bool offset = false)
     {
+        GameManager manager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
+
         if (attackEffect != null)
         {
             _attackEffect = Instantiate(attackEffect, attackEffect.transform.position, Quaternion.identity);
@@ -86,7 +89,7 @@ public class AnimatronicAbility : ScriptableObject
             Destroy(_attackEffect, timeToDestroyEffect);
         }
 
-        GameManager manager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
+        manager.AddEffectToList(_attackEffect, overrideCreatedEffect);
 
         if (abilityHasOverlay)
             manager.StartCoroutine(StartOverlay());
